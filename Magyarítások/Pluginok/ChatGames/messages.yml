@@ -10,8 +10,8 @@ game_started: '&8[%prefix%&8] &aElkezdtél egy %game% chat játékot a chatben!'
 #You can use <center> if you wish to do so in the next 4 messages.
 top:
   header: '&b&m---------&e&lTOP CHAT&b&m---------'
-  format: '&c%spot%. &f%player% &8| &e&l%points% &7points'
-  player-stat-format: '&7You`ve got &e&l%player_points% &7wins'
+  format: '&c%spot%. &f%player% &8| &e&l%points% &7pont'
+  player-stat-format: '&7Kaptál &e&l%player_points% &7pontot!'
   footer: '&b&m---------------------------'
   
   no_data_message: '&8[%prefix%&8] &cNincs még adat! Nyerni a chat játékokban és kap pontot!'
@@ -25,9 +25,9 @@ help_command:
   - '&a/chatgames (type) &f- &3Azonnal elkezd egy megadott típusú eseményt.'
   - '&a/chatgames top &f- &3Megnézi a top 10 játékosokat.'
   - '&a/chatgames toggle &f- &3Be- vagy kikapcsolja a játékokat.'
-  - '&a/chatgames reload &f- &3Reloads the config.yml file.'
+  - '&a/chatgames reload &f- &3Újratölti a config.yml fájlt.'
   - '&6'
-  - '&2&lGAME TYPES:'
+  - '&2&lJÁTÉK TÍPUSOK:'
   - '&5unscramble, unreverse, reaction, random,  math, trivia'
   - '&7&m-------------------------------------------------'
   
