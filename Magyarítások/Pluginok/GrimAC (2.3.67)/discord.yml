@@ -1,6 +1,6 @@
 enabled: true
 webhook: "Saját webhook linked"
-embed-title: "**Grim Értesítés**"
+embed-title: "**Grim Értesítés**" # Custom Emoji is használható itt.
 embed-color: "#00FFFF"
 violation-content:
   - "**Játékos**: %player%"

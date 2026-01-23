@@ -67,20 +67,20 @@ request:
   already-sent: "&#CCFFEEKereskedési kérés már küldve &#00FFDD%player%&#CCFFEE játékostól réceménnyel!"
   too-far: "&#CCFFEEKereskedés nem lehet &#00FFDD%player%&#CCFFEE játékossal, mert túl távol van!"
   not-accepting: "&#CCFFEEKereskedés nem fogad el kéréseket &#00FFDD%player%&#CCFFEE!"
-  disallowed-gamemode: "&#CCFFEEEither you or the other player is in a disallowed gamemode!"
-  same-ip: "&#CCFFEEYou can't trade with an account that has the same ip as you!"
-  below-required-amount: "&#CCFFEEYou are required to trade at least &f%amount% %currency%&#CCFFEE!"
-  blacklisted-world: "&#CCFFEETrades are disabled in this world!"
-  expired: "&#CCFFEEYour trade request to &#00FFDD%player% &#CCFFEEhas expired!"
-  disabled-trading: "&#CCFFEEYou have disabled trades! Use &#00FFDD/trade toggle &#CCFFEEto enable."
+  disallowed-gamemode: "&#CCFFEEEgyikük vagy a másik játékos nem engedélyezett játékmódban van!"
+  same-ip: "&#CCFFEENem tudsz kereskedni olyan fiókkal, amelynek ugyanaz az IP címe mint neki!"
+  below-required-amount: "&#CCFFEELegalább &f%amount% %currency%&#CCFFEE kell kereskedni!"
+  blacklisted-world: "&#CCFFEEA kereskedés letiltva ebben a világban!"
+  expired: "&#CCFFEEA kereskedési kérelmed &#00FFDD%player%&#CCFFEE játékossal lejárt!"
+  disabled-trading: "&#CCFFEEKereskedés letiltva! Használd a &#00FFDD/trade toggle &#CCFFEEparancsot a bekapcsolásához."
 
 # this must be 4 lines
 # note: currently the first line must be left empty
 currency-editor-sign:
   - ""
   - "-----------"
-  - "Write the new value"
-  - "in the first line"
+  - "Írj egy új értéket"
+  - "az első sorban"
 
 # list of sounds: https://www.digminecraft.com/lists/sound_list_pc.php
 # set to "" to disable
@@ -99,20 +99,20 @@ sounds:
 
 # can be used in the gui title as %own-status% and %partner-status%
 placeholders:
-  ready: "Ready"
-  waiting: "Waiting"
+  ready: "Készen Áll"
+  waiting: "Várakozik az Elfogadásra"
 
 commands:
-  invalid-value: "&#FF0000Invalid parameter: &#BB0000%value%"
-  invalid-command: "&#FF0000Invalid command or subcommand!"
-  missing-argument: "&#FF0000Missing argument! You must specify a value for &#BB0000%value%&#FF0000."
-  no-permission: "&#FF0000You don't have permission to access this command!"
-  out-of-range: "&#FF0000The &#BB0000%number% &#FF0000must be between &#BB0000%min% &#FF0000and &#BB0000%max%&#FF0000!"
-  player-only: "&#FF0000You must be a player to use this command!"
-  invalid-player: "&#FF0000The player &#BB0000%player% &#FF0000can not be found!"
-  invalid-selector: "&#FF0000You can not use this selector in this command!"
+  invalid-value: "&#FF0000Érvénytelen paraméter: &#BB0000%value%"
+  invalid-command: "&#FF0000Érvénytelen parancs vagy alparancs!"
+  missing-argument: "&#FF0000Hiányzó argumentum! Előfordulhat, hogy meg kell adnod egy értéket a &#BB0000%value%&#FF0000 paraméterhez."
+  no-permission: "&#FF0000Nincs jogosultságod ehhez a parancshoz!"
+  out-of-range: "&#FF0000A &#BB0000%number% &#FF0000értékneknek kell lennie &#BB0000%min% &#FF0000és &#BB0000%max% &#FF0000között!"
+  player-only: "&#FF0000Nincs jogosultságod ehhez a parancshoz! Csak játékosoknak használhatják!"
+  invalid-player: "&#FF0000A játékos &#BB0000%player% &#FF0000nem található!"
+  invalid-selector: "&#FF0000Nem használhatod ezt a kiválasztót ebben a parancsban!"
 
-update-notifier: "&#AAFFCCThere is a new version of the plugin available! &#DDDDDD(&#FFFFFFcurrent: &#FF0000%current% &#DDDDDD| &#FFFFFFlatest: &#00FF00%latest%&#DDDDDD)"
+update-notifier: "&#AAFFCCVan egy új verzió az AxTradeből! &#DDDDDD(&#FFFFFFJelenlegi: &#FF0000%current% &#DDDDDD| &#FFFFFFLegújabb: &#00FF00%latest%&#DDDDDD)"
 
 # do not change this
 version: 8
