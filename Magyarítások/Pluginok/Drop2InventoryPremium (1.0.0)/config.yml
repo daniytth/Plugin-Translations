@@ -1,0 +1,63 @@
+# If true: Drop2Inventory is always enabled for everyone (ignores per-player toggle in data.yml)
+always-enabled: false
+
+# If true: EXP from mob kills will be given directly to the killer (no exp orbs)
+# NOTE: This may reduce lag but can behave differently than vanilla exp orbs (e.g., mending/orb mechanics).
+collect-experience-directly: true
+
+# If true: When inventory is full and some items drop on the ground, show actionbar message.
+actionbar-on-inventory-full: true
+
+detection:
+  # If any hopper is found in range around the drop location -> plugin will NOT intercept drops.
+  # This prevents breaking auto-farms.
+  hoppers:
+    enabled: true
+    range: 4
+
+  # If any dispenser/dropper is found in range -> plugin will NOT intercept drops.
+  # This prevents breaking redstone machines.
+  dispensers-droppers:
+    enabled: true
+    range: 4
+
+autosmelt:
+  # Currently in code autosmelt is controlled by permission: drop2inventory.autosmelt
+  # (This flag is kept for future expansion / readability.)
+  permission-only: true
+
+autocondense:
+  # Currently in code autocondense is controlled by permission: drop2inventory.autocondense
+  # (This flag is kept for future expansion / readability.)
+  permission-only: true
+
+  # Rules: take X of input -> give 1 output
+  # You can add ANY materials here.
+  rules:
+    - input: IRON_INGOT
+      output: IRON_BLOCK
+      amount: 9
+
+    - input: GOLD_INGOT
+      output: GOLD_BLOCK
+      amount: 9
+
+    - input: DIAMOND
+      output: DIAMOND_BLOCK
+      amount: 9
+
+    - input: EMERALD
+      output: EMERALD_BLOCK
+      amount: 9
+
+    - input: COPPER_INGOT
+      output: COPPER_BLOCK
+      amount: 9
+
+messages:
+  no_permission: "&cNincsen jogosultságod ehhez a parancshoz."
+  enabled: "&aDrop2Inventory engedélyezve."
+  disabled: "&cDrop2Inventory letiltva."
+  reloaded: "&aKonfiguráció újratöltve."
+  player_not_found: "&cJátékos nem található."
+  inventory_full_actionbar: "&cA leltár tele van! Néhány tárgy leesett."

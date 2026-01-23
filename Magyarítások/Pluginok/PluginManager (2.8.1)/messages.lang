@@ -1,0 +1,193 @@
+# Fordítások a PluginManager számára
+# Használj & színező kódokhoz. Használj && ha & karaktert szeretnél
+# Használj %1/%2/%... argumentumokhoz
+# Használj # kommentekhez. Ezeket nem lehet sor végén használni, mert fordításokban lehet # karakter
+# Az üzenetek alapértelmezett színe: &a (zöld)
+# Néhány fordítás több sorból állhat. A sorokat \n választja el
+# Ha hiányzik egy fordítás, automatikusan hozzáadódik a fájl végéhez és egy értesítés jelenik meg a konzolon
+
+# Általános fordítások
+pm.general.noPermission=&cSajnálom, de nincs hozzáférésed ehhez a parancshoz.
+pm.general.pluginNotFound=&cA plugin nem található
+pm.general.checkConsole=Nézd meg a konzolt
+pm.general.onlyPlayer=&cEzt a parancsot csak játékosként futtathatod.
+pm.general.onlyConsole=&cJátékbeli parancsok tiltva. Kérlek használd a konzolt.
+
+# Soft függőségek
+pm.softdepend.found=A soft függőség &6%1 &atelepítve van és használatban lesz.
+
+# Frissítő
+pm.updater.found=Egy új &6PluginManager &afrissítés érhető el &e(%1 -> %2)&a.
+pm.updater.newMajor=&c------------------------------\nEgy új &lfő verzió &aa &6PluginManager &aból érhető el &e(%1 -> %2)&a.\nNézd meg a Github/SpigotMC oldalt további információkért.\n&c------------------------------
+pm.updater.downloadSuccess=Sikeresen letöltötted az új &6PluginManager &averziót.
+pm.updater.checkChangelog=Nézd meg a változásokat itt: &6%1&a.
+pm.updater.selfReload=A PluginManager másodperceken belül újratölti magát...
+pm.updater.reloadSuccess=A PluginManager sikeresen újratöltötte magát!
+pm.updater.downloadFail=&cNem sikerült automatikusan letölteni a legújabb &6PluginManager &cverziót.
+pm.updater.downloadHere=Innen töltheted le: &6%1
+pm.updater.latestVersion=A legújabb &6PluginManager &averziót használod.
+pm.updater.error=&cIsmeretlen hiba történt a &6PluginManager &cverzió ellenőrzése közben!
+pm.updater.missingTranslations=&cHiányoznak fordítások a &6messages.lang &cfájlból\nHa most telepítettél frissítést, ez normális és figyelmen kívül hagyható, ha nem szeretnél egyéni fordításokat
+
+# Telepített pluginok
+pm.installedPlugins.notFound=&cA &6%1 &cplugin el lett távolítva a konfigból, mert a fájl már nem található.
+
+# PluginUtils
+# loadPlugin metódus
+pm.pluginutils.loadPlugin.fileNotFound=Plugin fájl nem található
+pm.pluginutils.loadPlugin.missingDependency=Hiányzó függőség
+pm.pluginutils.loadPlugin.invalidPluginFile=Érvénytelen plugin fájl
+pm.pluginutils.loadPlugin.invalidPluginDescription=Érvénytelen plugin leírás
+pm.pluginutils.loadPlugin.notAdded=Nem lehet hozzáadni a plugin listához
+# unloadPlugin metódus
+pm.pluginutils.unloadPlugin.pluginListError=Nem lehet lekérni a plugin listát
+pm.pluginutils.unloadPlugin.lookupNamesError=Nem lehet lekérni a keresési neveket
+pm.pluginutils.unloadPlugin.commandMapError=Nem lehet lekérni a parancs térképet
+pm.pluginutils.unloadPlugin.knownCommandsError=Nem lehet lekérni az ismert parancsokat
+pm.pluginutils.unloadPlugin.closeClassLoaderError=Nem lehet bezárni az osztály betöltőt
+pm.pluginutils.unloadPlugin.unknownClassLoader=&cÚgy tűnik, a Spigot már nem URLClassLoadert használ.\n&cKérlek jelezd ezt a plugin fejlesztőjének!
+
+# Telepített pluginok konfig
+pm.installedpluginsconfig.createError=Nem lehet létrehozni az installed.yml fájlt!
+pm.installedpluginsconfig.loadError=Nem lehet betölteni az installed.yml fájlt!
+pm.installedpluginsconfig.saveError=Nem lehet menteni az installed.yml fájlt!
+
+# Parancsok
+# Reload parancs
+pm.commands.reload.start=&aMinden plugin újratöltése...
+pm.commands.reload.done=&aMinden plugin újratöltve lett.
+pm.commands.reload.unloadError=&cNem lehetett kirakni a &6%1&c plugint. &7(%2)
+pm.commands.reload.loadError=&cNem lehetett betölteni a &6%1&c plugint. &7(%2)
+# PluginManager parancs
+pm.commands.pluginmanager.subNotFound=&cA parancs nem található.
+pm.commands.pluginmanager.invalidUsage=&cÉrvénytelen parancs használat!
+pm.commands.pluginmanager.correctUsage=Használat: &6pm %1
+pm.commands.pluginmanager.unknownException=&cIsmeretlen hiba történt a parancs végrehajtása közben!\n&cKérlek vedd fel a kapcsolatot a plugin fejlesztőjével és küldj egy másolatot a logról.
+# Alparancsok
+# Commands alparancs
+pm.subcommands.commands.noCommands=&cA &6%1 &cpluginnek nincsenek regisztrált parancsai.
+pm.subcommands.commands.commandsOf=&6%1 &aparancsai:
+pm.subcommands.commands.help=Mutasd egy adott plugin összes regisztrált parancsát.\nCsak azok a parancsok mutathatók meg, amelyeket a "normál" módon regisztráltak a plugin.yml-ben.\nAz eseményekkel vagy más módon regisztrált parancsok nem listázhatók a PluginManager által!
+# Delete alparancs
+pm.subcommands.delete.unloadError=&cA plugin nem rakható ki. &7(%2)
+pm.subcommands.delete.fileNotFound=&cA plugin fájlja nem található.
+pm.subcommands.delete.success=A plugin törölve lett.
+pm.subcommands.delete.deleteError=&cA plugin nem törölhető.
+pm.subcommands.delete.overwriteError=A plugin nem írható felül
+pm.subcommands.delete.nextStartDelete=A következő újraindításkor törlődni fog.
+pm.subcommands.delete.manualDelete=&cA PluginManager megpróbálta felülírni, de ez is sikertelen volt.\n&cSajnálatos módon kézzel kell törölnöd.
+pm.subcommands.delete.help=Rakj ki és törölj egy plugint közvetlenül a szerverről.\nHa a plugin nem törölhető hozzáférési korlátozások miatt, felül lesz írva egy üres fájllal és a következő alkalommal törlődik, ha lehetséges.\nHa ez is sikertelen, a PluginManager nem tudja törölni a plugint, így kézzel kell megtenned.
+# Disable alparancs
+pm.subcommands.disable.disableError=&cNem lehet letiltani a &6%1&c plugint. &7(%2)
+pm.subcommands.disable.batchSuccess=Minden plugin letiltva &e(%1)&a.
+pm.subcommands.disable.singleSuccess=A &6%1 &aplugin letiltva lett.
+pm.subcommands.disable.alreadyDisabled=&cA &6%1 &cplugin már ki van kapcsolva.
+pm.subcommands.disable.help=Tiltsd le egy plugint, hogy ne fusson tovább.\nKönnyedén újra bekapcsolhatod a '/pm enable' paranccsal.
+# Download alparancs
+pm.subcommands.download.success=Sikeresen letöltötted a plugint és &6%1&a néven mentetted.
+pm.subcommands.download.downloadError=&cNem lehet letölteni a &6%1&c plugint. &7(%2)
+pm.subcommands.download.idExtractError=&cNem lehet kinyerni a plugin ID-t az URL-ből.\n&aPróbáld meg kézzel beírni az ID-t. Itt találod:\n&6https://www.spigotmc.org/resources/plugin-name.&aID&6/
+pm.subcommands.download.externalLink=&cA pluginnek külső letöltési linkje van és nem tölthető le automatikusan.
+pm.subcommands.download.notJar=&cA plugin nem JAR fájl. Fájltípus: &6%1
+pm.subcommands.download.notBought=&cÚgy tűnik, nem vásároltad meg ezt a plugint.\n&aAz ára: &6%1&a.
+pm.subcommands.download.isPremium=&cA plugin prémium erőforrás és nem tölthető le automatikusan.\n&aAz ára: &6%1&a.
+pm.subcommands.download.updateConfigError=&cNem lehet hozzáadni a plugint a konfighoz a későbbi frissítésekhez.
+pm.subcommands.download.noDownload=&cA plugin nem található vagy nincs letöltési lehetőség.
+pm.subcommands.download.spigetError=&cNem lehet elérni a spiget API-t. Kérlek próbáld újra később. &7(%1)
+pm.subcommands.download.help=Tölts le egy plugint játékból a spigotmc-ről vagy egy közvetlen linkről.\nHa a plugin a spigotmc-ről lett letöltve, az aktuális verzió el lesz mentve, hogy később könnyedén frissíthesd a '/pm update' paranccsal.\nA spigotmc letöltéseknél beillesztheted a plugin URL-jét, hogy a PluginManager kinyerje az ID-t, de kézzel is beírhatod.\nAz ID az URL végén található: https://www.spigotmc.org/resources/plugin-name._ID_/
+# Dump alparancs
+pm.subcommands.dump.noBatchPermission=&cA &6%1 &cfájl nem írható. Van írási jogod a szerver mappához? &7(%2)
+pm.subcommands.dump.batchSuccess=Sikeresen kiírtam minden plugin információt. A &6plugin_dumps &amappában találod.
+pm.subcommands.dump.success=Sikeresen kiírtam a plugin információkat. A &6plugin_dumps &amappában találod.
+pm.subcommands.dump.noPermission=&cA fájl nem írható. Van írási jogod a szerver mappához? &7(%1)
+pm.subcommands.dump.help=Írd ki egy plugin összes információját egy fájlba a szerver mappába, hogy könnyen áttekinthesd az összes telepített plugint és azok engedélyeit/parancsait.\nAz információ tartalmazza a következőket:\n - Név\n - Leírás\n - Verzió\n - Szerző(k)\n - Weboldal\n - Prefix\n - Parancsok\n - Engedélyek alapértelmezésekkel és alengedélyekkel
+pm.subcommands.dump.name=Név: %1
+pm.subcommands.dump.description=Leírás: %1
+pm.subcommands.dump.version=Verzió: %1
+pm.subcommands.dump.authors=Szerző(k): %1
+pm.subcommands.dump.website=Weboldal: %1
+pm.subcommands.dump.prefix=Prefix: %1
+pm.subcommands.dump.commands=Parancsok:
+pm.subcommands.dump.permissions=Engedélyek:
+pm.subcommands.dump.default=Alapértelmezett: %1
+pm.subcommands.dump.childPermissions=Alengedélyek:
+# Enable alparancs
+pm.subcommands.enable.enableError=&cNem lehet engedélyezni a &6%1&c plugint. &7(%2)
+pm.subcommands.enable.batchSuccess=Minden plugin engedélyezve &e(%1)&a.
+pm.subcommands.enable.singleSuccess=A &6%1 &aplugin engedélyezve lett.
+pm.subcommands.enable.alreadyEnabled=&cA &6%1 &cplugin már be van kapcsolva.
+pm.subcommands.enable.help=Engedélyezd egy plugint, hogy újra használhasd.\nKönnyedén újra kikapcsolhatod a '/pm disable' paranccsal.
+# Find alparancs
+pm.subcommands.find.noPlugin=&cNincs olyan plugin, amelyik regisztrálná ezt a parancsot.
+pm.subcommands.find.listHeader=&6Pluginek ezzel a paranccsal:
+pm.subcommands.find.help=Keresd meg, melyik plugin regisztrálta a megadott parancsot.\nCsak azok a parancsok találhatók meg, amelyeket a "normál" módon regisztráltak a plugin.yml-ben.\nAz eseményekkel vagy más módon regisztrált parancsok nem kereshetők a PluginManager által!
+# Gui alparancs
+pm.subcommands.gui.help=Mutasd egy könnyen használható felületet, ahol végrehajthatsz plugin specifikus parancsokat anélkül, hogy ténylegesen kiadnád őket.
+pm.subcommands.gui.page=Oldal
+pm.subcommands.gui.backToPage=Vissza az oldalra
+pm.subcommands.gui.goToPage=Ugrás az oldalra
+pm.subcommands.gui.back=Vissza
+# Help alparancs
+pm.subcommands.help.header=&6---------- Súgó a(z) &a%1 &6parancshoz ----------
+pm.subcommands.help.help=Mutasd részletes információkat az összes alparancsról, hogy az összes fontos aspektust egy helyen láthasd, anélkül, hogy külön keresgélnél.
+# Info alparancs
+pm.subcommands.info.pluginInfo=&6Plugin információk:
+pm.subcommands.info.name=&aNév: &6%1
+pm.subcommands.info.description=&aLeírás: &6%1
+pm.subcommands.info.version=&aVerzió: &6%1
+pm.subcommands.info.authors=&aSzerző(k): &6%1
+pm.subcommands.info.pluginEnabled=&aA plugin jelenleg &aengedélyezve van
+pm.subcommands.info.pluginDisabled=&aA plugin jelenleg &ctiltva van
+pm.subcommands.info.help=Nézd meg néhány információt egy adott pluginról.\nA következő dolgok jelennek meg:\n - Név\n - Leírás\n - Verzió\n - Szerző(k)\n - Plugin státusz (engedélyezve/tiltva)
+# List alparancs
+pm.subcommands.list.header=&6Pluginek &e&o(%1)&6:
+pm.subcommands.list.help=Mutasd az összes telepített plugin listáját és azok státuszát (engedélyezve/tiltva).
+# Load alparancs
+pm.subcommands.load.loadError=&cNem lehet betölteni a &6%1&c plugint. &7(%2)
+pm.subcommands.load.batchSuccess=Minden plugin betöltve &e(%1)&a.
+pm.subcommands.load.alreadyLoaded=&cA plugin már betöltve van.
+pm.subcommands.load.success=A plugin betöltve lett.
+pm.subcommands.load.help=Tölts be egy plugint, amely még nincs betöltve.\nMegadhatod a fájlnevet (ha nem tartalmaz szóközt) vagy a plugin.yml-beli nevet.
+# Permissions alparancs
+pm.subcommands.permissions.noPermissions=&cA pluginnek nincsenek regisztrált engedélyei.
+pm.subcommands.permissions.header=&6%1 &aengedélyei:
+pm.subcommands.permissions.description=Leírás
+pm.subcommands.permissions.default=Alapértelmezett
+pm.subcommands.permissions.everybody=Mindenki
+pm.subcommands.permissions.nobody=Senki
+pm.subcommands.permissions.ops=OP-ok
+pm.subcommands.permissions.notOps=Nem OP-ok
+pm.subcommands.permissions.undefined=Nem definiált
+pm.subcommands.permissions.childPermissions=Alengedélyek
+pm.subcommands.permissions.help=Listázd egy plugin összes engedélyét.\nCsak azok az engedélyek mutathatók meg, amelyek a plugin.yml-ben szerepelnek.
+# Reload alparancs
+pm.subcommands.reload.success=A &6%1 &aplugin újratöltve lett.
+pm.subcommands.reload.help=Rakj ki és tölts be újra egy plugint, hogy felszabadítsd az összes betöltött erőforrását és frissítsd futás közben vagy próbálj megjavítani néhány hibát.
+# ReloadConfig alparancs
+pm.subcommands.reloadconfig.batchSuccess=Minden plugin konfigja újratöltve &e(%1)&a.
+pm.subcommands.reloadconfig.success=A &6%1 &aplugin konfigja újratöltve lett.
+pm.subcommands.reloadconfig.help=Töltsd újra egy adott plugin konfigurációját.\nKönnyedén újratöltheted más pluginok konfigját akkor is, ha nincs saját reload config parancsuk.\nEnnek nincs hatása néhány pluginra, ha gyorsítótárazzák a konfig értékeket vagy más dolgokra van szükségük a konfig újratöltésekor.
+# Restart alparancs
+pm.subcommands.restart.batchSuccess=Minden plugin újraindítva &e(%1)&a.
+pm.subcommands.restart.success=A &6%1 &aplugin újraindítva lett.
+pm.subcommands.restart.help=Engedélyezd és tiltsd le egy plugint, hogy felszabadítsd az összes betöltött erőforrását (pl. konfig fájlokat).\nEz nem tölti újra az osztályokat és sok plugint tönkretehet, amelyek nem indíthatók újra!
+# Unload alparancs
+pm.subcommands.unload.unloadError=&cNem lehet kirakni a &6%1&c plugint. &7(%2)
+pm.subcommands.unload.batchSuccess=Minden plugin kirakva &e(%1)&a.
+pm.subcommands.unload.success=A plugin kirakva lett.
+pm.subcommands.unload.help=Rakj ki egy plugint és szabadítsd fel az összes betöltött erőforrását.\nHa új pluginokat tesztelsz, egyszerűen kirakhatod őket, ha nem felelnek meg az igényeidnek.
+# Update alparancs
+pm.subcommands.update.batchSuccess=Sikeresen frissítetted a &6%1 &aplugint a legújabb verzióra.
+pm.subcommands.update.batchUpToDate=A &6%1 &aplugin már naprakész.
+pm.subcommands.update.batchSpigetError=&cNem lehet elérni a spiget API-t vagy a &6%1 &cplugin nincs a spigotmc-n. Kérlek próbáld újra később.
+pm.subcommands.update.batchWriteError=&cNem lehet menteni a &6%1&c plugin fájlt.
+pm.subcommands.update.batchDone=Ellenőriztem az összes plugint a konfigban a frissítésekre.
+pm.subcommands.update.success=Sikeresen frissítetted a plugint a legújabb verzióra.
+pm.subcommands.update.upToDate=A plugin már naprakész.
+pm.subcommands.update.notInConfig=&cA &6%1 &cplugin nincs a konfig fájlban.
+pm.subcommands.update.spigetError=&cNem lehet elérni a spiget API-t vagy a plugin nincs a spigotmc-n. Kérlek próbáld újra később.
+pm.subcommands.update.writeError=&cNem lehet menteni a plugin fájlt.
+pm.subcommands.update.error=&cNem lehet frissíteni a &6%1&c plugint. &7(%2)
+pm.subcommands.update.nameUpdateAvailable=A &6%1 &apluginnek van elérhető frissítése.
+pm.subcommands.update.updateAvailable=A pluginnek van elérhető frissítése.
+pm.subcommands.update.help=Frissítsd a korábban a '/pm download' paranccsal letöltött pluginokat.\nEz csak a spigotmc-ről származó pluginokkal működik.
