@@ -1,17 +1,17 @@
-# DOCUMENTATION: https://docs.artillex-studios.com/axtrade.html
+# DOKUMENTÁCIÓ: https://docs.artillex-studios.com/axtrade.html
 # ITEM BUILDER: https://docs.artillex-studios.com/item-builder.html
 
-# ----- SETTINGS -----
+# ----- BEÁLLÍTÁSOK -----
 
-title: "&0Trading with: %player%"
-# a gui can have 1-6 rows
+title: "&0Csere vele: %player%"
+# a felületnek 1-6 sora lehet
 rows: 6
 
-# ----- SLOTS -----
+# ----- SLOTOK -----
 
-# the slots where the items can be placed
-# make sure to not put decorative items or currency items in the these slots
-# the own-slots and partner-slots must have an equal amount of slots
+# azok a slotok, ahova a tárgyakat lehet helyezni
+# ügyelj arra, hogy dekoratív tárgyakat vagy valutákat ne helyezz ezekbe a slotokba
+# az own-slots és partner-slots listáknak egyenlő számú slotot kell tartalmazniuk
 own-slots:
   - 9-12
   - 18-21
@@ -26,119 +26,119 @@ partner-slots:
   - 41-44
   - 50-53
 
-# ----- ITEMS -----
+# ----- TÁRGYAK -----
 
-# items on your side
+# a te oldaladon lévő tárgyak
 own:
   confirm-item:
     slot: 0
-    # you can use these placeholders:
-    # %own-name%"
+    # ezeket a helykitöltőket használhatod:
+    # %own-name%
     # %partner-name%
     accept:
       material: "RED_CONCRETE"
-      # if you want, you can add head textures, like this:
+      # ha szeretnéd, hozzáadhatsz fej textúrákat, így:
       #material: "PLAYER_HEAD"
       #texture: "%own-head%"
-      name: "&#00ffdd&lᴀᴄᴄᴇᴘᴛ ᴛʀᴀᴅᴇ"
+      name: "&#00ffdd&lᴄsᴇʀᴇ ᴍᴇɢᴋᴏɴғɪʀᴍᴀʟᴀsᴀ"
       lore:
         - ""
-        - " &7- &fAre you happy with the trade?"
+        - " &7- &fElégedett vagy a cserével?"
         - ""
-        - "&#00ffdd&l> &#00ffddClick &8- &#00ffddConfirm Trade"
+        - "&#00ffdd&l> &#00ffddKattintás &8- &#00ffddCsere elfogadása"
     cancel:
       material: "LIME_CONCRETE"
-      name: "&#00ffdd&lᴄᴀɴᴄᴇʟ ᴄᴏɴғɪʀᴍᴀᴛɪᴏɴ"
+      name: "&#00ffdd&lᴍᴇɢᴋᴏɴғɪʀᴍᴀʟᴀs ᴠɪssᴢᴀᴠᴏɴᴀsᴀ"
       lore:
         - ""
-        - " &7- &fDo you want to change something?"
+        - " &7- &fSzeretnél valamin változtatni?"
         - ""
-        - "&#00ffdd&l> &#00ffddClick &8- &#00ffddCancel Confirmation"
-  # you can define as many currencies as you want, but make sure to copy them to the 'partner' section too!
+        - "&#00ffdd&l> &#00ffddKattintás &8- &#00ffddVisszavonás"
+  # annyi valutát definiálhatsz, amennyit csak szeretnél, de másold át őket a 'partner' szakaszba is!
   currency1:
     slot: 2
-    # you need Vault installed for this
+    # ehhez szükséges a Vault plugin telepítve
     currency: "Vault"
     material: "GOLD_NUGGET"
-    name: "&#00ffdd&lᴍᴏɴᴇʏ"
-    # you can use these placeholders:
-    #  %amount% (the amount the player set)
-    #  %tax-amount% (amount after tax)
-    #  %tax-percent% (the % of tax on the currency)
-    #  %tax-fee% (amount taken because of tax)
+    name: "&#00ffdd&lᴘᴇɴᴢ"
+    # ezeket a helykitöltőket használhatod:
+    #  %amount% (a játékos által beállított összeg)
+    #  %tax-amount% (adó utáni összeg)
+    #  %tax-percent% (az adó százalékos értéke)
+    #  %tax-fee% (adó miatt levett összeg)
     lore:
-      - "&7Your offer"
+      - "&7Te ajánlatod"
       - ""
-      - " &7- &fAmount: &#00ffdd%amount%$"
+      - " &7- &fÖsszeg: &#00ffdd%amount%$"
       - ""
-      - "&#00ffdd&l> &#00ffddClick &8- &#00ffddChange Amount"
+      - "&#00ffdd&l> &#00ffddKattintás &8- &#00ffddÖsszeg módosítása"
   currency2:
     slot: 3
     currency: "Experience"
     material: "EXPERIENCE_BOTTLE"
-    name: "&#00ffdd&lᴇxᴘᴇʀɪᴇɴᴄᴇ"
+    name: "&#00ffdd&lᴛᴀᴘᴀsᴢᴛᴀʟᴏᴍ"
     lore:
-      - "&7Your offer"
+      - "&7Te ajánlatod"
       - ""
-      - " &7- &fAmount: &#00ffdd%amount% EXP"
+      - " &7- &fÖsszeg: &#00ffdd%amount% EXP"
       - ""
-      - "&#00ffdd&l> &#00ffddClick &8- &#00ffddChange Amount"
+      - "&#00ffdd&l> &#00ffddKattintás &8- &#00ffddÖsszeg módosítása"
 
-# items on your trade partner's side
+# a cserepartnered oldalán lévő tárgyak
 partner:
   confirm-item:
     slot: 8
-    # you can also use these placeholders:
-    # %own-name%"
+    # ezeket a helykitöltőket is használhatod:
+    # %own-name%
     # %partner-name%
     accept:
       material: "RED_CONCRETE"
-      # if you want, you can add head textures, like this:
+      # ha szeretnéd, hozzáadhatsz fej textúrákat, így:
       #material: "PLAYER_HEAD"
       #texture: "%partner-head%"
-      name: "&#00ffdd&lᴡᴀɪᴛɪɴɢ ғᴏʀ ᴏᴛʜᴇʀ ᴘʟᴀʏᴇʀ"
+      name: "&#00ffdd&lᴠᴀʀᴀᴋᴏᴢᴀs ᴀ ᴍᴀsɪᴋ ᴊᴀ́ᴛᴇ́ᴋᴏsʀᴀ"
       lore:
         - ""
-        - " &7- &f%partner-name% has not yet confirmed the trade!"
+        - " &7- &f%partner-name% még nem erősítette meg a cserét!"
         - ""
     cancel:
       material: "LIME_CONCRETE"
-      name: "&#00ffdd&lᴡᴀɪᴛɪɴɢ"
+      name: "&#00ffdd&lᴠᴀʀᴀᴋᴏᴢᴀs"
       lore:
         - ""
-        - " &7- &f%partner-name% has confirmed the trade!"
+        - " &7- &f%partner-name% már megerősítette a cserét!"
   currency1:
     slot: 6
     currency: "Vault"
     material: "GOLD_NUGGET"
-    name: "&#00ffdd&lᴍᴏɴᴇʏ"
-    # you can use these placeholders:
-    #  %amount% (the amount the player set)
-    #  %tax-amount% (amount after tax)
-    #  %tax-percent% (the % of tax on the currency)
-    #  %tax-fee% (amount taken because of tax)
+    name: "&#00ffdd&lᴘᴇɴᴢ"
+    # ezeket a helykitöltőket használhatod:
+    #  %amount% (a játékos által beállított összeg)
+    #  %tax-amount% (adó utáni összeg)
+    #  %tax-percent% (az adó százalékos értéke)
+    #  %tax-fee% (adó miatt levett összeg)
     lore:
-      - "&7%partner-name%'s offer"
+      - "&7%partner-name% ajánlata"
       - ""
-      - " &7- &fAmount: &#00ffdd%amount%$"
+      - " &7- &fÖsszeg: &#00ffdd%amount%$"
       - ""
-      - "&#00ffdd&l> &#00ffddClick &8- &#00ffddChange Amount"
+      - "&#00ffdd&l> &#00ffddKattintás &8- &#00ffddÖsszeg módosítása"
   currency2:
     slot: 5
     currency: "Experience"
     material: "EXPERIENCE_BOTTLE"
-    name: "&#00ffdd&lᴇxᴘᴇʀɪᴇɴᴄᴇ"
+    name: "&#00ffdd&lᴛᴀᴘᴀsᴢᴛᴀʟᴏᴍ"
     lore:
-      - "&7%partner-name%'s offer"
+      - "&7%partner-name% ajánlata"
       - ""
-      - " &7- &fAmount: &#00ffdd%amount% EXP"
+      - " &7- &fÖsszeg: &#00ffdd%amount% EXP"
       - ""
-      - "&#00ffdd&l> &#00ffddClick &8- &#00ffddChange Amount"
+      - "&#00ffdd&l> &#00ffddKattintás &8- &#00ffddÖsszeg módosítása"
 
 decoration-example:
   slot: [4, 13, 22, 31, 40, 49]
   material: "LIGHT_BLUE_STAINED_GLASS_PANE"
   name: " "
 
-# do not change this
+# ezt ne változtasd meg
 version: 1

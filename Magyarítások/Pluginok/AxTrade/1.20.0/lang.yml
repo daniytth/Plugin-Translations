@@ -1,41 +1,41 @@
-# DOCUMENTATION: https://docs.artillex-studios.com/axtrade.html
+# DOKUMENTÁCIÓ: https://docs.artillex-studios.com/axtrade.html
 
 player-help:
   - " "
-  - "<gradient:#00FFDD:#55FFFF><b>AxTrade</b></gradient> <#22FFDD>Help"
-  - " <#22FFDD>➤ <white>/axtrade <player> <#DDDDDD>| <#77FFFF>Send trade request"
-  - " <#22FFDD>➤ <white>/axtrade accept <player> <#DDDDDD>| <#77FFFF>Accept trade request"
-  - " <#22FFDD>➤ <white>/axtrade deny <player> <#DDDDDD>| <#77FFFF>Deny trade request"
+  - "<gradient:#00FFDD:#55FFFF><b>AxTrade</b></gradient> <#22FFDD>Segítség"
+  - " <#22FFDD>➤ <white>/axtrade <játékos> <#DDDDDD>| <#77FFFF>Csere kérés küldése"
+  - " <#22FFDD>➤ <white>/axtrade accept <játékos> <#DDDDDD>| <#77FFFF>Csere kérés elfogadása"
+  - " <#22FFDD>➤ <white>/axtrade deny <játékos> <#DDDDDD>| <#77FFFF>Csere kérés elutasítása"
   - " "
 
 admin-help:
   - " "
-  - "<gradient:#00FFDD:#55FFFF><b>AxTrade</b></gradient> <#22FFDD>Help"
-  - " <#22FFDD>➤ <white>/axtrade <player> <#DDDDDD>| <#77FFFF>Send trade request"
-  - " <#22FFDD>➤ <white>/axtrade accept <player> <#DDDDDD>| <#77FFFF>Accept trade request"
-  - " <#22FFDD>➤ <white>/axtrade deny <player> <#DDDDDD>| <#77FFFF>Deny trade request"
-  - " <#22FFDD>➤ <white>/axtrade reload <#DDDDDD>| <#77FFFF>Reload plugin"
-  - " <#22FFDD>➤ <white>/axtrade force <player> <#DDDDDD>| <#77FFFF>Force start a trade"
-  - " <#22FFDD>➤ <white>/axtrade preview <#DDDDDD>| <#77FFFF>Opens read only gui (meant for testing)"
+  - "<gradient:#00FFDD:#55FFFF><b>AxTrade</b></gradient> <#22FFDD>Segítség"
+  - " <#22FFDD>➤ <white>/axtrade <játékos> <#DDDDDD>| <#77FFFF>Csere kérés küldése"
+  - " <#22FFDD>➤ <white>/axtrade accept <játékos> <#DDDDDD>| <#77FFFF>Csere kérés elfogadása"
+  - " <#22FFDD>➤ <white>/axtrade deny <játékos> <#DDDDDD>| <#77FFFF>Csere kérés elutasítása"
+  - " <#22FFDD>➤ <white>/axtrade reload <#DDDDDD>| <#77FFFF>Plugin újratöltése"
+  - " <#22FFDD>➤ <white>/axtrade force <játékos> <#DDDDDD>| <#77FFFF>Kényszerített csere indítása"
+  - " <#22FFDD>➤ <white>/axtrade preview <#DDDDDD>| <#77FFFF>Teszt felület megnyitása (csak olvasható)"
   - " "
 
 reload:
-  success: "&#33FF33Plugin successfully reloaded!"
-  failed: "&#FF3333Failed to reload the plugin! Something is wrong in the &f%file%&#FF3333 file, look in the console or use a yaml validator to fix the errors!"
+  success: "&#33FF33A plugin sikeresen újratöltve!"
+  failed: "&#FF3333A plugin újratöltése sikertelen! Hiba található a &f%file%&#FF3333 fájlban, nézd meg a konzolt vagy javítsd a hibákat!"
 
 trade:
-  started: "&#CCFFEEYou have started a trade with &#00FFDD%player%&#CCFFEE!"
-  completed: "&#CCFFEEYour trade with &#00FFDD%player% &#CCFFEEwas completed!"
-  aborted: "&#CCFFEEYour trade with &#00FFDD%player% &#CCFFEEwas aborted!"
-  blacklisted-item: "&#CCFFEEThis item is blacklisted!"
-  inventory-full: "&#CCFFEEYou can't put any more items in the gui, because your trade partner has no more empty slots."
-  preview-info: "&#CCFFEEYou are opening the preview gui, this is meant for testing your configuration, clicking buttons will cause errors and might not work."
+  started: "&#CCFFEEElkezdted a cserét &#00FFDD%player%&#CCFFEE játékossal!"
+  completed: "&#CCFFEEA csere &#00FFDD%player%&#CCFFEE játékossal sikeresen befejeződött!"
+  aborted: "&#CCFFEEA csere &#00FFDD%player%&#CCFFEE játékossal megszakadt!"
+  blacklisted-item: "&#CCFFEEEz a tárgy tiltott a cserében!"
+  inventory-full: "&#CCFFEENem rakhatsz be több tárgyat, mert a partnerednek nincs helye a táskájában."
+  preview-info: "&#CCFFEEA teszt felületet nyitottad meg. Itt csak a konfigurációt ellenőrizheted, a gombokra kattintás hibákat okozhat."
 
 toggle:
-  enabled: "&#CCFFEEYou have enabled trade requests!"
-  disabled: "&#CCFFEEYou have disabled trade requests!"
+  enabled: "&#CCFFEEBekapcsoltad a csere kérések fogadását!"
+  disabled: "&#CCFFEEKikapcsoltad a csere kérések fogadását!"
 
-# summary after a successful trade
+# összefoglaló sikeres csere után
 summary:
   get:
     item: "&#00FF00&l+ &#00FF00%amount%x %item%"
@@ -45,75 +45,75 @@ summary:
     currency: "&#FF0000&l- &#FF0000%amount% %currency%"
 
 currency-editor:
-  success: "&#CCFFEESuccessfully changed value!"
-  failed: "&#CCFFEEIncorrect value!"
-  not-enough: "&#CCFFEEYou don't have enough of this currency!"
+  success: "&#CCFFEEÉrték sikeresen megváltoztatva!"
+  failed: "&#CCFFEEErvénytelen érték!"
+  not-enough: "&#CCFFEENincs elegendő %currency% a rendelkezésedre!"
 
 request:
-  sent-sender: "&#CCFFEEYou have successfully sent a trade request to &#00FFDD%player%&#CCFFEE!"
+  sent-sender: "&#CCFFEESikeresen elküldted a csere kérést &#00FFDD%player%&#CCFFEE játékosnak!"
   sent-receiver:
-    info: "&#CCFFEEYou have received a trade request from &#00FFDD%player%&#CCFFEE!"
+    info: "&#CCFFEECserét ajánlott neked &#00FFDD%player%&#CCFFEE!"
     accept:
       message: "&#00FF00/trade accept %player%"
-      hover: "&#00FF00Click here to &naccept&#00FF00 trade request!"
+      hover: "&#00FF00Kattints ide a csere &nelfogadásához&#00FF00!"
     deny:
       message: "&#FF0000/trade deny %player%"
-      hover: "&#FF0000Click here to &ndeny&#FF0000 trade request!"
-  no-request: "&#CCFFEEYou don't have an active trade request from &#00FFDD%player%&#CCFFEE!"
-  deny-sender: "&#CCFFEEYou trade request was denied by &#00FFDD%player%&#CCFFEE!"
-  deny-receiver: "&#CCFFEEYou have successfully denied &#00FFDD%player%&#CCFFEE's trade request!"
-  cant-trade-self: "&#CCFFEEYou can't send a trade request to yourself!"
-  already-in-trade: "&#CCFFEEThe player is already trading with someone!"
-  already-sent: "&#CCFFEEYou have already sent a trade request to &#00FFDD%player% &#CCFFEErecently!"
-  too-far: "&#CCFFEEYou are too far from &#00FFDD%player% &#CCFFEEto send a trade request!"
-  not-accepting: "&#CCFFEEThis player is not accepting trades!"
-  disallowed-gamemode: "&#CCFFEEEither you or the other player is in a disallowed gamemode!"
-  same-ip: "&#CCFFEEYou can't trade with an account that has the same ip as you!"
-  below-required-amount: "&#CCFFEEYou are required to trade at least &f%amount% %currency%&#CCFFEE!"
-  blacklisted-world: "&#CCFFEETrades are disabled in this world!"
-  expired: "&#CCFFEEYour trade request to &#00FFDD%player% &#CCFFEEhas expired!"
-  disabled-trading: "&#CCFFEEYou have disabled trades! Use &#00FFDD/trade toggle &#CCFFEEto enable."
+      hover: "&#FF0000Kattints ide a csere &nelutasításához&#FF0000!"
+  no-request: "&#CCFFEENincs aktív csere kérésed &#00FFDD%player%&#CCFFEE játékostól!"
+  deny-sender: "&#CCFFDD%player%&#CCFFEE elutasította a csere kérésedet!"
+  deny-receiver: "&#CCFFEESikeresen elutasítottad &#00FFDD%player%&#CCFFEE csere kérését!"
+  cant-trade-self: "&#CCFFEENem küldhetsz csere kérést saját magadnak!"
+  already-in-trade: "&#CCFFEEEz a játékos már cserél valakivel!"
+  already-sent: "&#CCFFEENemrég már küldtél csere kérést &#00FFDD%player%&#CCFFEE játékosnak!"
+  too-far: "&#CCFFEETúl messze vagy &#00FFDD%player%&#CCFFEE játékostól a csere kérés küldéséhez!"
+  not-accepting: "&#CCFFEEEz a játékos nem fogad csere kéréseket!"
+  disallowed-gamemode: "&#CCFFEEEgyikőtök sem megfelelő játékmódban van a cseréhez!"
+  same-ip: "&#CCFFEENem cserélhetsz veled azonos IP-címmel rendelkező fiókkal!"
+  below-required-amount: "&#CCFFEELegalább &f%amount% %currency%&#CCFFEE-t kell cserélned!"
+  blacklisted-world: "&#CCFFEEA cserek tiltva vannak ebben a világban!"
+  expired: "&#CCFFEEA csere kérésed &#00FFDD%player%&#CCFFEE játékoshoz lejárt!"
+  disabled-trading: "&#CCFFEEKikapcsoltad a cserét! Használd ezt: &#00FFDD/trade toggle &#CCFFEEa bekapcsoláshoz."
 
-# this must be 4 lines
-# note: currently the first line must be left empty
+# ennek 4 sornak kell lennie
+# jelenleg az első sor üresen kell maradjon
 currency-editor-sign:
   - ""
   - "-----------"
-  - "Write the new value"
-  - "in the first line"
+  - "Írd az új értéket"
+  - "az első sorba"
 
-# list of sounds: https://www.digminecraft.com/lists/sound_list_pc.php
-# set to "" to disable
+# hangok listája: https://www.digminecraft.com/lists/sound_list_pc.php
+# tiltsd le: ""
 sounds:
-  # trade sounds
+  # csere hangok
   started: "entity.player.levelup"
   completed: "entity.player.levelup"
   aborted: "block.anvil.destroy"
-  # trade requests
+  # csere kérés hangok
   deny: "block.anvil.land"
   requested: "entity.experience_bottle.throw"
-  # gui sounds
+  # felület hangok
   accept: "ui.button.click"
   countdown: "ui.button.click"
   cancel: "ui.button.click"
 
-# can be used in the gui title as %own-status% and %partner-status%
+# felület címében használható: %own-status% és %partner-status%
 placeholders:
-  ready: "Ready"
-  waiting: "Waiting"
+  ready: "Kész"
+  waiting: "Várakozás"
 
 commands:
-  invalid-value: "&#FF0000Invalid parameter: &#BB0000%value%"
-  invalid-command: "&#FF0000Invalid command or subcommand!"
-  missing-argument: "&#FF0000Missing argument! You must specify a value for &#BB0000%value%&#FF0000."
-  no-permission: "&#FF0000You don't have permission to access this command!"
-  out-of-range: "&#FF0000The &#BB0000%number% &#FF0000must be between &#BB0000%min% &#FF0000and &#BB0000%max%&#FF0000!"
-  player-only: "&#FF0000You must be a player to use this command!"
-  invalid-player: "&#FF0000The player &#BB0000%player% &#FF0000can not be found!"
-  invalid-selector: "&#FF0000You can not use this selector in this command!"
+  invalid-value: "&#FF0000Érvénytelen paraméter: &#BB0000%value%"
+  invalid-command: "&#FF0000Érvénytelen parancs vagy alparancs!"
+  missing-argument: "&#FF0000Hiányzó argumentum! Meg kell adnod: &#BB0000%value%&#FF0000."
+  no-permission: "&#FF0000Nincs jogosultságod ehhez a parancshoz!"
+  out-of-range: "&#FF0000A &#BB0000%number% &#FF0000értéknek &#BB0000%min% &#FF0000és &#BB0000%max%&#FF0000 között kell lennie!"
+  player-only: "&#FF0000Csak játékos használhatja ezt a parancsot!"
+  invalid-player: "&#FF0000A &#BB0000%player% &#FF0000játékos nem található!"
+  invalid-selector: "&#FF0000Ezt a szelektort nem használhatod ebben a parancsban!"
 
-update-notifier: "&#AAFFCCThere is a new version of the plugin available! &#DDDDDD(&#FFFFFFcurrent: &#FF0000%current% &#DDDDDD| &#FFFFFFlatest: &#00FF00%latest%&#DDDDDD)"
-safety: "&#FF0000This feature has been disabled for safety reasons and updating the plugin is required, please contact the server administrators."
+update-notifier: "&#AAFFCCÚj verzió érhető el a pluginból! &#DDDDDD(&#FFFFFFjelenlegi: &#FF0000%current% &#DDDDDD| &#FFFFFFlegújabb: &#00FF00%latest%&#DDDDDD)"
+safety: "&#FF0000Ez a funkció biztonsági okokból le van tiltva, és a plugin frissítése szükséges. Kérlek vedd fel a kapcsolatot a szerver adminokkal."
 
-# do not change this
+# ezt ne változtasd meg
 version: 9
