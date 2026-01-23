@@ -1,0 +1,85 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axtrade.html
+
+prefix: "&#00ffdd&lAxTrade &7» "
+
+# format: language_COUNTRY
+# after changing this, the server will download the default item names
+language: en_US
+
+# you must define at least 1
+# reloading will add new commands, however a restart is recommended when editing this
+command-aliases:
+  - "axtrade"
+  - "trade"
+
+# the time after clicking the trade confirm button before the trade finishes
+trade-confirm-seconds: 5
+
+# how fast should trade requests expire?
+trade-request-expire-seconds: 60
+
+# how far apart the 2 players can be from each other?
+# set to -1 to disable
+trade-max-distance: 10
+
+# should shift + right clicking on another player send them a trade request?
+shift-click-send-request: true
+
+# the trade summaries will not be sent after trades end to players if disabled
+enable-trade-summaries: true
+
+# when one of the player's inventory can't hold any more items, the plugin will not allow adding more items to the trade gui
+prevent-adding-items-when-inventory-full: true
+
+# if enabled, players will not be able to trade if they have the same ip address
+disallow-same-ip-trade: false
+
+number-formatting:
+  # modes:
+  # 0 - formatted (customizable, look at the formatted part)
+  # 1 - short (1K)
+  # 2 - raw (1000.4242421412)
+  mode: 0
+  # https://docs.oracle.com/javase/tutorial/i18n/format/decimalFormat.html
+  formatted: "#,###.##"
+  # format: language_COUNTRY
+  short: "en_US"
+
+# list of gamemodes: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/GameMode.html
+# you can't trade in these gamemodes
+disallowed-gamemodes:
+  - SPECTATOR
+
+# worlds where trades will not work
+blacklisted-worlds:
+  - "example_world"
+
+# list of items that CAN'T be traded
+#
+# supported regex: (optional)
+# - 'name' #  only 'name' is disallowed
+# - 'name*' #  disallows text starting with 'name'
+# - '*name' #  disallows text ending with 'name'
+# - '*name*' #  disallows text containing 'name'
+#
+# you can use some sections from our item builder: (https://docs.artillex-studios.com/item-builder.html)
+#  > name
+#  > material / type
+#  > custom-model-data (only the old variant)
+blacklist-items:
+  - custom-model-data: 100
+    material: BARRIER
+    name: "*Some custom item*"
+  - custom-model-data: 150
+    material: BARRIER
+    name: "*Another custom item*"
+
+# should be plugin notify you if there is a new update?
+update-notifier:
+  # if enabled, it will display the message in the console
+  enabled: true
+  # if enabled, it will broadcast the update message to all players who have the <plugin-name>.update-notify permission
+  on-join: true
+
+# do not change this
+version: 7

@@ -1,0 +1,118 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axtrade.html
+
+player-help:
+  - " "
+  - "&#00FFDD&lAxTrade &7»"
+  - " &7- &f/axtrade <player> &7| &#00FFDDKereskedés kérés küldése"
+  - " &7- &f/axtrade accept <player> &7| &#00FFDDKereskedés kérés elfogadása"
+  - " &7- &f/axtrade deny <player> &7| &#00FFDDKereskedés kérés elutasítása"
+  - " "
+
+admin-help:
+  - " "
+  - "&#00FFDD&lAxTrade &7»"
+  - " &7- &f/axtrade <player> &7| &#00FFDDKereskedés kérés küldése"
+  - " &7- &f/axtrade accept <player> &7| &#00FFDDKereskedés kérés elfogadása"
+  - " &7- &f/axtrade deny <player> &7| &#00FFDDKereskedés kérés elutasítása"
+  - " &7- &f/axtrade reload &7| &#00FFDDPlugin újratöltése"
+  - " &7- &f/axtrade force <player> &7| &#00FFDDElekezd egy azonali kereskedést a megadott játékossal"
+  - " &7- &f/axtrade preview &7| &#00FFDDMegnyitja a kereskedés menűt olvasás módban (teszteléshez)"
+  - " "
+
+reload:
+  success: "&#33FF33Plugin sikeresen újratöltve!"
+  failed: "&#FF3333Nem sikerült újratölteni a plugint! Valami van a(z) &f%file%&#FF3333 fájlal, nézd meg a konzolt és használj egy yaml validátort a hibák javításához!"
+
+trade:
+  started: "&#CCFFEEElkezdtél kereskedni &#00FFDD%player%&#CCFFEE játékossal!"
+  completed: "&#CCFFEEKereskedésed &#00FFDD%player% &#CCFFEEjátékossal sikeresen befejeződött!"
+  aborted: "&#CCFFEEKereskedésed &#00FFDD%player% &#CCFFEEjátékossal megszakadt!"
+  blacklisted-item: "&#CCFFEEEz a tárgy feketelistán van!"
+  inventory-full: "&#CCFFEENem tudsz több tárgyat elhelyezni a grafikus felületen, mert kereskedelmi partnerednek nincs több üres helye.."
+  preview-info: "&#CCFFEEKereskedés menűjét nyitva olvasás módban, ez csak tesztelésre szolgál, kattintásra hibák kerülhetnek és nem mindig működik."
+
+toggle:
+  enabled: "&#CCFFEEKereskedési kérések engedélyezve!"
+  disabled: "&#CCFFEEKereskedési kérések letiltva!"
+
+# Összesegzés a kereskedésről
+summary:
+  get:
+    item: "&#00FF00&l+ &#00FF00%amount%x %item%"
+    currency: "&#00FF00&l+ &#00FF00%amount% %currency%"
+  give:
+    item: "&#FF0000&l- &#FF0000%amount%x %item%"
+    currency: "&#FF0000&l- &#FF0000%amount% %currency%"
+
+currency-editor:
+  success: "&#CCFFEEÉrték sikeresen változtatva!"
+  failed: "&#CCFFEEÉrvénytelen érték!"
+  not-enough: "&#CCFFEENincsen elég pénzed a mennyiség módosításához!"
+
+request:
+  sent-sender: "&#CCFFEEKereskedési kérés sikeresen küldve &#00FFDD%player%&#CCFFEE játékosnak!"
+  sent-receiver:
+    info: "&#CCFFEEKereskedési kérés érkezett &#00FFDD%player%&#CCFFEE játékostól!"
+    accept:
+      message: "&#00FF00/trade accept %player%"
+      hover: "&#00FF00Kattints ide &nelfogad&#00FF00 a kereskedelmi kérést!"
+    deny:
+      message: "&#FF0000/trade deny %player%"
+      hover: "&#FF0000Kattints ide &nelutasítsd&#00FF00 a kereskedelmi kérést!"
+  no-request: "&#CCFFEEKereskedési kérés nem található &#00FFDD%player%&#CCFFEE játékostól!"
+  deny-sender: "&#CCFFEEKereskedési kérés elutasítva &#00FFDD%player%&#CCFFEE játékostól!"
+  deny-receiver: "&#CCFFEEKereskedési kérés sikeresen elutasítva &#00FFDD%player%&#CCFFEE játékostól!"
+  cant-trade-self: "&#CCFFEEKereskedés nem lehet önmagával!"
+  already-in-trade: "&#CCFFEEA játékos már kereskedik valakivel!"
+  already-sent: "&#CCFFEEKereskedési kérés már küldve &#00FFDD%player%&#CCFFEE játékostól réceménnyel!"
+  too-far: "&#CCFFEEKereskedés nem lehet &#00FFDD%player%&#CCFFEE játékossal, mert túl távol van!"
+  not-accepting: "&#CCFFEEKereskedés nem fogad el kéréseket &#00FFDD%player%&#CCFFEE!"
+  disallowed-gamemode: "&#CCFFEEEither you or the other player is in a disallowed gamemode!"
+  same-ip: "&#CCFFEEYou can't trade with an account that has the same ip as you!"
+  below-required-amount: "&#CCFFEEYou are required to trade at least &f%amount% %currency%&#CCFFEE!"
+  blacklisted-world: "&#CCFFEETrades are disabled in this world!"
+  expired: "&#CCFFEEYour trade request to &#00FFDD%player% &#CCFFEEhas expired!"
+  disabled-trading: "&#CCFFEEYou have disabled trades! Use &#00FFDD/trade toggle &#CCFFEEto enable."
+
+# this must be 4 lines
+# note: currently the first line must be left empty
+currency-editor-sign:
+  - ""
+  - "-----------"
+  - "Write the new value"
+  - "in the first line"
+
+# list of sounds: https://www.digminecraft.com/lists/sound_list_pc.php
+# set to "" to disable
+sounds:
+  # trade sounds
+  started: "entity.player.levelup"
+  completed: "entity.player.levelup"
+  aborted: "block.anvil.destroy"
+  # trade requests
+  deny: "block.anvil.land"
+  requested: "entity.experience_bottle.throw"
+  # gui sounds
+  accept: "ui.button.click"
+  countdown: "ui.button.click"
+  cancel: "ui.button.click"
+
+# can be used in the gui title as %own-status% and %partner-status%
+placeholders:
+  ready: "Ready"
+  waiting: "Waiting"
+
+commands:
+  invalid-value: "&#FF0000Invalid parameter: &#BB0000%value%"
+  invalid-command: "&#FF0000Invalid command or subcommand!"
+  missing-argument: "&#FF0000Missing argument! You must specify a value for &#BB0000%value%&#FF0000."
+  no-permission: "&#FF0000You don't have permission to access this command!"
+  out-of-range: "&#FF0000The &#BB0000%number% &#FF0000must be between &#BB0000%min% &#FF0000and &#BB0000%max%&#FF0000!"
+  player-only: "&#FF0000You must be a player to use this command!"
+  invalid-player: "&#FF0000The player &#BB0000%player% &#FF0000can not be found!"
+  invalid-selector: "&#FF0000You can not use this selector in this command!"
+
+update-notifier: "&#AAFFCCThere is a new version of the plugin available! &#DDDDDD(&#FFFFFFcurrent: &#FF0000%current% &#DDDDDD| &#FFFFFFlatest: &#00FF00%latest%&#DDDDDD)"
+
+# do not change this
+version: 8
