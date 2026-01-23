@@ -1,0 +1,34 @@
+###################
+# Plugin messages #
+###################
+
+# Message on account linking attempt.
+linkAccount: "\n\"&9&l{code}&r\". Privát üzenetben küldd el a kódot a {bot} nak/nek, hogy linkeld a fiókod a Discordra!"
+# Message if the account is already linked. !linkdiscord
+alreadyLinked: "\n&6&lA te fiókod már linkelve van a Discordra! Írd meg /unlinkdiscord-ot, hogy elvesszük a linket."
+# Message if the player already started the linking process!
+linkingInProcess: "Már elkezdtél a linkelést! A kódod &l&9{code}&r."
+
+# Message if the account is not linked. !unlinkdiscord
+accountNotLInked: "\n&4A te fiókod nincs linkelve a Discordra!"
+# Message if the account got successfully unlinked.
+unlinkAccount: "\n&2Sikeresen elvesszük a linket a fiókodról a Discordról!"
+
+# Message if the bot is not in independent mode while using DiscordSRV
+helpCommandFail:
+  - "\n&l ▁▂▃▄▅ &3&lDiscordEconomyBridge Parancsok&r&l ▅▄▃▂▁"
+  - " "
+  - " &4&lA linkelés és elvesszés parancsok csak a dependent mode-ban (Konfigurálva a config-ban) vagy a DiscordSRV nélkül érhetők el"
+
+# Help message for normal help
+helpCommand:
+  - "\n&l ▁▂▃▄▅ &3&lDiscordEconomyBridge Parancsok&r&l ▅▄▃▂▁"
+  - " "
+  - "&l > &e&l/linkdiscord&r&l -&r Linkeld a Minecraft fiókodat a Discord botra!"
+  - "&l > &e&l/unlinkdiscord&r&l -&r Elvesszük a linket a Minecraft fiókodról a Discord botról!"
+
+# Message error in console if the console can't run the command
+noConsole: "Ez a parancs nem futtatható a konzolon!"
+
+# Message if linking is disabled
+linkingDisabled: "A linkelés le van tiltva ezzel a pluginel."
