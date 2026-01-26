@@ -1,0 +1,26 @@
+# Rush mód kiegészítő
+Prefix: "&c[&a&lRush mód&c]"
+
+Features:
+  # Idő másodpercben
+  Gen_spawn_delay: 0.5
+  # Speciális generátorok, mint a gyémánt és a smaragd
+  Special_gen_spawn_delay: 50.5
+  # Megakadályozza az obszidián visszaélését
+  Disable_obsidian: true
+
+
+Messages:
+  # Csak akkor működik, ha engedélyezve van
+  Obsidian_not_allowed: "&c&lSAJNÁLOM! &cAz obszidián nem engedélyezett ebben a módban!"
+  Arena_added_to_rush_mode: "&a{arena} hozzáadva a rush mód arénáihoz"
+  Arena_removed_from_rush_mode: "&a{arena} eltávolítva a rush mód arénáiból"
+  Bridge_mode_activated: "&d[Rush] &aHíd mód aktiválva"
+  Bridge_mode_deactivated: "&d[Rush] &cHíd mód kikapcsolva"
+  Not_enough_perms: "&c&lSAJNÁLOM &cRush mód játszásához &bMVP++ &cjogosultság szükséges"
+
+
+# Rush mód arénáinak listája
+Arenas:
+  - "rushModeArena"
+  - "MultipleArenaSupport"

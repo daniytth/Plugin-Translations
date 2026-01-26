@@ -1,0 +1,634 @@
+# / ================================================= \
+# |    Ez a Parties Bukkit üzenetfájlja               |
+# \ ================================================= /
+#
+# Bármilyen probléma esetén mindenképpen:
+# - Olvasd el a teljes dokumentációt itt: https://alessiodp.com/docs/parties
+# - Csatlakozz Discord szerverünkhöz további segítségért: https://discord.alessiodp.com
+#
+
+# / =============================== \
+# |        PARTY ÜZENETEK           |
+# \ =============================== /
+parties:
+  # [Speciális címkék]
+  # => %version%     = Új verzió található
+  # => %thisversion% = Telepített verzió
+  update-available: "&9Van új verziója Partiesnak: %version% (Jelenlegi: %thisversion%)"
+  
+  # [Speciális címkék]
+  # => %config%      = Az elavult konfigurációs fájl neve
+  configuration-outdated: "&cA konfigurációs fájl '%config%' Partiesnak nem a legfrissebb!"
+
+  common-messages:
+    invalid-command: "&cÉrvénytelen parancs"
+    configuration-reloaded: "&aKonfiguráció újratöltve"
+    not-in-party: "&cNem vagy partiban"
+    already-in-party: "&cMár egy partiban vagy!"
+    party-not-found: "&cA parti %party% nem létezik. Lehet elírtad"
+    party-full: "&cA parti tele van!"
+    player-not-found: "&cA játékos %player% nem található"
+    player-not-in-party: "&c%player% nincsen partiban"
+
+  options:
+    enabled: '&aEngedélyezve'
+    disabled: '&cLetiltva'
+    toggled-on: '&aBe'
+    toggled-off: '&cKi'
+    word-yes: '&aIgen'
+    word-no: '&cNem'
+    empty: '&8Üres'
+    none: '&8Semmi'
+
+  syntax:
+    wrong-message: '&cRossz szintaxis: Írd be ezt &7/%syntax%'
+    color: 'szín'
+    description: 'leírás'
+    experience: 'tapasztalat'
+    kills: 'ölés'
+    home: 'otthon'
+    members: 'tagok'
+    message: 'üzenet'
+    motd: 'motd'
+    name: 'név'
+    nickname: 'becenév'
+    online-members: 'online_tagok'
+    order: 'rendezés'
+    page: 'oldal'
+    party: 'parti'
+    password: 'jelszó'
+    permission: 'jogosultság'
+    player: 'játékos'
+    rank: 'rang'
+    tag: 'címke'
+
+  permissions:
+    # [Speciális címkék]
+    # => %permission%  = Hiányzó jogosultság
+    no-permission: "&cNincsen jogosultságod ehhez a parancshoz"
+    no-permission-in-party-general: "&cA partis rangodnak nincsen joga ehhez"
+    no-permission-in-party-rank: "&cNeked ebben a rangban kell lenned: %rank_name% hogy végrehajtsd a parancsot"
+
+  out-party: "Partiból kilépés"
+
+  list:
+    player-online-format: "&b%player%"
+    player-offline-format: "&7%player%"
+    player-separator: "&7, "
+    player-empty: "&7Senki"
+    player-unknown: "&6Valaki"
+    missing-value: "&7Melé"
+
+  # A Parties chat üzeneteinek formátumának meghatározása
+  formats:
+    party-chat: "&b[Party] %player_rank_chat% %player%&r&7: &b%message%"
+    spy:
+      party-chat: "&7[SPY] [%party%] %player%: %message%"
+      broadcast: "&7[SPY] [%party%]: %message%"
+
+# / =============================== \
+# |     FŐ PARANCSOK ÜZENETEI      |
+# \ =============================== /
+main-commands:
+  accept:
+    no-request: "&cNincs függőben lévő kérésed"
+    no-exists: "&cA kérés már nem létezik"
+    multiple-requests: "&cVálaszd ki, melyik kérést szeretnéd elfogadni:"
+    multiple-requests-party: '[{"text":"%party%","color":"aqua"},{"text":" - Kattints ide az elfogadáshoz","color":"gray","clickEvent":{"action":"run_command","value":"/%run_command% %party%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"Fogadd el a kérést","color":"gold"}]}}}]'
+    multiple-requests-player: '[{"text":"%player%","color":"aqua"},{"text":" - Kattints ide az elfogadáshoz","color":"gray","clickEvent":{"action":"run_command","value":"/%run_command% %player%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"Fogadd el a kérést","color":"gold"}]}}}]'
+
+  chat:
+    enabled: "&aChat beállítva partira"
+    disabled: "&aChat beállítva nyilvánosra"
+
+  create:
+    created: '[{"text":"Létrehoztad a(z) %party% partit.\n","color":"aqua","bold":true},{"text":"Írd be ","color":"aqua","bold":false},{"text":"/party invite","color":"gray","clickEvent":{"action":"suggest_command","value":"/party invite "}},{"text":" hogy meghívd a barátod.","color":"aqua"}]'
+    created-fixed: "&b&lLétrehoztad a(z) %party% fix partit"
+    name-already-exists: "&cA(z) %party% parti név már létezik, válassz másik nevet"
+    name-too-long: "&cA parti név túl hosszú!"
+    name-too-short: "&cA parti név túl rövid!"
+    invalid-name: "&cÉrvénytelen karakterek. Használj: a-Z vagy 0-9."
+    censored: "&cA parti név tiltott szavakat tartalmaz!"
+
+  delete:
+    deleted: "&a%party% parti törölve"
+    deleted-silently: "&a%party% parti csendben törölve"
+    broadcast: "&6&lA partid törölve lett"
+
+  deny:
+    no-request: "&cNincs függőben lévő kérésed"
+    no-exists: "&cA kérés már nem létezik"
+    multiple-requests: "&cVálaszd ki, melyik kérést szeretnéd elutasítani:"
+    multiple-requests-party: '[{"text":"%party%","color":"aqua"},{"text":" - Kattints ide az elutasításhoz","color":"gray","clickEvent":{"action":"run_command","value":"/%run_command% %party%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"Utasítsd el a kérést","color":"gold"}]}}}]'
+    multiple-requests-player: '[{"text":"%player%","color":"aqua"},{"text":" - Kattints ide az elutasításhoz","color":"gray","clickEvent":{"action":"run_command","value":"/%run_command% %player%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"Utasítsd el a kérést","color":"gold"}]}}}]'
+
+  ignore:
+    start-ignore: "&7Mostantól figyelmen kívül hagyod a(z) %party% meghívóit"
+    stop-ignore: "&7Már nem hagyod figyelmen kívül a(z) %party% meghívóit"
+    ignore-list:
+      header: "&b&lFigyelmen kívül hagyott partik listája:"
+      party-prefix: "&c"
+      separator: "&7, "
+      empty: "&7Nincs"
+
+  info:
+    content-own-party:
+    - "&b============ &l%party% Információi &r&b============"
+    - "&b&lLeírás&7: %desc%"
+    - "&bVezető&7: %list_rank_leader%"
+    - "&bModerátorok&7: %list_rank_moderator%"
+    - "&bTagok&7: %list_rank_member%"
+    - "&bOnline játékosok&7: %members_online_total%"
+    content-other-party:
+    - "&b============ &l%party% Információi &r&b============"
+    - "&b&lLeírás&7: %desc%"
+    - "&bVezető&7: %list_rank_leader%"
+    - "&bModerátorok&7: %list_rank_moderator%"
+    - "&bTagok&7: %list_rank_member%"
+    - "&bOnline játékosok&7: %members_online_total%"
+
+  invite:
+    sent: "&bMeghívtad %player% a partidba"
+    player-invited: '[{"text":"&b%player% meghívott a(z) %party% partiba.\n&bSzeretnéd "},{"text":"&a&lel fogadni","clickEvent":{"action":"run_command","value":"/party accept %party%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"&6Fogadd el a meghívást"}]}}},{"text":" &bvagy "},{"text":"&c&lel utasítani","clickEvent":{"action":"run_command","value":"/party deny %party%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"&6Utasítsd el a meghívást"}]}}},{"text":"&b?\n&bHasználhatod a &7/party <accept/deny> &bparancsot a választáshoz."}]'
+    accept:
+      broadcast: "&b&l%player% csatlakozott a partihoz"
+      accepted: "&aElfogadtad a parti meghívást"
+      receipt: "&a%player% elfogadta a meghívásod"
+    deny:
+      broadcast: ""
+      denied: "&aElutasítottad a parti meghívást"
+      receipt: "&a%player% elutasította a meghívásod"
+    timeout:
+      no-response: "&7%player% nem fogadta el a parti meghívást"
+      timeout: "&7Nem fogadtad el a(z) %party% parti meghívást"
+    revoke:
+      sent-revoked: "&7Visszavont meghívás elküldve %player% részére"
+      player-invite-revoked: "&7A(z) %party% partitól kapott meghívást visszavonták"
+    cooldown:
+      global: "&cVárnod kell %seconds% másodpercet mielőtt újabb játékost meghívhatsz"
+      individual: "&cVárnod kell %seconds% másodpercet mielőtt újra meghívhatod ugyanazt a játékost"
+      on-leave: "&cVárnod kell %seconds% másodpercet mielőtt meghívhatod ezt a játékost"
+    player-offline: "&cCsak online játékosokat hívhatsz meg"
+    player-no-permission: "&c%player% nincs jogosultsága a csatlakozáshoz"
+    player-in-party: "&c%player% már egy partiban van"
+    already-invited: "&c%player% már meg volt hívva"
+    invite-yourself: "&cNem hívhatod meg magadat"
+    failed: "&cSikertelen volt %player% meghívása"
+
+  kick:
+    sent: "&aKirúgtad %player% a partiból!"
+    player-kicked: "&bKirúgtak a(z) %party% partiból"
+    broadcast: "&b&l%player% ki lett rúgva a partiból"
+    broadcast-disband: "&b&lA parti feloszlott, mert a vezetőt kirúgták"
+    broadcast-leader-changed: "&b&lAz új vezető %player%"
+    broadcast-leave-server: "&b&l%player% ki lett rúgva a partiból"
+    player-higher-rank: "&cNem rúghatod ki a felettesed!"
+    player-not-in-party: "&c%player% nincs a partidban"
+    players-conflict:
+      # [Speciális címkék]
+      # => %username%                       = A játékos neve
+      # => %rank%                           = A rang
+      # => %list_players%                   = Minden játékos listája
+      # => %number%                         = A játékos száma
+      # => %lastloginapi_last_logout_date%  = Az utolsó kijelentkezés dátuma (LastLoginAPI plugin)
+      content:
+      - "&cTöbb játékost is találtunk ezzel a névvel:"
+      - "%list_players%"
+      - "&cHasználd ezt: '&7/party kick <felhasználónév> <szám>&c' hogy kirúgd a megfelelő játékost"
+      player: '{"text":"","extra":[{"text":"[%number%] ","color":"gray"},{"text":"%username%","color":"gold"},{"text":" [","color":"gray"},{"text":"%party%","color":"aqua"},{"text":"]: utolsó belépés %lastloginapi_last_logout_date%","color":"gray"}],"clickEvent":{"action":"run_command","value":"/party kick %username% %number%"},"hoverEvent":{"action":"show_text","value":{"text":"Rúgd ki ezt a játékost","color":"gold"}}}'
+
+  leave:
+    left: "&b&lElhagytad a(z) %party% partit"
+    broadcast: "&b&l%player% elhagyta a partit"
+    party-disbanded: "&6&lA parti feloszlott, mert a vezető elhagyta"
+    leader-changed: "&b&lA vezető elhagyta a partit, az új vezető %player%"
+
+  p:
+    # [Speciális címkék]
+    # => %seconds%   = Hátralévő idő másodpercben
+    cooldown: "&cMég várnod kell %seconds% másodpercet"
+    censored: "&cAz üzenet tiltott szavakat tartalmaz!"
+    muted: "&cNémítva vagy!"
+
+  rank:
+    # [Speciális címkék]
+    # => %rank_name%   = A játékos által beírt rang
+    changed: "&a%player% rangja megváltozott erre: %rank_name%"
+    broadcast: ""
+    wrong-rank: "&cA(z) '%rank_name%' rang nem létezik!"
+    same-rank: "&c%player% már %rank_name%!"
+    low-rank: "&cNem szerkeszthetsz olyan játékosokat, akiknek azonos vagy magasabb rangja van mint neked!"
+    to-higher-rank: "&cNem léptethetsz fel egy olyan rangra, amely azonos vagy magasabb mint a tiéd!"
+    full: "&cA(z) %rank_name% rang elérte a maximális játékos számot"
+    fixed-leader: "&cNem tehetsz valakit egy fix parti vezetőjévé!"
+    demote-leader: "&cNem lefokozhatod a parti vezetőjét"
+    changing-yourself: "&cNem változtathatod meg a saját rangodat!"
+    player-not-in-party: "&c%player% nincs a partidban"
+    players-conflict:
+      # [Speciális címkék]
+      # => %username%                       = A játékos neve
+      # => %rank%                           = A rang
+      # => %list_players%                   = Minden játékos listája
+      # => %number%                         = A játékos száma
+      # => %lastloginapi_last_logout_date%  = Az utolsó kijelentkezés dátuma (LastLoginAPI plugin)
+      content:
+      - "&cTöbb játékost is találtunk ezzel a névvel:"
+      - "%list_players%"
+      - "&cHasználd ezt: '&7/party rank <felhasználónév> <rang> <szám>&c' hogy megváltoztasd a megfelelő játékos rangját"
+      player: '{"text":"","extra":[{"text":"[%number%] ","color":"gray"},{"text":"%username%","color":"gold"},{"text":" [","color":"gray"},{"text":"%party%","color":"aqua"},{"text":"]: utolsó belépés %lastloginapi_last_logout_date%","color":"gray"}],"clickEvent":{"action":"run_command","value":"/party rank %username% %rank% %number%"},"hoverEvent":{"action":"show_text","value":{"text":"Változtasd meg ennek a játékosnak a rangját","color":"gold"}}}'
+
+  rename:
+    # [Speciális címkék]
+    # => %old%   = Régi parti név
+    renamed: "&aA(z) %old% parti átnevezve erre: %party%"
+    broadcast: "&6A partid átnevezve erre: %party%!"
+    # [Speciális címkék]
+    # => %seconds%   = Hátralévő idő másodpercben
+    cooldown: "&cVárnod kell %seconds% másodpercet!"
+
+  spy:
+    enabled: "&7Most már kém vagy!"
+    disabled: "&7Már nem vagy kém"
+
+  version:
+    # [Speciális címkék]
+    # => %version%    = Parties verzió
+    # => %newversion% = Legújabb Parties verzió
+    # => %platform%   = A plugin platformja (pl. Bukkit, BungeeCord)
+    updated: "&b&lParties &b%version% &7(%platform%) - Készítette: &6AlessioDP"
+    outdated: "&b&lParties &b%version% &7(%platform%) - Készítette: &6AlessioDP\n&aÚj verzió található: &2%newversion%"
+
+# / =============================== \
+# |  KÜLÖNLEGES PARANCSOK ÜZENETEI |
+# \ =============================== /
+additional-commands:
+  ask:
+    sent: "&aCsatlakozási kérés elküldve a(z) %party% partinak"
+    received: '[{"text":"&b%player% csatlakozni szeretne a partidhoz.\n&bSzeretnéd "},{"text":"&a&lel fogadni","clickEvent":{"action":"run_command","value":"/party accept %player%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"&6Fogadd el a kérést"}]}}},{"text":" &bvagy "},{"text":"&c&lel utasítani","clickEvent":{"action":"run_command","value":"/party deny %player%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"Utasítsd el a kérést","color":"gold"}]}}},{"text":"&b?\n&bHasználhatod a &7/party <accept/deny> %player% &bparancsot a választáshoz."}]'
+    accept:
+      broadcast: "&b&l%player% csatlakozott a partihoz"
+      accepted: "&aElfogadtad a csatlakozási kérést"
+      receipt: "&aA(z) %party% parti elfogadta a csatlakozási kérelmed"
+    deny:
+      broadcast: ""
+      denied: "&aElutasítottad %player% csatlakozási kérését"
+      receipt: "&aA(z) %party% parti elutasította a csatlakozási kérelmed"
+    timeout:
+      no-response: "&7A(z) %party% parti nem fogadta el a csatlakozási kérelmed"
+    cooldown:
+      # [Speciális címkék]
+      # => %seconds%          = Hátralévő idő másodpercben
+      global: "&cVárnod kell %seconds% másodpercet mielőtt másik partitól kérhetsz csatlakozást"
+      individual: "&cVárnod kell %seconds% másodpercet mielőtt újra kérhetsz csatlakozást ugyanattól a partitól"
+
+  claim:
+    claimed: "&aJogosultság megadva a partinak"
+    removed: "&aJogosultság eltávolítva a partitól"
+    no-manager: "&cA claim kezelőjének kell lenned"
+    claim-no-exists: "&cClaim nem található"
+    allowed-permissions: "&cJogosultságok: trust, container & access"
+
+  color:
+    info: "&bA parti színe: %color_code%%color_command%"
+    empty: "&bA partidnak nincs színe"
+    changed: "&bA parti színe megváltozott erre: %color_command%"
+    removed: "&bA parti színe eltávolítva"
+    broadcast: ""
+    # %available_colors% szintaxisa
+    available-colors:
+      color: "%color_command%"
+      separator: ", "
+    wrong-color: "&cSzín nem található. Kiválaszthatod: %available_colors%"
+
+  debug:
+    bungeecord:
+      sent: "&bDebug BungeeCord kérés elküldve a hálózatba"
+      server-players: "&cLegalább 1 játékosnak kell lennie a szerveren"
+      sync: "A Parties helyesen szinkronizálva van"
+      not-sync: "A Parties NEM helyesen szinkronizálva van"
+
+    config:
+      header: '&b================== &lDebug Konfig &r&b=================='
+      text:
+      - "&bElavult config/parties/messages:&7 %outdated_config%&7/%outdated_parties%&7/%outdated_messages%"
+      - "&bTároló&7: %storage%"
+      - "&bRangok&7: %ranks%"
+      rank-format: '&f%name%&7[%level%]'
+      rank-separator: '&7, '
+
+    exp:
+      header: '&b=================== &lDebug Tapasztalat &r&b==================='
+      text:
+      - "&bTapasztalat rendszer&7: %exp%"
+      - "&bSzerezhető moboktól: %earn%"
+      - "&bMód&7: %mode%"
+      - "%mode_options%"
+      mode-options:
+        progressive: "&bProgresszív kezdet&7: %start%\n&bKéplet&7: '%formula%'"
+        fixed: "&bFix ismétlés&7: %repeat%&bSzintek&7: %levels%"
+
+    party:
+      header: '&b================== &lDebug Party &r&b=================='
+      text:
+      - "&bID&7: %id%"
+      - "&bNév/címke&7: %name%&7/%tag%"
+      - "&bVezető&7: %leader%"
+      - "&bTagok száma/online&7: %members%&7/%members_online%"
+      - "&bLeírás&7: %description%"
+      - "&bMOTD méret/otthonok/ölések&7: %motd_size%&7/%homes%&7/%kills%"
+      - "&bJelszó/védelem/követés/nyitott&7: %password%&7/%protection%&7/%follow%&7/%open%"
+      - "&bSzín beállítva/aktív/dinamikus&7: %color%&7/%color_active%&7/%color_dynamic%"
+      - "&bTapasztalat&7: %experience%"
+
+    player:
+      header: '&b================== &lDebug Játékos &r&b=================='
+      text:
+      - "&bUUID&7: %uuid%"
+      - "&bNév&7: %name%"
+      - "&bRang&7: %rank%"
+      - "&bParty&7: %party%"
+      - "&bChat/spy/némítva&7: %chat%&7/%spy%&7/%muted%"
+      - "&bVédelem megkerülés&7: %protection_bypass%"
+      player-offline: "&cA(z) '%player%' játékosnak online kell lennie"
+
+  desc:
+    changed: "&bA parti leírása megváltozott"
+    removed: "&bA parti leírása eltávolítva"
+    broadcast: ""
+    invalid-chars: "&cÉrvénytelen karakterek. Használj: a-Z vagy 0-9. Minimum 3 és maximum 16 karakter."
+    censored: "&cA leírás tiltott szavakat tartalmaz!"
+
+  exp:
+    # [Speciális címke]
+    # => %exp%        = Szerzett tapasztalat
+    gained-experience: "&b%exp% parti tapasztalatot szerzettél a mob megöléséért"
+    level-up: "&bA parti szintet lépett erre: %experience_level%"
+
+  follow:
+    toggle-on: "&aMostantól a parti tagjaid követik a vezetődet"
+    toggle-off: "&aA parti tagjaid már nem követik a vezetődet"
+
+  home:
+    teleported: "&7Teleportálva a parti otthonába"
+    # [Speciális címkék]
+    # => %seconds%          = Késleltetés másodpercben
+    teleport-in: "&7Teleportálva leszel %seconds% másodperc múlva..."
+    teleport-cancelled: "&7Teleportálás megszakítva"
+    teleport-waiting: "&cMár vársz egy teleportálásra!"
+    no-home: "&cMég nincs otthon beállítva"
+    # [Speciális címkék]
+    # => %seconds%          = Hátralévő idő másodpercben
+    cooldown: "&cVárnod kell %seconds% másodpercet!"
+    must-select-home: "&cVálasztanod kell egy érvényes otthont"
+    invalid-home: "&cA kiválasztott otthon nem létezik"
+    valid-homes: "&bÉrvényes otthonok listája:"
+    # [Speciális címkék]
+    # Otthonhoz kapcsolódó értékek: %name%, %world%, %server%, %x%, %y%, %z%, %pitch% & %yaw%
+    valid-home-line: '[{"text":"&b%name%","clickEvent":{"action":"run_command","value":"/party home %name%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"&aKattints a teleportáláshoz"}]}}}]'
+
+  join:
+    joined: "&aCsatlakoztál a(z) %party% partihoz"
+    player-joined: "&b&l%player% csatlakozott a partihoz"
+    open-close:
+      opened: "&bA parti mostantól nyitott"
+      closed: "&bA parti mostantól zárt"
+      already-open: "&cA parti már nyitott"
+      already-closed: "&cA parti már zárt"
+      cooldown: "&cVárnod kell %seconds% másodpercet!"
+      cannot-join: "&cNem csatlakozhatsz ehhez a partihoz"
+      failed: "&cSikertelen volt a parti megnyitása"
+    password:
+      wrong-password: "&cHibás jelszó!"
+
+  list:
+    # [Speciális címkék]
+    # => %index%     = A parti indexe
+    # => %number%    = Online partik száma
+    # => %page%      = A lista aktuális oldala
+    # => %maxpages%  = Összes oldal
+    header: "&b============ &lOnline Partik Listája &r&b============"
+    footer: "&b================ &l%page%. oldal / %maxpages% &r&b================"
+    no-one: "&7Senki"
+    format-party: '[{"text":"&b%party%","clickEvent":{"action":"run_command","value":"/party info %party%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"&aInformációk megjelenítése"}]}}},{"text":" &7[&6Online %members_online_total%&7] %desc%"}]'
+    invalid-order: '&cÉrvénytelen rendezési típus'
+
+  motd:
+    changed: "&bA parti MOTD megváltozott"
+    removed: "&bA parti MOTD eltávolítva"
+    broadcast: ""
+    content:
+    - "&bParti MOTD:"
+    - "&b%motd%"
+    invalid-chars: "&cÉrvénytelen karakterek. Használhatod még: '. , /'. Minimum 3 és maximum 100 karakter."
+    censored: "&cA MOTD tiltott szavakat tartalmaz!"
+
+  mute:
+    toggle-on: "&7Letiltottad az értesítéseket!"
+    toggle-off: "&7Engedélyezted az értesítéseket!"
+
+  nickname:
+    own:
+      changed: "&bMegváltoztattad a beceneved erre: %player_nickname%"
+      removed: "&bEltávolítottad a saját beceneved"
+      no-permission: "&cNem változtathatod meg a saját beceneved"
+    others:
+      changed: "&bMegváltoztattad %player% becenevét erre: %player_nickname%"
+      # Speciális címkék:
+      # => %nickname%   = A cél játékos beceneve
+      # A címkék a küldő számára lesznek értelmezve
+      target-changed: "&b%player% megváltoztatta a beceneved erre: %nickname%"
+      removed: "&bEltávolítottad %player% becenevét"
+      target-removed: "&b%player% eltávolította a beceneved"
+      no-permission: "&cNem változtathatod meg más játékosok becenevét"
+    show:
+      own: "&bA beceneved: %player_nickname%"
+      own-none: "&bNincs beceneved"
+      other: "&b%player% beceneve: %player_nickname%"
+      other-none: "&b%player% nem rendelkezik becenévvel"
+    invalid-chars: "&cÉrvénytelen karakterek. Használhatod még: '. , /'. Minimum 3 és maximum 16 karakter."
+    censored: "&cA becenév tiltott szavakat tartalmaz!"
+
+  password:
+    changed: "&aA parti jelszava megváltozott"
+    removed: "&aA parti jelszava eltávolítva"
+    broadcast: ""
+    invalid-chars: "&cÉrvénytelen karakterek. Használj: a-Z vagy 0-9. Minimum 1 és maximum 16 karakter."
+
+  protection:
+    toggle-on: "&aMostantól a partid védett a baráti tűztől"
+    toggle-off: "&aA partid már nem védett a baráti tűztől"
+    protected: "&cNem ütheted a parti társaid"
+    warn-on-attack: "&c%player% megpróbálta megütni %victim%!"
+
+  sethome:
+    changed: ""
+    removed: "&bA parti otthon eltávolítva"
+    removed-none: "&cNincs parti otthon található"
+    broadcast: "&aA partinak új otthona van!"
+    # [Speciális címkék]
+    # => %seconds%          = Hátralévő idő másodpercben
+    cooldown: "&cVárnod kell %seconds% másodpercet!"
+    max-homes: "&cElérted a maximális otthonok számát"
+
+  tag:
+    changed: "&bA parti címke megváltozott"
+    removed: "&bA parti címke eltávolítva"
+    broadcast: ""
+    invalid-chars: "&cÉrvénytelen karakterek. Használj: a-Z vagy 0-9. Minimum 3 és maximum 10 karakter."
+    censored: "&cA címke tiltott szavakat tartalmaz!"
+    already-used: "&cA(z) %tag% címke már használatban van"
+
+  teleport:
+    teleporting: "&7Teleportálom a partid ide!"
+    player-teleported: "&bTeleportálva %player% helyére"
+    # [Speciális címkék]
+    # => %seconds%          = Késleltetés másodpercben
+    player-teleport-in: "&7Teleportálva leszel %seconds% másodperc múlva"
+    player-teleport-cancelled: "&7Teleportálás megszakítva"
+    # [Speciális címkék]
+    # => %seconds%          = Hátralévő idő másodpercben
+    cooldown: "&cVárnod kell %seconds% másodpercet!"
+    accept-request:
+      sent: "&aTeleport kérés elküldve a partinak"
+      received: '[{"text":"&bSzeretnél teleportálni %player% helyére? "},{"text":"&a&lIgen","clickEvent":{"action":"run_command","value":"/party accept %player%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"&6Fogadd el a kérést"}]}}},{"text":" &bvagy "},{"text":"&c&lNem","clickEvent":{"action":"run_command","value":"/party deny %player%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"Utasítsd el a meghívást","color":"gold"}]}}},{"text":"&b?\n&bHasználhatod a &7/party <accept/deny> %player% &bparancsot a választáshoz."}]'
+      denied: "&7Elutasítottad %player% teleport kérését"
+
+  vault:
+    # [Speciális címkék]
+    # => %price%          = A parancs ára
+    no-money:
+      ask: "&cNincs elég pénzed egy csatlakozási kérés küldéséhez [%price%$]"
+      claim: "&cNincs elég pénzed egy claim végrehajtásához [%price%$]"
+      color: "&cNincs elég pénzed a szín parancs végrehajtásához [%price%$]"
+      create: "&cNincs elég pénzed egy parti létrehozásához [%price%$]"
+      desc: "&cNincs elég pénzed a leírás beállításához [%price%$]"
+      follow: "&cNincs elég pénzed a követés engedélyezéséhez [%price%$]"
+      home: "&cNincs elég pénzed az otthon parancs használatához [%price%$]"
+      join: "&cNincs elég pénzed egy partihoz való csatlakozáshoz [%price%$]"
+      motd: "&cNincs elég pénzed a MOTD beállításához [%price%$]"
+      nickname: "&cNincs elég pénzed a becenév beállításához [%price%$]"
+      password: "&cNincs elég pénzed a jelszó beállításához [%price%$]"
+      protection: "&cNincs elég pénzed a védelem engedélyezéséhez [%price%$]"
+      rename: "&cNincs elég pénzed a parti átnevezéséhez [%price%$]"
+      sethome: "&cNincs elég pénzed az otthon beállításához [%price%$]"
+      tag: "&cNincs elég pénzed a címke beállításához [%price%$]"
+      teleport: "&cNincs elég pénzed egy teleport végrehajtásához [%price%$]"
+    confirm:
+        warn-onbuy: '[{"text":"&aA(z) %cmd% parancs ára: %price%$.\n"},{"text":"&2&lKattints ide a megerősítéshez","clickEvent":{"action":"run_command","value":"/party confirm"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"&6Fizesd ki a parancsot"}]}}},{"text":" &a vagy írd be: &7/party confirm &ahogy használd"}]'
+        confirmed: "&aParancs végrehajtása."
+        no-cmd: "&cNincs parancs a megerősítéshez"
+
+# / =============================== \
+# |         EGYÉB ÜZENETEK         |
+# \ =============================== /
+other:
+  follow:
+    # [Speciális címkék]
+    # => %world%          = Új világ
+    following-world: "&7Követem %player% a(z) %world% világba"
+
+  fixed-parties:
+    default-join: "&bBeléptél a(z) %party% partiba"
+
+  join-leave:
+    server-join: "&b%player% online!"
+    server-leave: "&7%player% offline!"
+
+# / =============================== \
+# |          SEGÍTSÉG ÜZENETEK     |
+# \ =============================== /
+help:
+  header: "&b================= &lParty Súgó %page%/%maxpages% &r&b================="
+  footer: ""
+  perform-command: 'Parancs végrehajtása'
+  console-help:
+    header: 'Csak ezeket a parancsokat hajthatod végre:'
+    command: ' > %command% - %description%'
+  # [Speciális címkék]
+  # => %syntax%          = Parancs szintaxis
+  # => %description%     = Leírás
+  # => %run_command%     = Parancs futtatási szintaxis
+  # => %perform_command% = Parancs végrehajtása üzenet
+  main:
+    commands:
+      help: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      accept: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      chat: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      create: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      delete: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      deny: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      ignore: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      info: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      invite: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      kick: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      leave: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"run_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      p: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      rank: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      reload: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"run_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      rename: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      spy: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      version: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"run_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+    descriptions:
+      help: 'Súgó oldalak megjelenítése'
+      accept: 'Egy parti kérés elfogadása'
+      chat: 'Party chat váltása'
+      create: 'Új parti létrehozása'
+      delete: 'A parti törlése'
+      deny: 'Egy parti kérés elutasítása'
+      ignore: 'Figyelmen kívül hagyott partik hozzáadása/eltávolítása/megjelenítése'
+      info: 'Parti információ megjelenítése'
+      invite: 'Játékos meghívása a partidba'
+      kick: 'Játékos kirúgása a partiból'
+      leave: 'Kilépés a partidból'
+      p: 'Üzenet küldése a partinak'
+      rank: 'Játékos rangjának megváltoztatása'
+      reload: 'Parties konfigurációs fájlok újratöltése'
+      rename: 'A parti átnevezése'
+      spy: 'Más partik üzeneteinek kémkedése'
+      version: 'Parties információ megjelenítése'
+  additional:
+    commands:
+      ask: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      claim: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      close: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"run_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      color: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      createfixed: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      debug: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      desc: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      follow: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      home: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"run_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      join: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      list: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      motd: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      mute: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      nickname: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      open: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"run_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      password: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      protection: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      sethome: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      tag: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"suggest_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+      teleport: '{"text":"&b/%syntax% &7- %description%","clickEvent":{"action":"run_command","value":"/%run_command% "},"hoverEvent":{"action":"show_text","value":{"text":"&6%perform_command%"}}}'
+    descriptions:
+      ask: 'Csatlakozási kérés küldése'
+      claim: 'Jogosultságok megadása a claimhez'
+      close: 'A parti bezárása'
+      color: 'Parti szín megváltoztatása'
+      createfixed: 'Új fix parti létrehozása'
+      debug: 'Hibakeresés'
+      desc: 'Parti leírás beállítása/eltávolítása'
+      follow: 'Vezető követésének váltása'
+      home: 'Teleportálás a parti otthonába'
+      join: 'Belépés a partiba'
+      list: 'Online partik listája'
+      motd: 'Parti MOTD beállítása/eltávolítása'
+      mute: 'Értesítések váltása'
+      nickname: 'Tag becenév beállítása/eltávolítása'
+      open: 'A parti megnyitása'
+      password: 'Parti jelszó megváltoztatása'
+      protection: 'Baráti tűz védelem váltása'
+      sethome: 'Parti otthon beállítása/eltávolítása'
+      tag: 'Parti címke beállítása/eltávolítása'
+      teleport: 'A partid teleportálása hozzád'
+
+dont-edit-this:
+  version: 16

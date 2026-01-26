@@ -25,6 +25,7 @@
 | FoliaLogin | :white_check_mark: |
 | GreenKOTH | :white_check_mark: |
 | GrimAC | :white_check_mark: |
+| HypixelRushModeAddon | :white_check_mark: |
 | ItemsAdder | :white_check_mark: |
 | LandClaiming | :white_check_mark: |
 | LiteBans | :white_check_mark: |
@@ -33,6 +34,7 @@
 | Maintenance | :white_check_mark: |
 | McAntiVPN | :white_check_mark: |
 | Parkour | :white_check_mark: |
+| Parties | :white_check_mark: |
 | PlayerReport | :white_check_mark: |
 | PluginManager | :white_check_mark: |
 | PvPManager | :white_check_mark: |
