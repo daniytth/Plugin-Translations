@@ -1,0 +1,51 @@
+messages:
+  prefix: "&#b4ff33&lEffektek&r &8» &r"
+  no-permission: "&cNincsen ehhez jogod hogy ezt megtedd!"
+  not-player: "&cEzt csak játékosok használhatják!"
+  invalid-command: "&cIsmeretlen alparancs!"
+  reloaded: "Újratöltve!"
+
+  cannot-afford: "&cNem tudod megvenni! &fEnnyi be kerül &a$$%cost% "
+  cannot-afford-type: "&cNem tudod megvenni! &fÁr fajta: &a%cost% %type%"
+  cannot-afford-price: "&cNem tudod megvenni! &fÁrra: %price%"
+  on-cooldown: "&cAz effekten cooldown vam! &fIdő: &a%seconds% másodpercek"
+  cannot-transmit: "&cItt nem tudsz továbbítani!"
+
+  must-specify-lrcdb-id: "&cMeg kell adnod egy ID hogy letöltsd! Nem tudod mit jelent? Látogass el ide: &alrcdb.auxilor.io"
+  lrcdb-import-error: "&cHiba történt miközben importáltam a konfigot: &f%message%"
+  lrcdb-import-success: "&fImportálva &a%name%&f! Tölsd újra a plugint a változtatások betöltéséhez."
+  lrcdb-export-error: "&cHiba történt miközben exportáltam a üzeneteket: &f%message%"
+  lrcdb-export-success: "&fExportálva &a%name%&f! Tekinsd meg &alrcdb.auxilor.io&f, vagy osztmeg a konfig ID-t ID: &f%id%"
+
+  must-specify-plugin: "&cMeg kell adnod egy plugint!"
+  invalid-plugin: "&cÉrvénytelen plugin név!"
+  must-specify-category: "&cMeg kell adnod egy kategóriát!"
+  invalid-category: "&cÉrvénytelen kategória!"
+  must-specify-config-name: "&cMeg kell adnod egy konfig nevet!"
+  invalid-config-name: "&cÉrvénytelen konfig név!"
+
+  must-specify-player: "&cMeg kell adnod egy játékos nevet!"
+  invalid-player: "&cÉrvénytelen játékos név!"
+
+  must-specify-point: "&cmeg kell adnod egy pontot!"
+  invalid-point: "&cÉrvénytelen pont név!"
+
+  must-specify-amount: "&cMeg kell adond egy számot!"
+  invalid-amount: "&cÉrvénytelen mennyiség!"
+
+  points-given: "&a%amount% &a%point% &fhozzádva &a%playername%&fnak/nek!"
+  points-taken: "&a%amount% &a%point% &felvéve &a%playername%&ftól/től!"
+  points-set: "&f&a%playername%&fnek/nak be lett állítva &a%amount% &a%point%&f!"
+  points-amount: "&6%playername%nek/nak &e%amount% &a%point%&r!"
+
+  plugin-not-installed: "&cA plugin nincsen telepítve!"
+
+  must-specify-dispatcher: "&cMeg kell adnod egy diszpécsert!"
+  invalid-dispatcher: "&cNem jó diszpécser!"
+  must-specify-trigger: "&cMeg kell adnod egy triggelt!"
+  triggered: "custom_%id% triggerelve lett!"
+
+  debug: "A naplózott üzeneteteket a konzolban találod."
+
+picked-up-price-item: "&f+%price%"
+infinity: "∞"
