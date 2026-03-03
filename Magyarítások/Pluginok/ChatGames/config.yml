@@ -1,4 +1,4 @@
-Prefix: "&8[&1F&3S&8] &f"
+Prefix: "&aChatGames &7|"
 #Time between the messages appear and the game starts (in seconds)
 Time: 300
 #Should the games be randomized?
