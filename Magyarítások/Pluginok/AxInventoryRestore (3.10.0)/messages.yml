@@ -1,0 +1,188 @@
+reloaded: '&#33FF33A plugin sikeresen újratöltve!'
+reload-fail: '&#FF3333A plugin újratöltése sikertelen! Valami hiba van a &f%file%&#FF3333 fájlban, nézd meg a konzolt vagy használj YAML ellenőrzőt a hibák javításához!'
+
+cleaned-up: '&#33FF33Az adatbázis sikeresen takarítva!'
+
+manual-backup: '&#33FF33Sikeresen létrehozva egy manuális biztonsági mentés &f%player%&#33FF33 részére!'
+manual-backup-all: '&#33FF33Sikeresen létrehozva egy manuális biztonsági mentés az összes játékosról!'
+manual-created-by: '%player% által.'
+
+help:
+- ' '
+- <gradient:#00AAFF:#00CCFF><b>AxInventoryRestore</b></gradient> <#00DDFF>Súgó
+- ' <#00DDFF>➤ <white>/axir view <játékos> <#DDDDDD>| <#AAFFFF>Visszaállító GUI megnyitása'
+- ' <#00DDFF>➤ <white>/axir save <játékos> <#DDDDDD>| <#AAFFFF>Manuális biztonsági mentés készítése'
+- ' <#00DDFF>➤ <white>/axir saveall <#DDDDDD>| <#AAFFFF>Manuális biztonsági mentés készítése minden játékosról'
+- ' <#00DDFF>➤ <white>/axir reload <#DDDDDD>| <#AAFFFF>Bővítmény újratöltése'
+- ' <#00DDFF>➤ <white>/axir cleanup <#DDDDDD>| <#AAFFFF>Régi biztonsági mentések törlése (lásd config.yml)'
+- ' '
+
+errors:
+  no-permission: '&#FF3333Nincs jogosultságod a parancs végrehajtásához!'
+  player-offline: '&#FF3333A játékosnak online kell lennie a leltár visszaállításához!'
+  unknown-player: '&#FF3333Ennek a játékosnak nincsenek mentett biztonsági mentései! &#DDDDDD(hiba: %number%)'
+  not-player: '&#FF3333Játékosnak kell lenned a parancs végrehajtásához!'
+
+restored-shulker:
+  # this must be some kind of shulker box!
+  material: SHULKER_BOX
+  name: '&#00CCFFLeltári Biztonsági Mentés'
+  lore:
+  - '&#DDDDDD%player-uuid%'
+  - ' '
+  - ' &7- &#00FFFFDátum: &f%date%'
+  - ' &7- &#00FFFFHely: &f%location%'
+  - ' &7- &#00FFFFÁtadva: &f%staff%'
+  - ' '
+
+guis:
+  maingui:
+    title: '&0&lVisszaállítás > &8%player%'
+  categorygui:
+    title: '&0&lVisszaállítás > &8%player%'
+    item:
+      material: BARREL
+      name: '&#00CCFFDátum: &#00EEFF%date%'
+      lore:
+      - ' '
+      - '&#00FFFFOkozta: &f%cause%'
+      - '&#00FFFFHely: &f%location%'
+      - ' '
+      - '&#00CCFF&l(!) &#00CCFFKattints ide a tárgyak megtekintéséhez!'
+  previewgui:
+    title: '&0&lVisszaállítás > &8%player%'
+    quick-restore:
+      material: PISTON
+      name: '&#00CCFFJátékos Leltárának Cseréje'
+      lore:
+      - ' '
+      - ' &7- &#00FFFFMegjegyzés: &fez törölni fogja a játékos jelenlegi tárgyait!'
+      - ' &7- &#00FFFFA játékosnak online kell lennie, hogy ez működjön!'
+      - ' '
+      - '&#00CCFF&l(!) &#00CCFFKattints ide a cseréhez!'
+    quick-restore-ender-chest:
+      material: ENDER_CHEST
+      name: '&#00CCFFJátékos Ender Ládájának Cseréje'
+      lore:
+      - ' '
+      - ' &7- &#00FFFFMegjegyzés: &fez törölni fogja a jelenlegi tárgyakat az ender ládában!'
+      - ' &7- &#00FFFFA játékosnak online kell lennie, hogy ez működjön!'
+      - ' '
+      - '&#00CCFF&l(!) &#00CCFFKattints ide a cseréhez!'
+    teleport:
+      material: ENDER_PEARL
+      name: '&#00CCFFTeleportálás Az Esemény Helyszínére'
+      lore:
+      - ' '
+      - ' &7- &#00FFFFHely: &f%location%'
+      - ' '
+      - '&#00CCFF&l(!) &#00CCFFKattints ide a teleportáláshoz!'
+    export-as-shulker:
+      material: SHULKER_BOX
+      name: '&#00CCFFTárgyak Exportálása Shulker Dobozokba'
+      lore:
+      - ' '
+      - ' &7- &#00FFFFSzükséges üres helyek: &f%shulker-amount%'
+      - ' '
+      - '&#00CCFF&l(!) &#00CCFFKattints ide a tárgyak exportálásához!'
+
+gui-items:
+  close:
+    material: BARRIER
+    name: '&#FF3333&lBezárás'
+  back:
+    material: BARRIER
+    name: '&#FF3333&lVissza'
+  previous-page:
+    material: ARROW
+    name: '&#FF6600&lElőző Oldal'
+  next-page:
+    material: ARROW
+    name: '&#FFCC00&lKövetkező Oldal'
+
+categories:
+  ALL:
+    raw: ALL
+    material: NETHER_STAR
+    name: '&#FFCC00&lÖSSZES &7(%amount% mentés)'
+    lore:
+    - ' '
+    - '&#FFCC00&l(!) &#FFCC00Kattints ide az összes mentés megtekintéséhez!'
+  ENDER_CHEST:
+    raw: ENDER_CHEST
+    material: ENDER_CHEST
+    name: '&#EE00FF&lENDER LÁDA MENTÉSEK &7(%amount% mentés)'
+    lore:
+    - ' '
+    - '&#EE00FF&l(!) &#EE00FFKattints ide a mentések megtekintéséhez!'
+  DEATH:
+    raw: DEATH
+    material: TOTEM_OF_UNDYING
+    name: '&#FF3333&lHALÁLOK &7(%amount% mentés)'
+    lore:
+    - ' '
+    - '&#FF3333&l(!) &#FF3333Kattints ide a mentések megtekintéséhez!'
+  JOIN:
+    raw: JOIN
+    material: LIME_WOOL
+    name: '&#33FF33&lCSATLAKOZÁSOK &7(%amount% mentés)'
+    lore:
+    - ' '
+    - '&#33FF33&l(!) &#33FF33Kattints ide a mentések megtekintéséhez!'
+  QUIT:
+    raw: QUIT
+    material: RED_WOOL
+    name: '&#EE3333&lKILÉPÉSEK &7(%amount% mentés)'
+    lore:
+    - ' '
+    - '&#EE3333&l(!) &#EE3333Kattints ide a mentések megtekintéséhez!'
+  WORLD_CHANGE:
+    raw: WORLD CHANGE
+    material: END_PORTAL_FRAME
+    name: '&#33DD33&lVILÁG VÁLTÁSOK &7(%amount% mentés)'
+    lore:
+    - ' '
+    - '&#33DD33&l(!) &#33DD33Kattints ide a mentések megtekintéséhez!'
+  GAMEMODE_CHANGE:
+    raw: WORLD CHANGE
+    material: GOLDEN_APPLE
+    name: '&#FFFF00&lJÁTÉKMÓD VÁLTÁSOK &7(%amount% mentés)'
+    lore:
+    - ' '
+    - '&#FFFF00&l(!) &#FFFF00Kattints ide a mentések megtekintéséhez!'
+  CONTAINER_CLOSE:
+    raw: CONTAINER_CLOSE
+    material: CHEST
+    name: '&#00DDFF&lTÁROLÓ BEZÁRÁS &7(%amount% mentés)'
+    lore:
+    - ' '
+    - '&#00DDFF&l(!) &#00DDFFKattints ide a mentések megtekintéséhez!'
+  MANUAL:
+    raw: MANUAL
+    material: LEVER
+    name: '&#FFEE00&lMANUÁLIS MENTÉSEK &7(%amount% mentés)'
+    lore:
+    - ' '
+    - '&#FFEE00&l(!) &#FFEE00Kattints ide a mentések megtekintéséhez!'
+  AUTOMATIC:
+    raw: AUTOMATIC
+    material: CLOCK
+    name: '&#AA00FF&lAUTOMATIKUS MENTÉSEK &7(%amount% mentés)'
+    lore:
+    - ' '
+    - '&#AA00FF&l(!) &#AA00FFKattints ide a mentések megtekintéséhez!'
+
+commands:
+  invalid-value: '&#FF0000Érvénytelen paraméter: &#BB0000%value%'
+  invalid-command: '&#FF0000Érvénytelen parancs vagy alparancs!'
+  missing-argument: '&#FF0000Hiányzó argumentum! Meg kell adnod egy értéket a következőhöz: &#BB0000%value%&#FF0000.'
+  no-permission: '&#FF0000Nincs jogosultságod a parancs eléréséhez!'
+  out-of-range: '&#FF0000A &#BB0000%number% &#FF0000értéknek &#BB0000%min% &#FF0000és &#BB0000%max% &#FF0000között kell lennie!'
+  player-only: '&#FF0000Játékosnak kell lenned a parancs használatához!'
+  invalid-player: '&#FF0000A játékos &#BB0000%player% &#FF0000nem található!'
+  invalid-selector: '&#FF0000Nem használhatod ezt a szelektort ebben a parancsban!'
+
+update-notifier: '&#88CCFFElérhető az AxInventoryRestore új verziója! &#DDDDDD(&#FFFFFFjelenlegi: &#FF0000%current% &#DDDDDD| &#FFFFFFlegújabb: &#00FF00%latest%&#DDDDDD)'
+
+# do not change this
+version: '7'

@@ -8,6 +8,7 @@
 | AutoSellChests | :white_check_mark: |
 | AxAFKZone | :white_check_mark: |
 | AxAuctions | :white_check_mark: |
+| AxInventoryRestore | :white_check_mark: |
 | AxKoth | :white_check_mark: |
 | AxTrade | :white_check_mark: |
 | AxVaults | :white_check_mark: |
@@ -30,7 +31,7 @@
 | LandClaiming | :white_check_mark: |
 | LiteBans | :white_check_mark: |
 | LibteryBans | :white_check_mark: |
-| Libreforge | ⚒️ |
+| Libreforge | :white_check_mark |
 | Luxry-Webhhok-Logs | :white_check_mark: |
 | Maintenance | :white_check_mark: |
 | McAntiVPN | :white_check_mark: |
