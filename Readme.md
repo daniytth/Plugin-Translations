@@ -1,3 +1,6 @@
+Discord szerver: https://discord.gg/8c6sAqmE9V
+
+
 | Plugin  | Állapot            |
 | ------- | ------------------ |
 | Admin GUI | :white_check_mark: |
