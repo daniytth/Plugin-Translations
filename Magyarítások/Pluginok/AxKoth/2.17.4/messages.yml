@@ -1,0 +1,128 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axkoth.html
+
+help:
+- ' '
+- <gradient:#FF2200:#FF5500><b>AxKoth</b></gradient> <#FF5555>Súgó
+- ' <#FF5555>➤ <white>/axkoth wand <#DDDDDD>| <#FFAAAA>Kijelölő eszköz beszerzése'
+- ' <#FF5555>➤ <white>/axkoth create <KOTH> <ELFOGLALÁS/PONTSZÁM> <#DDDDDD>| <#FFAAAA>Koth létrehozása'
+- ' <#FF5555>➤ <white>/axkoth delete <KOTH> <#DDDDDD>| <#FFAAAA>Koth törlése'
+- ' <#FF5555>➤ <white>/axkoth start <KOTH> <#DDDDDD>| <#FFAAAA>Koth indítása'
+- ' <#FF5555>➤ <white>/axkoth stop <KOTH> <#DDDDDD>| <#FFAAAA>Koth leállítása'
+- ' <#FF5555>➤ <white>/axkoth stopall <#DDDDDD>| <#FFAAAA>Összes futó koth leállítása'
+- ' <#FF5555>➤ <white>/axkoth editor <KOTH> <#DDDDDD>| <#FFAAAA>GUI szerkesztő megnyitása'
+- ' <#FF5555>➤ <white>/axkoth schedulers <#DDDDDD>| <#FFAAAA>Ütemező szerkesztő megnyitása'
+- ' <#FF5555>➤ <white>/axkoth tp <KOTH> <#DDDDDD>| <#FFAAAA>Teleportálás a koth-hoz'
+- ' <#FF5555>➤ <white>/axkoth list <#DDDDDD>| <#FFAAAA>Koth-ok listázása'
+- ' <#FF5555>➤ <white>/axkoth givestarter <KOTH> <játékos> [mennyiség] <#DDDDDD>| <#FFAAAA>Koth indító tárgy átadása játékosnak'
+- ' <#FF5555>➤ <white>/axkoth reload <#DDDDDD>| <#FFAAAA>Konfiguráció újratöltése'
+- ' <#FF5555>➤ <white>/axkoth resetwins <játékos> <#DDDDDD>| <#FFAAAA>Játékos koth győzelmeinek visszaállítása'
+- ' '
+
+time:
+  second: mp
+  minute: p
+  hour: ó
+  day: n
+
+# this section will be ignored if you don't have a team plugin enabled
+teams:
+  team-format: '&8[&#FF6600%team%&8]&r'
+  # the next 2 settings will be used for the %player% placeholder in some messages
+  team-player: '%player% %team%'
+  # player without a team
+  player: '%player%'
+
+selection-wand:
+  material: GOLDEN_AXE
+  name: '&#FF6600&lKIJELÖLŐ ESZKÖZ'
+  lore:
+  - ' '
+  - '&#FF6600ʙᴀʟ ᴋᴀᴛᴛɪɴᴛáꜱ'
+  - ' &7- &f1. pozíció kijelölése'
+  - ' '
+  - '&#FF6600ᴊᴏʙʙ ᴋᴀᴛᴛɪɴᴛáꜱ'
+  - ' &7- &f2. pozíció kijelölése'
+  - ' '
+
+selection:
+  pos1: '&fKijelölve: &#FF66001. POZÍCIÓ &7- &#DDDDDD%location%'
+  pos2: '&fKijelölve: &#FF66002. POZÍCIÓ &7- &#DDDDDD%location%'
+  no-selection: '&#FF0000A koth létrehozásához ki kell jelölnöd 2 sarkot az /axkoth wand parancs segítségével!'
+
+created: '&#00FF00Létrehoztad a koth-ot: &f%koth%&#00FF00!'
+deleted: '&#FF0000Törölted a koth-ot: &f%koth%&#FF0000!'
+does-not-exist: '&#FF0000A koth &f%koth% &#FF0000NEM létezik!'
+already-exists: '&#00FF00A koth &f%koth% &#00FF00MÁR létezik!'
+redefined: '&#00FF00Újradefiniáltad a koth területét a &f%koth% &#00FF00koth-hoz!'
+
+koth-start: '&#00FF00Elindítottad a &f%koth% &#00FF00koth-ot!'
+koth-stop: '&#00FF00Leállítottad a &f%koth% &#00FF00koth-ot!'
+not-running: '&#FF0000A &f%koth% &#FF0000koth nem aktív!'
+
+list: '&#FFFF00Koth-ok listája: &f%list%'
+
+teleport: '&#00FF00Teleportáltál a &f%koth% &#00FF00koth középpontjához!'
+
+reset-wins: '&#FF0000Visszaállítottad &f%player%&#FF0000 győzelmeit!'
+
+starter-given: '&#00FF00Átadtál &f%amount%x %koth% &#00FF00koth indítót a következő játékosnak: &f%player%&#00FF00!'
+starter-got: '&#00FF00Kaptál &f%amount%x %koth% &#00FF00koth indítót!'
+koth-start-with-starter: '&#00FF00Elindítottad a %koth% &#00FF00koth-ot!'
+starter-already-running: '&#FF0000A koth %koth% &#FF0000már fut!'
+starter-not-enough-players: '&#FF0000Legalább &f%amount% &#FF0000játékosnak online kell lennie a &f%koth% &#FF0000koth elindításához!'
+
+info:
+- '&#FF6600&l=== %name% ==='
+- '&#FFAA66Fut: &f%active%'
+- '&#FFAA66Világ: &f%world%'
+- '&#FFAA66Pozíció: &f%x% / %y% / %z%'
+- '&#FFAA66Következő ütemezés: &f%next_formatted%'
+- '&#FFAA66Maximális idő: &f%maxTime_formatted%'
+- '&#FFAA66Nyertes idő: &f%time_formatted%'
+
+capture-disallowed-actionbar:
+  # set to "" to disable
+  gamemode: '&#FF0000Csak túlélő módban foglalhatod el a koth-ot!'
+  vanish: '&#FF0000Csak akkor foglalhatod el a koth-ot, ha nem vagy láthatatlanban!'
+
+placeholders:
+  not-active: '---'
+  not-found: Ismeretlen koth
+  no-hook: Nincs betöltve team hook
+  not-in-team: '---'
+  no-capturer: '---'
+  infinity: ∞
+
+# set to "" to disable
+broadcasts:
+  start: '&#FFFF00A &#FFCC00%displayName% &#FFFF00koth elindult! &7(%timeLeft_formatted%)'
+  started-with-starter: '&#FFFF00A &#FFCC00%displayName% &#FFFF00koth-ot elindította: &#FFCC00%starter%&#FFFF00! &7(%timeLeft_formatted%)'
+  stop: '&#FFFF00A &#FFCC00%displayName% &#FFFF00koth leállt! &7(%timeTaken_formatted%)'
+  capture-start: '&#FFCC00%capturer% &#FFFF00elkezdte elfoglalni a &#FFCC00%displayName% &#FFFF00koth-ot! &7(%timeLeft_formatted%)'
+  capture-status: '&#FFCC00%capturer% &#FFFF00éppen elfoglalja a &#FFCC00%displayName% &#FFFF00koth-ot! &7(%timeLeft_formatted%)'
+  capture-lost: '&#FFCC00%capturer% &#FFFF00elvesztette az uralmat a &#FFCC00%displayName% &#FFFF00koth felett! &7(%timeLeft_formatted%)'
+  captured: '&#FFCC00%capturer% &#FFFF00elfoglalta a &#FFCC00%displayName% &#FFFF00koth-ot! &7(%timeTaken_formatted%)'
+  out-of-time: '&#FFFF00A &#FFCC00%displayName% &#FFFF00koth győztes nélkül ért véget! &7(%timeTaken_formatted%)'
+
+reload:
+  success: '&#33FF33A plugin sikeresen újratöltve!'
+  failed: '&#FF3333A plugin újratöltése sikertelen! Hiba van a &f%file%&#FF3333 fájlban, nézd meg a konzolt vagy használj YAML ellenőrzőt a hibák javításához!'
+
+editor:
+  open: '&#FF6600Megjegyzés: A szerkesztő bezárása után a változtatások alkalmazásához használnod kell a &#FFCC00/axkoth reload &#FF6600parancsot!'
+
+commands:
+  invalid-value: '&#FF0000Érvénytelen paraméter: &#BB0000%value%'
+  invalid-command: '&#FF0000Érvénytelen parancs vagy alparancs!'
+  missing-argument: '&#FF0000Hiányzó argumentum! Meg kell adnod egy értéket a következőhöz: &#BB0000%value%&#FF0000.'
+  no-permission: '&#FF0000Nincs jogosultságod a parancs eléréséhez!'
+  out-of-range: '&#FF0000A &#BB0000%number% &#FF0000értéknek &#BB0000%min% &#FF0000és &#BB0000%max% &#FF0000között kell lennie!'
+  player-only: '&#FF0000Játékosnak kell lenned a parancs használatához!'
+  invalid-player: '&#FF0000A játékos &#BB0000%player% &#FF0000nem található!'
+  invalid-selector: '&#FF0000Nem használhatod ezt a szelektort ebben a parancsban!'
+
+update-notifier: '&#FFAAAAElérhető az AxKoth új verziója! &#DDDDDD(&#FFFFFFjelenlegi: &#FF0000%current% &#DDDDDD| &#FFFFFFlegújabb: &#00FF00%latest%&#DDDDDD)'
+
+# do not change
+version: 6
+# eyJ1c2VyLW5hbWUiOiJEQ1dJVEhDUkFDS0VSIiwidXNlci1pZCI6IjY4OCIsImRhdGUiOiIyMDI1LTExLTE0IDIwOjM0Iiwic2l0ZSI6Imh0dHBzOi8vZ2xlYWtzLnBybyJ9

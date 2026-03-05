@@ -1,4 +1,4 @@
-# DOKUMENTÁCIÓ: https://docs.artillex-studios.com/axkoth.html
+# DOCUMENTATION: https://docs.artillex-studios.com/axkoth.html
 
 help:
   - "<gradient:#FF6600:#FF8800><b>AxKoth</b></gradient> &7» &#FFAA66Segítség:"
@@ -24,17 +24,17 @@ time:
   hour: "ó"
   day: "nap"
 
-# Ez a szakasz figyelmen kívül marad, ha nincs csapat plugin engedélyezve
+# this section will be ignored if you don't have a team plugin enabled
 teams:
   team-format: "&8[&#FF6600%team%&8]&r"
-  # A következő 2 beállítás a %player% helykitöltőre vonatkozik néhány üzenetben
+  # the next 2 settings will be used for the %player% placeholder in some messages
   team-player: "%player% %team%"
-  # Csapat nélküli játékos
+  # player without a team
   player: "%player%"
 
 selection-wand:
   material: "GOLDEN_AXE"
-  name: "&#FF6600&lKIVÁLASZTÓ BÁRD"
+  name: "&#FF6600&lKIVÁLASZTÓ ESZKÖZ"
   lore:
     - " "
     - "&#FF6600ʙᴀʟ ᴋᴀᴛᴛɪɴᴛᴀs"
@@ -81,7 +81,7 @@ info:
   - "&#FFAA66Győztes idő: &f%time_formatted%"
 
 capture-disallowed-actionbar:
-  # Tiltsd le: ""
+  # set to "" to disable
   gamemode: "&#FF0000Csak túlélő módban veheted át a koth-ot!"
   vanish: "&#FF0000Csak látható állapotban veheted át a koth-ot!"
 
@@ -93,7 +93,7 @@ placeholders:
   no-capturer: "---"
   infinity: "∞"
 
-# Tiltsd le: ""
+# set to "" to disable
 broadcasts:
   start: "&#FFFF00A(z) &#FFCC00%displayName% &#FFFF00koth elindult! &7(%timeLeft_formatted%)"
   started-with-starter: "&#FFFF00A(z) &#FFCC00%displayName% &#FFFF00koth-ot &#FFCC00%starter%&#FFFF00 indította! &7(%timeLeft_formatted%)"
@@ -123,5 +123,5 @@ commands:
 
 update-notifier: "&#FFAAAAÚj verzió érhető el az AxKoth plugintól! &#DDDDDD(&#FFFFFFjelenlegi: &#FF0000%current% &#DDDDDD| &#FFFFFFlegújabb: &#00FF00%latest%&#DDDDDD)"
 
-# ezt ne változtasd
+# do not change
 version: 6

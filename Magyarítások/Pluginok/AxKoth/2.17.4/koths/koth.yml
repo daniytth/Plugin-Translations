@@ -1,0 +1,173 @@
+# ===========================================
+# FONTOS: Ne az egész kothneve.yml fájlt jelöld ki mert ez nem tartalmaz világ adatot, koth kezdési/végi parancsokat nem tartalmaz és Foglalási parancsokat se tartalmaz!
+# FIGYELMETETVE LETTÉL!
+# ===========================================
+
+
+starter:
+  enabled: true
+  material: BLAZE_POWDER
+  glow: true
+  name: '&#FF0000%displayName% Koth Indító'
+  lore:
+  - ' '
+  - '&#FF0000Információ:'
+  - ' &#444444❙ &#FFAA66Helyszín: &f%x%; Y%y%; Z%z%'
+  - ' &#444444❙ &#FFAA66Idő: &f%time_formatted%'
+  - ' &#444444❙ &#FFAA66Max Idő: &f%maxTime_formatted%'
+  - ' '
+  - '&#FF0000ᴋᴀᴛᴛɪɴᴛꜱ ᴀᴢ ɪɴᴅɪ́ᴛᴀ́ꜱʜᴏᴢ'
+
+# set to 0 to disable
+# this is ONLY checked on schedule start & starter use
+minimum-players: 0
+
+hologram:
+  enabled: true
+  location-offset:
+    x: 0
+    y: 1.5
+    z: 0
+  lines:
+  - '&#FF0000&l%displayName%'
+  - '&f%capturer% &7| &f%timeLeft_formatted%'
+
+bossbar:
+  enabled: true
+  only-show-when-capturing: false
+  # set to -1 to make it that everyone in the world can see it
+  # set to 0 to make it that everyone on the server can see it
+  view-distance: 64
+  name: '&#FF0000%displayName% &#DDDDDD| &#FF6600%capturer% &#DDDDDD(%timeLeft_formatted%)'
+  # colors: https://javadoc.io/static/net.kyori/adventure-api/4.11.0/net/kyori/adventure/bossbar/BossBar.Color.html
+  color: RED
+  # styles: https://javadoc.io/static/net.kyori/adventure-api/4.11.0/net/kyori/adventure/bossbar/BossBar.Overlay.html
+  style: NOTCHED_20
+
+scoreboard:
+  enabled: true
+  only-show-when-capturing: false
+  # set to -1 to make it that everyone in the world can see it
+  # set to 0 to make it that everyone on the server can see it
+  view-distance: 64
+  title: '&#FF0000&l%displayName%'
+  lines:
+  - ' '
+  - '&#FF0000Helyszín:'
+  - ' &#444444❙ &fX%x%; Y%y%; Z%z%'
+  - ' '
+  - '&#FF0000Elfoglaló:'
+  - ' &#444444❙ &f%capturer%'
+  - ' '
+  - '&#FF0000Idő:'
+  - ' &#444444❙ &f%timeLeft_formatted%'
+  - ' '
+  - '&#FF0000Szerver ip címe'
+
+## ---- REMOVE FIRST HASHTAGS FROM ALL LINES TO ENABLE THIS FEATURE! -----
+## in this section you can override parts from the messages.yml, for example if you don't want a start message for this koth, set start here to ""
+#broadcasts:
+#  start: "&#FFFF00The &#FFCC00%displayName% &#FFFF00koth has started! &7(%timeLeft_formatted%)"
+#  started-with-starter: "&#FFFF00The &#FFCC00%displayName% &#FFFF00koth has been started by &#FFCC00%starter%&#FFFF00! &7(%timeLeft_formatted%)"
+#  stop: "&#FFFF00The &#FFCC00%displayName% &#FFFF00koth has been stopped! &7(%timeTaken_formatted%)"
+#  capture-start: "&#FFCC00%capturer% &#FFFF00has started capturing the &#FFCC00%displayName% &#FFFF00koth! &7(%timeLeft_formatted%)"
+#  capture-status: "&#FFCC00%capturer% &#FFFF00is capturing the &#FFCC00%displayName% &#FFFF00koth! &7(%timeLeft_formatted%)"
+#  capture-lost: "&#FFCC00%capturer% &#FFFF00has lost control of the &#FFCC00%displayName% &#FFFF00koth! &7(%timeLeft_formatted%)"
+#  captured: "&#FFCC00%capturer% &#FFFF00has captured the &#FFCC00%displayName% &#FFFF00koth! &7(%timeTaken_formatted%)"
+#  out-of-time: "&#FFFF00The &#FFCC00%displayName% &#FFFF00koth has ended without a winner! &7(%timeTaken_formatted%)"
+
+# to enable this remove the [] and the # from the next line
+start-commands: []
+#  - "say Koth started!"
+
+end-commands: []
+#  - "say Koth ended"
+
+capture-start-commands: []
+#  - "say %capturer_name% is now capturing the %name% koth!"
+
+capture-end-commands: []
+#  - "say The %name% koth is no longer being captured!"
+
+# wiki: https://docs.artillex-studios.com/discord-webhook-builder.html
+# make sure to set a webhook url, you can get an url by hovering over a channel > Edit Channel > Integrations > Create Webhook > Copy WebHook Url
+webhook:
+  # your webhook url here
+  url: ''
+  start:
+    enabled: true
+    content: Fel készülni!
+    color: '#FF0000'
+    title:
+      text: '%name% - ELINDÍTVA'
+    fields:
+      '1':
+        inline: true
+        name: Idp
+        value: '%timeLeft_formatted%'
+  stop:
+    enabled: true
+    color: '#CC0000'
+    title:
+      text: '%name% - LEÁLLÍTVA'
+    fields:
+      '1':
+        inline: true
+        name: Idő
+        value: '%timeTaken_formatted%'
+  capture-start:
+    enabled: true
+    color: '#AAFFAA'
+    title:
+      text: '%name% - ELFOGLALÁS ELKEZDVE'
+    fields:
+      '1':
+        inline: true
+        name: Elfoglaló
+        value: '%capturer_name%'
+      '2':
+        inline: true
+        name: Csapat
+        value: '%capturer_team_name%'
+      '3':
+        inline: true
+        name: Idő
+        value: '%timeLeft_formatted%'
+  capture-end:
+    enabled: true
+    color: '#FFAAAA'
+    title:
+      text: '%name% - ELFOGLALÁS LEÁLLÍTVA'
+    fields:
+      '1':
+        inline: true
+        name: Elfoglaló
+        value: '%capturer_name%'
+      '2':
+        inline: true
+        name: Csapat
+        value: '%capturer_team_name%'
+      '3':
+        inline: true
+        name: Idő
+        value: '%timeLeft_formatted%'
+  captured:
+    enabled: true
+    content: ':tada:'
+    color: '#00FF00'
+    title:
+      text: '%name% - ELFOGLALVA'
+    fields:
+      '1':
+        inline: true
+        name: Elfoglaló
+        value: '%capturer_name%'
+      '2':
+        inline: true
+        name: Csapat
+        value: '%capturer_team_name%'
+      '3':
+        inline: true
+        name: Idő
+        value: '%timeTaken_formatted%'
+# eyJ1c2VyLW5hbWUiOiJEQ1dJVEhDUkFDS0VSIiwidXNlci1pZCI6IjY4OCIsImRhdGUiOiIyMDI1LTExLTE0IDIwOjM0Iiwic2l0ZSI6Imh0dHBzOi8vZ2xlYWtzLnBybyJ9
