@@ -6,19 +6,19 @@
 #    content: "<@&1234567890123456789>"
 #    # color in hex
 #    color: "#FF6600"
-#    description: "Your description"
+#    description: "Leírás!"
 #    title:
 #      # required
-#      text: "Title!"
+#      text: "Cím!"
 #      icon: ""
 #    author:
 #      # required
-#      name: "Author name"
+#      name: "Készítő Neve"
 #      icon-url: ""
 #      url: ""
 #    footer:
 #      # required
-#      text: "Footer"
+#      text: "Lábléc"
 #      icon: ""
 #    image-url: ""
 #    thumbnail-url: ""
@@ -126,7 +126,7 @@ backup-export:
 # the bot will run on your minecraft server, you don't need to do anything externally
 token: ''
 
-bot-activity: Leltáradak Visszaállítása
+bot-activity: Leltárak Visszaállítása
 
 # where should the requests be sent?
 channel-id: ''
