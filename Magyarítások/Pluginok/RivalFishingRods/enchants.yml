@@ -7,7 +7,7 @@
 #                                                     #
 #######################################################
 UpgradesMenu:
-  name: '&8Elementalnetwork » Halak felszerelésjavítások'
+  name: '&8Szervernév » Halak felszerelésjavítások'
   size: 36
   hasenchant: '&4&l[!] &cMár van ez az ágazat.'
   noenchant: '&4&l[!] &cNincs ez az ágazat.'
