@@ -170,4 +170,4 @@ webhook:
         inline: true
         name: Idő
         value: '%timeTaken_formatted%'
-# eyJ1c2VyLW5hbWUiOiJEQ1dJVEhDUkFDS0VSIiwidXNlci1pZCI6IjY4OCIsImRhdGUiOiIyMDI1LTExLTE0IDIwOjM0Iiwic2l0ZSI6Imh0dHBzOi8vZ2xlYWtzLnBybyJ9
+
