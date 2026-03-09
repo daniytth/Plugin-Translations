@@ -12,11 +12,11 @@ FailedFetch: "&cNem sikerült lekérni az UUID-t a %NAME%! Nézd a konzolt a tov
 
 Ban:
   Usage: "&cHasználat &8» &7&o/ban (-s) [Név] [Indok/@Layout]"
-  Done: "&c&o%NAME% &7sikeresen bannolva!"
-  AlreadyDone: "&c&o%NAME% &7már bannolva van!"
-  Exempt: "&7Nem tudod bannolni őt &c&o%NAME%"
+  Done: "&c&o%NAME% &7sikeresen kitiltva!"
+  AlreadyDone: "&c&o%NAME% &7már ki van tiltva!"
+  Exempt: "&7Nem tudod kitltani: &c&o%NAME%"
   Layout:
-  - '%PREFIX% &7Véglegesen kitiltva'
+  - '%PREFIX% &7Véglegesen Kitiltva'
   - '&7'
   - '&7'
   - "&cIndok &8» &7%REASON%"
@@ -25,14 +25,14 @@ Ban:
   - "&eDc-Ip &8» &c&nhamarosan jön"
   - "&eFórum &8» &c&nhamarosan jön"
   Notification:
-  - "&c&o%NAME% &7bannolva lett &e&o%OPERATOR% által"
+  - "&c&o%NAME% &7ki lett tiltva &e&o%OPERATOR% által."
   - "&7Indok &o%REASON%"
-  UndoNotification: "&e&o%OPERATOR% &7unbannolta &c&o%NAME%"
+  UndoNotification: "&e&o%OPERATOR% &7fel oldotta &c&o%NAME% kitiltását."
 
 Ipban:
   Usage: "&cHasználat &8» &7&o/banip (-s) [Név/IP] [Indok/@Layout]"
   Layout:
-  - '%PREFIX% &7Véglegesen kitiltva'
+  - '%PREFIX% &7Véglegesen Kitiltva'
   - '&7'
   - '&7'
   - "&cIndok &8» &7%REASON%"
@@ -41,15 +41,15 @@ Ipban:
   - "&eDc-Ip &8» &c&nhamarosan jön"
   - "&eFórum &8» &c&nhamarosan jön"
   Notification:
-  - "&c&o%NAME% &7bannolva lett &e&o%OPERATOR% által"
+  - "&c&o%NAME% &7ki lett tiltva &e&o%OPERATOR% által."
   - "&7Indok &o%REASON%"
-  IpNotCashed: "&cNincs mentett IP cím a %NAME%!"
+  IpNotCashed: "&cNincs mentett IP cím %NAME% Felhasználónak!"
 
 Tempban:
   Usage: "&cHasználat &8» &7&o/tempban (-s) [Név] [Xmo/Xd/Xh/Xm/Xs/#TimeLayout] [Indok/@Layout]"
   MaxDuration: "&cNem tilthatsz meg több mint %MAX%másodpercben"
   Layout:
-  - '%PREFIX% &7Ideiglenesen kitiltva'
+  - '%PREFIX% &7Ideiglenesen Kitiltva'
   - '&7'
   - '&7'
   - "&cIndok &8» &7%REASON%"
@@ -59,7 +59,7 @@ Tempban:
   - "&eDc-Ip &8» &c&nhamarosan jön"
   - "&eFórum &8» &c&nhamarosan jön"
   Notification:
-  - "&c&o%NAME% &7bannolva lett &e&o%OPERATOR% által"
+  - "&c&o%NAME% &7ki lett tiltva &e&o%OPERATOR% által."
   - "&7Indok &o%REASON%"
   - "&7&oEzt a játékost eltiltották ennyi időre &e&o%DURATION%"
 
@@ -67,7 +67,7 @@ Tempipban:
   Usage: "&cHasználat &8» &7&o/tempipban (-s) [Név/IP] [Xmo/Xd/Xh/Xm/Xs/#TimeLayout] [Indok/@Layout]"
   MaxDuration: "&cNem tilthatsz meg több mint %MAX%másodpercben"
   Layout:
-  - '%PREFIX% &7Ideiglenesen kitiltva'
+  - '%PREFIX% &7Ideiglenesen Kitiltva'
   - '&7'
   - '&7'
   - "&cIndok &8» &7%REASON%"
