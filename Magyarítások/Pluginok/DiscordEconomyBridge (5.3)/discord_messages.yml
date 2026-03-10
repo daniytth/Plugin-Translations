@@ -83,7 +83,7 @@ balanceCommandEmbed:
 ######################
 
 helpCommandEmbed:
-  title: "Ezek a parancsok elérhetők"
+  title: "Ezek a Parancsok Elérhetők"
   color: "#0048ad"
   fields:
     "%discord_command_prefix%balance":
