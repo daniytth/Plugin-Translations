@@ -17,7 +17,7 @@ pages:
   main:
     options:
       size: 45
-      title: '&8ElementalNetwork » {eco_name} Shop'
+      title: '&8Szervernév » {eco_name} Bolt'
       default: true
       filler:
         material: LIGHT_BLUE_STAINED_GLASS_PANE
