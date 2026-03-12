@@ -21,7 +21,7 @@ Ban:
   - '&7'
   - "&cIndok &8» &7%REASON%"
   - '&7'
-  - '&8Unban kérelem a dc-én vagy a fórumon'
+  - '&8Kitiltás feoldási kérelem a dc-én vagy a fórumon'
   - "&eDc-Ip &8» &c&nhamarosan jön"
   - "&eFórum &8» &c&nhamarosan jön"
   Notification:
@@ -90,9 +90,9 @@ Mute:
   - '%PREFIX% &7Le lettél némitva'
   - "&cIndok &8» &7%REASON%"
   Notification:
-  - "&c&o%NAME% &7némitva lett &e&o%OPERATOR% által"
+  - "&c&o%NAME% &7némitva lett &e&o%OPERATOR% által."
   - "&7Indok &o%REASON%"
-  UndoNotification: "&e&o%OPERATOR% &7eltávolitotta a némitását &c&o%NAME%"
+  UndoNotification: "&e&o%OPERATOR% &7eltávolitotta &c&o%NAME% némítását."
 
 Tempmute:
   Usage: "&cHasználat &8» &7&o/tempmute (-s) [Név] [Xmo/Xd/Xh/Xm/Xs/#TimeLayout] [Indok/@Layout]"
@@ -101,7 +101,7 @@ Tempmute:
   - '%PREFIX% &7Némitva lettél %DURATION%'
   - "&cIndok &8» &7%REASON%"
   Notification:
-  - "&c&o%NAME% &7némitva lett &e&o%OPERATOR% által"
+  - "&c&o%NAME% &7némitva lett &e&o%OPERATOR% által."
   - "&7Indok &o%REASON%"
   - "&7&oEzt a játékost elnémították ennyi időre &e&o%DURATION%"
 
@@ -110,11 +110,11 @@ Warn:
   Done: "&c&o%NAME% &7sikeresen figyelmeztettve!"
   Exempt: "&7Nem tudod figyelmeztettni őt &c&o%NAME%"
   Layout:
-  - '%PREFIX% &cKaptál egy figyelmeztettést'
+  - '%PREFIX% &cKaptál Egy Figyelmeztettést'
   - "&cIndok &8» &7%REASON%"
   - '&7Ennyi &c&o%COUNT% &7figyelmeztetté(sek) összesen!'
   Notification:
-  - "&c&o%NAME% &7figyelmeztettve lett &e&o%OPERATOR% által"
+  - "&c&o%NAME% &7figyelmeztettve lett &e&o%OPERATOR% által."
   - "&7Indok &o%REASON%"
 
 Note:
@@ -122,19 +122,19 @@ Note:
   Done: "&c&o%NAME% &7sikeresen feljegyezték!"
   Exempt: "&7Nem tudsz feljegyzést tenni rá &c&o%NAME%"
   Notification:
-  - "&c&o%NAME% &7feljegyezést kapott &e&o%OPERATOR% által"
+  - "&c&o%NAME% &7feljegyezést kapott &e&o%OPERATOR% által."
   - "&7Indok &o%REASON%"
 
 Tempwarn:
   Usage: "&cHasználat &8» &7&o/tempwarn (-s) [Név] [Xmo/Xd/Xh/Xm/Xs/#TimeLayout] [Indok/@Layout]"
   MaxDuration: "&cNem figyelmeztetthetsz meg több mint %MAX%másodpercben "
   Layout:
-  - '%PREFIX% &cKaptál egy ideiglenes figyelmeztetést'
+  - '%PREFIX% &cKaptál Egy Ideiglenes Figyelmeztetést'
   - "&cIndok &8» &7%REASON%"
   - "&cLejár ennyi idő múlva &8» &7%DURATION%"
   - '&7Ennyi &c&o%COUNT% &7figyelmeztetté(sek) van összesen!'
   Notification:
-  - "&c&o%NAME% &7kapott egy ideiglenes figyelmeztetést &e&o%OPERATOR% által"
+  - "&c&o%NAME% &7kapott egy ideiglenes figyelmeztetést &e&o%OPERATOR% által."
   - "&7Indok &o%REASON%"
   - "&7Ez a figyelmeztettés lejár &o%DURATION% múlva"
 
@@ -144,32 +144,32 @@ Kick:
   NotOnline: "&c&o%NAME% &7nincsen online!"
   Exempt: "&7Nem rúghatód ki &c&o%NAME% őt"
   Layout:
-  - '%PREFIX% &7Ki lettél rúgva'
+  - '%PREFIX% &7Ki Lettél Eúgva'
   - '&7'
   - "&cIndok &8» &7%REASON%"
   - '&7'
   Notification:
-  - "&c&o%NAME% &7ki lett rúgva &e&o%OPERATOR% áltak"
+  - "&c&o%NAME% &7ki lett rúgva &e&o%OPERATOR% által."
   - "&7Indoka &o%REASON%"
 
 
 UnBan:
   Usage: "&cHasználat &8» &7&o/unban [Név/IP]"
-  NotPunished: "&c&o%NAME% nincs is bannolva!"
-  Done: "&a&o%NAME% &7sikeresen unbannolva!"
-  Notification: "&e&o%OPERATOR% &7unbanolta &c&o%NAME%"
+  NotPunished: "&c&o%NAME% nincs is kitiltva!"
+  Done: "&a&o%NAME% &7sikeresen feloldva!"
+  Notification: "&e&o%OPERATOR% &7feoldotta &c&o%NAME% kitiltását."
 
 UnMute:
   Usage: "&cHasználat &8» &7&o/unmute [Név]"
   NotPunished: "&c&o%NAME% nincs is el némitva!"
-  Done: "&a&o%NAME% &7sikeresen a némitás etávolítva!"
-  Notification: "&e&o%OPERATOR% &7némitását eltovította &c&o%NAME%"
+  Done: "&a&o%NAME% &7némitása sikeresen  etávolítva!"
+  Notification: "&e&o%OPERATOR% &7némitását eltovította &c&o%NAME%."
 
 UnWarn:
   Usage: "&cHasználat &8» &7&o/unwarn [ID] vagy /unwarn clear [Név]"
   NotFound: "&cNem található figyelmeztetés #%ID%"
   Done: "&7Figyelmeztettés &a&o#%ID% &7sikeresen törölve!"
-  Notification: "&e&o%OPERATOR% &7eltávolította a figyelmeztettést &c&o%NAME% -nak/nek"
+  Notification: "&e&o%OPERATOR% &7eltávolította a figyelmeztettést &c&o%NAME% -nak/nek."
   Clear:
     Empty: "&c&o%NAME% &7nincsen figyelmeztetése!"
     Done: "&7Törölve &a&o%COUNT% &7figyelmeztetés"
@@ -203,7 +203,7 @@ Banlist:
   - "&c%NAME% &8| &e%DURATION% &8| &7%OPERATOR%"
   - "&c%TYPE% &8> &7&o%REASON%"
   - "&7"
-  Footer: "&7Oldal &e&o%CURRENT_PAGE% &7ennyiből &e&o%TOTAL_PAGES% &8| &7Listázott bannok: &e&o%COUNT%"
+  Footer: "&7Oldal &e&o%CURRENT_PAGE% &7ennyiből &e&o%TOTAL_PAGES% &8| &7Listázott Kitiltások: &e&o%COUNT%"
   PageFooter: "&7Használd &e&o/banlist %NEXT_PAGE% &7hogy lásd a következő oldalt"
 
 History:
@@ -298,7 +298,7 @@ Check:
   Geo: "&cOrszág &8» &7%LOCATION%"
   Mute: "&cNémitva &8» &7%DURATION%"
   MuteReason: "  &cIndok &8» &7%REASON%"
-  Ban: "&cBannolva &8» &7%DURATION%"
+  Ban: "&cKitiltva &8» &7%DURATION%"
   BanReason: "  &cIndok &8» &7%REASON%"
   Warn: "&cFigyelmeztettés &8» &7%COUNT%"
   Note: "&cJegyzés &8» &7%COUNT%"
