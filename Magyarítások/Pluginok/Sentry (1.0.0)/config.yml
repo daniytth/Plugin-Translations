@@ -1,0 +1,42 @@
+# ⚠️ DO NOT MODIFY THE CONFIG VERSION BELOW ⚠️
+# This value is used for automatic config migration. Altering it may cause issues with future updates.
+config_version: 5
+
+# Discord Integration (webhook)
+discord:
+  enabled: true
+  webhook_url: "YOUR_DISCORD_WEBHOOK_URL_HERE"
+  
+# Alert Settings (in-game and discord)
+# To keep invaders anonymous, remove {player} from both message_format and discord_format.
+alerts:
+  in_game: true
+  discord: true
+  message_format: "&c[Sentry] &e{player} &7belépet a régióba &a{region_name}&c!"
+  discord_format: "🛡️ **Sentry**: Az ébresztőd meg lett triggerrelve **{owner}**! {player} belépet a régióba __{region_name}__!"
+  discord_cooldown_minutes: 5  # ⚠️ Cooldown under 5 minutes may enable spam/abuse --> Use 0 for no cooldown
+  bypass_op_players: true  # Opped players bypass alerts by default
+# 💡 Cooldown is per player, so each player can trigger alerts independently even if others are still on cooldown
+
+# Region settings
+regions:
+  max_regions_per_player: 3
+  default_expiry_days: 30
+  allow_overlap: false
+
+# Auto-Renewal System for defined sentry regions
+auto_renewal:
+  enabled: true
+  renewal_days: 30  # Days to extend when visiting region
+  
+# 💡 TO ADD NEW WANDS
+# 1. Create any .yml file in the recipes/ folder. Copy and paste one of the default files as a template.
+# 2. Plugin will warn you if duplicate recipes are found
+
+# Region Visualization (particles that outline region selection)
+visualization:
+  particle_duration: 15  # seconds
+  particle_color: "RED"  # RED, BLUE, GREEN, YELLOW, PURPLE, ORANGE, WHITE, BLACK
+  show_on_wand_use: true
+  show_on_info_view: true 
+  show_on_list_click: true
