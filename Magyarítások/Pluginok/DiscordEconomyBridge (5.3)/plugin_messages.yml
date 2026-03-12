@@ -31,4 +31,4 @@ helpCommand:
 noConsole: "Ez a parancs nem futtatható a konzolon!"
 
 # Message if linking is disabled
-linkingDisabled: "A linkelés le van tiltva ezzel a pluginel."
+linkingDisabled: "A linkelés le van tiltva ezzel a pluginnal."
