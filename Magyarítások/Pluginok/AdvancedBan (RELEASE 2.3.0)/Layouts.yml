@@ -14,7 +14,7 @@
 # Example usage: /ban Leoko @ExampleLayout
 Message:
   ExampleLayout:
-    - '%PREFIX% &7Ki lettél tiltiva csalásért'
+    - '%PREFIX% &7Ki Lettél Tiltiva Csalásért'
     - '&c&oKitilittot téged %OPERATOR%'
     - '&7'
     - "&cAzt látom hogy"
@@ -25,10 +25,10 @@ Message:
     - "&eDC-Ip &8» &c&nhamarosan jön"
     - "&eFórum &8» &c&nhamarosan jön"
   ExampleLayout2:
-    - '%PREFIX% &7Ki lettél tiltva nem normális nyelvezet használatáért'
+    - '%PREFIX% &7Ki Lettél Tiltva Nem Normális Nyelvezet Használatáért'
     - '&7'
     - "&cMi ezt nem vagyunk képesek elfogadni a ezt a nyelvezetett!"
-    - "&cEzért a szóért lettél bannolva '%REASON%'" # You can even use reasons in message layouts
+    - "&cEzért a szóért lettél kitiltva '%REASON%'" # You can even use reasons in message layouts
 
 # You would use this time-layout for example like this: "/tempban Leoko #ExampleLayout Hacking in FFA"
 # Or with "/tempwarn Leoko #ExampleLayout Advertising" or even "/tempwarn Leoko #ExampleLayout No capslock please"
