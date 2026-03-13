@@ -112,12 +112,12 @@ additions:
       - '&7&lKititás&f'
       - '&cIdőtartam: &e%TIME_REMAINING%&f'
       - ''
-      - '&c&lOk&f'
+      - '&c&lIndok&f'
       - '&7%REASON%&f'
       - ''
       - '&3&lItt fellebbezheted a büntetésed:&f'
-      - '&cWeboldal: &7https://discord.gg/7PysbY9FSGf&f'
-      - '&cDiscord: &7https://discord.gg/7PysbY9FSGf&f'
+      - '&cWeboldal: &7weboldalad linkje&f'
+      - '&cDiscord: &7https://discord.gg/meghívó kód&f'
     permission:
       duration: '&cNincs jogod hogy kitílts más játékosokat &e%DURATION%&c ideig.'
       both: '&cNincs jogod hogy IP cím alapján kitílts más játékosokat.'
@@ -127,8 +127,8 @@ additions:
 
   mutes:
     success:
-      notification: '&c&o%OPERATOR%&7 kitíltotta &c&o%VICTIM%&7 -t &a&o%DURATION%&7 ideig, &e&o%REASON%&7 okkal.'
-      message: '&c&o%VICTIM%&a ki lett kitíltva &o%DURATION%&r&a ideig, &e&o%REASON%&a okkal.'
+      notification: '&c&o%OPERATOR%&7 kitíltotta &c&o%VICTIM%&7 -t &a&o%DURATION%&7 ideig, &e&o%REASON%&7 indokkal.'
+      message: '&c&o%VICTIM%&a ki lett kitíltva &o%DURATION%&r&a ideig, &e&o%REASON%&a indokkal.'
 
     exempted: '&c&o%TARGET%&7 nem lehet némítva.'
     conflicting: '&c&o%TARGET%&7 már némítva.'
@@ -137,7 +137,7 @@ additions:
       - '&7&lNémítás&f'
       - '&cIdőtartam: &e%TIME_REMAINING%&f'
       - ''
-      - '&c&lOk&f'
+      - '&c&lIndok&f'
       - '&7%REASON%'
     permission:
       duration: '&cNincs jogod hogy némíts más játékosokat &e%DURATION%&c ideig.'
@@ -148,8 +148,8 @@ additions:
 
   kicks:
     success:
-      notification: '&c&o%OPERATOR%&7 kirúgta &c&o%VICTIM%&7 nevű játékost &e&o%REASON%&7 &aokkal.'
-      message: '&aA &c&o%VICTIM%&a játékos ki lett rugva &e&o%REASON%&a okkal.'
+      notification: '&c&o%OPERATOR%&7 kirúgta &c&o%VICTIM%&7 nevű játékost &e&o%REASON%&7 &aindokkal.'
+      message: '&aA &c&o%VICTIM%&a játékos ki lett rugva &e&o%REASON%&a indokkal.'
 
     must-be-online: '&c&o%TARGET%&7 online kell legyen.'
     exempted: '&c&o%TARGET%&7 nem lehet kirúgva.'
@@ -157,7 +157,7 @@ additions:
     layout:
       - '&7&lKirúgás&f'
       - ''
-      - '&c&lOk&f'
+      - '&c&lIndok&f'
       - '&7%REASON%'
     permission:
       both: '&cNincs jogod hogy IP cím alapján kirúgj más játékosokat.'
@@ -167,8 +167,8 @@ additions:
 
   warns:
     success:
-      notification: '&c&o%OPERATOR%&7 figyelmeztetett &c&o%VICTIM%&7 -t &a&o%DURATION%&7 ideig, &e&o%REASON%&7 okkal.'
-      message: '&aFigyelmeztetett &c&o%VICTIM%&a -t &o%DURATION%&r&a ideig, &e&o%REASON%&a okkal.'
+      notification: '&c&o%OPERATOR%&7 figyelmeztetett &c&o%VICTIM%&7 -t &a&o%DURATION%&7 ideig, &e&o%REASON%&7 indokkal.'
+      message: '&aFigyelmeztetett &c&o%VICTIM%&a -t &o%DURATION%&r&a ideig, &e&o%REASON%&a indokkal.'
 
     exempted: '&c&o%TARGET%&7 nem lehet figyelmeztetve.'
     usage: '&cHasználat: /warn &e<játékos> [idő] <ok>&c.'
@@ -176,7 +176,7 @@ additions:
       - '&7&lFigyelmeztetés&f'
       - '&cIdőtartam: &e%TIME_REMAINING%&f'
       - ''
-      - '&c&lOk&f'
+      - '&c&lIndok&f'
       - '&7%REASON%'
     permission:
       duration: '&cNincs jogod hogy figyelmeztetj más játékosokat &e%DURATION%&c ideig.'
@@ -465,7 +465,7 @@ removals:
     permission:
       both: '&cSzerintem ne csináld ezt.'
       ip-address: '&cNem szedhetsz le IP kitiltásokat más játékosokról.'
-      uuid: '&cNem szedhetsz le kitiltás(okat) más játékosokról.'
+      uuid: '&cNem szedhetsz le kitiltás(indokat) más játékosokról.'
 
 
   mutes:
