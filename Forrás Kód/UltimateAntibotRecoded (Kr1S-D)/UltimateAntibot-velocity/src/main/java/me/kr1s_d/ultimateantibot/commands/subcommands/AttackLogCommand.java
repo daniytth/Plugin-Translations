@@ -50,7 +50,7 @@ public class AttackLogCommand implements SubCommand {
 
             sender.sendMessage(Component.text("§8§l§n___________________________________________"));
             sender.sendMessage(Component.text(""));
-            sender.sendMessage(Component.text("§f§lRunning §c§lULTIMATE§F§L | ANTIBOT §r§7- V" + plugin.getVersion()));
+            sender.sendMessage(Component.text("§c§lULTIMATE§F§L | ANTIBOT §r§7- V" + plugin.getVersion())) + "§f§lfutattása";
             AttackLog attackLog = log.get();
             List<Component> messages = MessageManager.getMessageList("attack-log").stream().map(attackLog::replaceInformation).map(Utils::colora).collect(Collectors.toList());
             messages.forEach(sender::sendMessage);
@@ -58,15 +58,15 @@ public class AttackLogCommand implements SubCommand {
         }
 
         if(args[1].equals("list")) {
-            sender.sendMessage(Utils.colora(MessageManager.prefix + "&fHere is a list of the last &c" + value + " &fattacks"));
+            sender.sendMessage(Utils.colora(MessageManager.prefix + "&fItt található a legutóbbiak listája &c" + value + " &ftámadásoknak"));
             List<AttackLog> lastAttacks = plugin.getAttackTrackerService().getLastAttacks(value);
             if(lastAttacks.size() == 0) {
-                sender.sendMessage(Utils.colora(MessageManager.prefix + "&fThere are no attacks to show!"));
+                sender.sendMessage(Utils.colora(MessageManager.prefix + "&fNincsen támadások amit lehet megjeleníteni!"));
                 return;
             }
             for (AttackLog attack : lastAttacks) {
-                KComponentBuilder.interact("&c" + attack.getAttackDate() + " &7-> &f" + attack.getID() + " &7(&c" + attack.getAttackPower() +"&7) &7(&o&nHover me!&7)")
-                        .hover(HoverEvent.Action.SHOW_TEXT, "§a§n» Click to see more details!")
+                KComponentBuilder.interact("&c" + attack.getAttackDate() + " &7-> &f" + attack.getID() + " &7(&c" + attack.getAttackPower() +"&7) &7(&o&nVidd rám az egeret!&7)")
+                        .hover(HoverEvent.Action.SHOW_TEXT, "§a§n» Kattints hogy lásd a részleteket!")
                         .click(ClickEvent.Action.SUGGEST_COMMAND, "/uab logs info  + attack.getID()")
                         .send((Player) sender);
             }

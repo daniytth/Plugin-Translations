@@ -47,12 +47,12 @@ public class CheckIDCommand implements SubCommand {
         }
 
         TextComponent whitelistComponent = KComponentBuilder.interact("§a§l[WHITELIST]§f")
-                .hover(HoverEvent.Action.SHOW_TEXT, "§a§n» Click to WHITELIST this IP!")
+                .hover(HoverEvent.Action.SHOW_TEXT, "§a§n» Kattints hogy WHITELIST-tld az IP-t!!")
                 .click(ClickEvent.Action.SUGGEST_COMMAND, "/uab whitelist add " + profile.getIp().replace("/", ""))
                 .getComponent();
 
         TextComponent blacklistComponent = KComponentBuilder.interact("§c§l[BLACKLIST]§f")
-                .hover(HoverEvent.Action.SHOW_TEXT, "§c§n» Click to BLACKLIST this IP!")
+                .hover(HoverEvent.Action.SHOW_TEXT, "§c§n» Kattints hogy BLACKLIST-tld az IP-t!")
                 .click(ClickEvent.Action.SUGGEST_COMMAND, "/uab blacklist add " + profile.getIp().replace("/", ""))
                 .getComponent();
 

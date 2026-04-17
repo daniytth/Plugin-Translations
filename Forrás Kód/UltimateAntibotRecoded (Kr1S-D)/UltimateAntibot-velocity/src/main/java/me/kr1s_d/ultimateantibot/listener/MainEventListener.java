@@ -260,7 +260,7 @@ public class MainEventListener {
         String ip = Utils.getIP(e.getPlayer());
         //return in case is the first server connection and not a server switch
         if(!e.getPreviousServer().isPresent()) {
-            plugin.getLogHelper().debug("[EVENT] Server first connection for " + ip);
+            plugin.getLogHelper().debug("[EVENT] Szerver első csatlakozás: " + ip);
             return;
         }
 
@@ -271,7 +271,7 @@ public class MainEventListener {
             antiBotManager.getJoinCache().removeJoined(ip);
         }
 
-        plugin.getLogHelper().debug("[EVENT] Server switch for " + ip);
+        plugin.getLogHelper().debug("[EVENT] Szerver váltás: " + ip);
     }
 
     @Subscribe

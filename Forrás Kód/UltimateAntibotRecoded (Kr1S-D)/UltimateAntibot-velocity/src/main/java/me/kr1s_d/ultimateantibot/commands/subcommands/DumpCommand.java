@@ -28,30 +28,30 @@ public class DumpCommand implements SubCommand {
     @Override
     public void execute(CommandSource sender, String[] args) {
         PasteBinBuilder pasteBinBuilder = PasteBinBuilder.builder();
-        pasteBinBuilder.addLine("Name: " + UltimateAntiBotVelocity.getInstance().getServer().getVersion().getName());
-        pasteBinBuilder.addLine("Version: " + UltimateAntiBotVelocity.getInstance().getServer().getVersion().getVersion());
-        pasteBinBuilder.addLine("Online Count: " + Utils.calculatePlayerNames().size());
-        pasteBinBuilder.addLine("Plugins:");
+        pasteBinBuilder.addLine("Név: " + UltimateAntiBotVelocity.getInstance().getServer().getVersion().getName());
+        pasteBinBuilder.addLine("Verzió: " + UltimateAntiBotVelocity.getInstance().getServer().getVersion().getVersion());
+        pasteBinBuilder.addLine("Online Mennyiség: " + Utils.calculatePlayerNames().size());
+        pasteBinBuilder.addLine("Pluginok:");
         for (PluginContainer plugin : UltimateAntiBotVelocity.getInstance().getServer().getPluginManager().getPlugins()) {
             if (plugin.getDescription().getName().orElse("").contains("Protocol") || plugin.getDescription().getName().orElse("").contains("Geyser")) {
-                pasteBinBuilder.addLine(plugin.getDescription().getName() + " - " + plugin.getDescription().getVersion() + " - It could cause problems!");
+                pasteBinBuilder.addLine(plugin.getDescription().getName() + " - " + plugin.getDescription().getVersion() + " - Problémákat okozhat!");
             } else {
                 pasteBinBuilder.addLine(plugin.getDescription().getName() + " - " + plugin.getDescription().getVersion());
             }
         }
-        pasteBinBuilder.addLine("Plugin Info:");
-        pasteBinBuilder.addLine("Version: " + plugin.getVersion());
-        pasteBinBuilder.addLine("Whitelist Size: " + plugin.getAntiBotManager().getWhitelistService().size());
-        pasteBinBuilder.addLine("Blacklist Size: " + plugin.getAntiBotManager().getBlackListService().size());
-        pasteBinBuilder.addLine("Users: " + plugin.getUserDataService().size());
+        pasteBinBuilder.addLine("Plugin Információ:");
+        pasteBinBuilder.addLine("Verzió: " + plugin.getVersion());
+        pasteBinBuilder.addLine("Whitelist Mérete: " + plugin.getAntiBotManager().getWhitelistService().size());
+        pasteBinBuilder.addLine("Blacklist Mérete: " + plugin.getAntiBotManager().getBlackListService().size());
+        pasteBinBuilder.addLine("Felhasznűlók: " + plugin.getUserDataService().size());
         plugin.runTask(pasteBinBuilder::pasteSync, true);
         pasteBinBuilder.pasteSync();
-        sender.sendMessage(Utils.colora(MessageManager.prefix + "&fsending request to server, wait please..."));
+        sender.sendMessage(Utils.colora(MessageManager.prefix + "&fKérés küldése a szervernek, kérlek várj..."));
         plugin.scheduleDelayedTask(() -> {
             if (pasteBinBuilder.isReady()) {
-                sender.sendMessage(Utils.colora(MessageManager.prefix + "&fDump is ready: &n" + pasteBinBuilder.getUrl() + "&f &7(It will reset in a week!)"));
+                sender.sendMessage(Utils.colora(MessageManager.prefix + "&fDump készen áll: &n" + pasteBinBuilder.getUrl() + "&f &7(Vissza áll egy hét múlva!)"));
             }else{
-                sender.sendMessage(Utils.colora(MessageManager.prefix + "&fUnable to complete request, try later..."));
+                sender.sendMessage(Utils.colora(MessageManager.prefix + "&fA kérés nem hajtható végre, kérjük, próbálja meg később..."));
             }
         }, true, 2500L);
     }

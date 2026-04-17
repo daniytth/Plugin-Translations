@@ -39,8 +39,8 @@ public class ConnectionProfileCommand implements SubCommand {
     public void execute(CommandSource sender, String[] args) {
         ConnectionProfile pro = getFromNickName(args[1]);
         if(pro == null) {
-            sender.sendMessage(Utils.colora(MessageManager.prefix + "&fUnable to find the player &c" + args[1]));
-            sender.sendMessage(Utils.colora("&7This command supports offline profiles so make sure you spell the player's name correctly (including uppercase and lowercase letters)"));
+            sender.sendMessage(Utils.colora(MessageManager.prefix + "&fNem sikerült megtalálni a játékost: &c" + args[1]));
+            sender.sendMessage(Utils.colora("&7Ez a parancs támogatja az offline profilokat, ezért ügyeljen arra, hogy a játékos nevét helyesen írja be (a nagy- és kisbetűket is figyelembe véve)"));
             return;
         }
 
@@ -50,31 +50,31 @@ public class ConnectionProfileCommand implements SubCommand {
 
         sender.sendMessage(Component.text("§8§l§n___________________________________________"));
         sender.sendMessage(Component.text(""));
-        sender.sendMessage(Component.text("§f§lRunning §c§lULTIMATE§F§L | ANTIBOT §r§7- V" + plugin.getVersion()));
+        sender.sendMessage(Component.text("§c§lULTIMATE§F§L | ANTIBOT §r§7- V" + plugin.getVersion())) + "§f§lfutattása";
         sender.sendMessage(Component.text(""));
         sender.sendMessage(Utils.colora("&cIP &7» &c" + pro.getIP()));
-        sender.sendMessage(Utils.colora("&cCurrent Name &7» &c" + pro.getCurrentNickName()));
-        sender.sendMessage(Utils.colora("&cFirst Join &7» &c" + TimeUtil.convertSeconds(pro.getSecondsFromFirstJoin())));
-        sender.sendMessage(Utils.colora("&cLast Join &7» &c" + TimeUtil.convertSeconds(pro.getSecondsFromLastJoin())));
-        sender.sendMessage(Utils.colora("&cScore &7» &c" + pro.getConnectionScore()));
-        sender.sendMessage(Utils.colora("&cTime Played &7» &c" + TimeUtil.convertSeconds(TimeUnit.MINUTES.toSeconds(pro.getMinutePlayed()))));
-        sender.sendMessage(Utils.colora("&fLast Nicknames: "));
+        sender.sendMessage(Utils.colora("&cJelenleg Név &7» &c" + pro.getCurrentNickName()));
+        sender.sendMessage(Utils.colora("&cElső Belépés &7» &c" + TimeUtil.convertSeconds(pro.getSecondsFromFirstJoin())));
+        sender.sendMessage(Utils.colora("&cUtólsó Belépés &7» &c" + TimeUtil.convertSeconds(pro.getSecondsFromLastJoin())));
+        sender.sendMessage(Utils.colora("&cPontszám &7» &c" + pro.getConnectionScore()));
+        sender.sendMessage(Utils.colora("&cJátékidő &7» &c" + TimeUtil.convertSeconds(TimeUnit.MINUTES.toSeconds(pro.getMinutePlayed()))));
+        sender.sendMessage(Utils.colora("&fUtólsó Becenevek: "));
         for (NickNameEntry s : nickHistory) {
-            sender.sendMessage(Utils.colora("&f» &c" + s.getName() + " &7(" + TimeUtil.convertSeconds(s.getSecondsFromLastJoin()) + " ago)"));
+            sender.sendMessage(Utils.colora("&f» &c" + s.getName() + " &7(" + TimeUtil.convertSeconds(s.getSecondsFromLastJoin()) + " előtt)"));
         }
-        sender.sendMessage(Utils.colora("&fLast IPs: "));
+        sender.sendMessage(Utils.colora("&fUtólsó IPk: "));
         for (IpEntry s : ipHistory) {
-            sender.sendMessage(Utils.colora("&f» &c" + s.getIP() + " &7(" + TimeUtil.convertSeconds(s.getSecondsFromLastJoin()) + " ago)"));
+            sender.sendMessage(Utils.colora("&f» &c" + s.getIP() + " &7(" + TimeUtil.convertSeconds(s.getSecondsFromLastJoin()) + " előtt)"));
         }
 
         if(ConfigManger.isDebugModeOnline) {
-            sender.sendMessage(Utils.colora("&fScore stats:"));
+            sender.sendMessage(Utils.colora("&fPontszám Statisztika:"));
             for (ScoreTracker.ScoreAddition s : pro.getScoreTracker().getAdditionList()) {
                 sender.sendMessage(Utils.colora("&f» &c" + s.toString()));
             }
         }
         sender.sendMessage(Component.text("§8§l§n___________________________________________"));
-        sender.sendMessage(Utils.colora("&7PS: If you see that you are suspected as a bot at the beginning it is normal, don't worry, at the beginning all players have a minimum level of suspicion for safety which should not cause problems with the default config."));
+        sender.sendMessage(Utils.colora("&7PS: Ha az elején azt látod, hogy botnak gyanúsítanak, az teljesen normális, ne aggódj! Az elején minden játékosra biztonsági okokból minimális gyanú szintet állítanak be, ami az alapbeállítások mellett nem okozhat problémát."));
     }
 
     @Override

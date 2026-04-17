@@ -34,14 +34,14 @@ public class PacketCheckVelocity {
 
         for (String invalidPlugin : invalidPlugins) {
             if (UltimateAntiBotVelocity.getInstance().getServer().getPluginManager().getPlugin(invalidPlugin).orElse(null) != null) {
-                iAntiBotPlugin.getLogHelper().warn("The packet check has been automatically disabled to prevent false positives given by the presence of the plugin " + invalidPlugin + " (which could alter its correct functioning)");
+                iAntiBotPlugin.getLogHelper().warn("A csomagellenőrzés automatikusan kikapcsolásra került, hogy elkerüljék a plugin jelenléte miatt fellépő téves riasztásokat " + invalidPlugin + " (ami befolyásolhatja a megfelelő működését)");
                 ConfigManger.getPacketCheckConfig().setEnabled(false);
             }
         }
 
         if (isEnabled()) {
             loadTask();
-            plugin.getLogHelper().debug("Loaded " + this.getClass().getSimpleName() + "!");
+            plugin.getLogHelper().debug("Betöltve " + this.getClass().getSimpleName() + "!");
         }
     }
 
@@ -77,7 +77,7 @@ public class PacketCheckVelocity {
             suspected.removeIf(packetReceived::contains);
 
             if (suspected.size() >= ConfigManger.getPacketCheckConfig().getTrigger()) {
-                iAntiBotPlugin.getLogHelper().debug("Packet Check Executed!");
+                iAntiBotPlugin.getLogHelper().debug("Packet Check Végrehajtva!");
                 Utils.disconnectAll(new ArrayList<>(suspected), MessageManager.getSafeModeMessage());
                 for (String ip : new ArrayList<>(suspected)) {
                     if (ConfigManger.getPacketCheckConfig().isBlacklist()) {
@@ -88,7 +88,7 @@ public class PacketCheckVelocity {
                     antibotManager.enableSlowAntiBotMode();
                 }
                 suspected.clear();
-                iAntiBotPlugin.getLogHelper().debug("[UAB DEBUG] Detected attack on PacketCheck!");
+                iAntiBotPlugin.getLogHelper().debug("[UAB DEBUG] Támadás észlelve PacketCheck-kel!");
             }
         }, false, 2500L);
     }

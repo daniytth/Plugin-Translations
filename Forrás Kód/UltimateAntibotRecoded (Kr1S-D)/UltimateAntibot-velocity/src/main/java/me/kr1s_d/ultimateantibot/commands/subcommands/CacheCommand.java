@@ -27,8 +27,8 @@ public class CacheCommand implements SubCommand {
                 break;
             case "clear":
                 CheckService.clearCheckCache();
-                commandSender.sendMessage(Utils.colora(MessageManager.prefix + "&fThe &c&lUAB &fcache has been cleared!"));
-                commandSender.sendMessage(Utils.colora(MessageManager.prefix + "&7PS: The cache of the various checks is cleaned periodically, except that of the first-join which is permanent. Running this command does not improve or worsen the functioning of the antibot in any way!"));
+                commandSender.sendMessage(Utils.colora(MessageManager.prefix + "&fAz &c&lUAB &fcache törölve lett!"));
+                commandSender.sendMessage(Utils.colora(MessageManager.prefix + "&7PS: A cache A különböző ellenőrzések adatai rendszeresen törlődnek, kivéve az első csatlakozáskor rögzített adatokat, amelyek véglegesen megmaradnak. A parancs futtatása semmilyen módon nem javítja vagy rontja az antibot működését!"));
         }
     }
 

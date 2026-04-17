@@ -30,7 +30,7 @@ public class ToggleNotificationCommand implements SubCommand {
                     if(((Player) sender).getProtocolVersion().getProtocol() > 106) {
                         Notificator.toggleBossBar((Player) sender);
                     }else {
-                        sender.sendMessage(Utils.colora(MessageManager.prefix + "&cBossbar&f notifications are not supported on &c1.8.x!"));
+                        sender.sendMessage(Utils.colora(MessageManager.prefix + "&cBossbar&f értesítések nem támogatottak &c1.8-as verziókon!"));
                     }
                 } else {
                     sender.sendMessage(Utils.colora(MessageManager.prefix + MessageManager.commandWrongArgument));

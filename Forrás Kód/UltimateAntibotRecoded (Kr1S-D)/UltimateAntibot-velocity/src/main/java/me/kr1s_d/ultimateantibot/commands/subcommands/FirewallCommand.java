@@ -27,14 +27,14 @@ public class FirewallCommand implements SubCommand {
         FirewallService service = iAntiBotPlugin.getFirewallService();
         sender.sendMessage(Component.text("§8§l§n___________________________________________"));
         sender.sendMessage(Component.text(""));
-        sender.sendMessage(Component.text("§f§lRunning §c§lULTIMATE§F§L | ANTIBOT §r§7- V" + iAntiBotPlugin.getVersion()));
+        sender.sendMessage(Component.text("§c§lULTIMATE§F§L | ANTIBOT §r§7- V" + iAntiBotPlugin.getVersion())) + "§f§lfutattása";
         sender.sendMessage(Component.text(""));
-        sender.sendMessage(Utils.colora("&cFirewall status: &f%status%".replace("%status%", service.getFirewallStatus())));
+        sender.sendMessage(Utils.colora("&cTűzfal Állapota: &f%status%".replace("%status%", service.getFirewallStatus())));
         sender.sendMessage(Component.text(""));
-        sender.sendMessage(Utils.colora("&cIP in queue:&f %queue%".replace("%queue%", String.valueOf(service.getIPQueue()))));
-        sender.sendMessage(Utils.colora("&cIP blacklisted:&f %blacklist%".replace("%blacklist%", String.valueOf(service.getBlacklistedIP()))));
+        sender.sendMessage(Utils.colora("&cIP a Várólistán:&f %queue%".replace("%queue%", String.valueOf(service.getIPQueue()))));
+        sender.sendMessage(Utils.colora("&cIP Feketelistázva:&f %blacklist%".replace("%blacklist%", String.valueOf(service.getBlacklistedIP()))));
         sender.sendMessage(Component.text(""));
-        sender.sendMessage(Utils.colora("&cThe attack will be mitigated when all IPs have been blocked!"));
+        sender.sendMessage(Utils.colora("&cA támadás hatása csökkenni fog, miután az összes IP-címet letiltották!"));
         sender.sendMessage(Component.text("§8§l§n___________________________________________"));
     }
 

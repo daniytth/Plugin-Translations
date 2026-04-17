@@ -48,7 +48,7 @@ public class AuthCheckVelocity {
         this.runningTasks = new HashMap<>();
         this.checkInitiator = new HashMap<>();
         this.VPNService = plugin.getVPNService();
-        plugin.getLogHelper().debug("Loaded " + this.getClass().getSimpleName() + "!");
+        plugin.getLogHelper().debug("Betöltve " + this.getClass().getSimpleName() + "!");
     }
 
 
@@ -76,7 +76,7 @@ public class AuthCheckVelocity {
         }
         //se ha superato il numero massimo di ping allora lo aggiunge nei fails
         if (hasExceededPingLimit(ip)) {
-            increaseFails(ip, "Unable to get player name during ping event on velocity");
+            increaseFails(ip, "A Velocity rendszerben a ping esemény során nem sikerült lekérdezni a játékos nevét");
             resetData(ip);
         }
     }

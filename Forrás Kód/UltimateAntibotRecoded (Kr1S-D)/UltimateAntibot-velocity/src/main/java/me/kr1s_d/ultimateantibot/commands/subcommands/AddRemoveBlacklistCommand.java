@@ -50,7 +50,7 @@ public class AddRemoveBlacklistCommand implements SubCommand {
         }
 
         if(!StringUtil.isValidIPv4(args[2])) {
-            sender.sendMessage(Utils.colora(MessageManager.prefix + "&FThe IP entered is invalid or the player's name is not present in the database"));
+            sender.sendMessage(Utils.colora(MessageManager.prefix + "&FA megadott IP-cím érvénytelen, vagy a játékos neve nem szerepel az adatbázisban"));
             return;
         }
 
@@ -62,7 +62,7 @@ public class AddRemoveBlacklistCommand implements SubCommand {
             iAntiBotManager.getWhitelistService().unWhitelist("/" + args[2]);
             plugin.disconnect("/" + args[2], MessageManager.getBlacklistedMessage(iAntiBotManager.getBlackListService().getProfile("/" + args[2])));
             sender.sendMessage(Utils.colora(MessageManager.prefix + MessageManager.getCommandAdded(args[2], "blacklist")));
-            sender.sendMessage(Utils.colora(MessageManager.prefix + "&7PS: The IP has been removed from the whitelist as it has been blacklisted!"));
+            sender.sendMessage(Utils.colora(MessageManager.prefix + "&7PS: Az IP-címet eltávolítottuk a whitelistről, mivel blacklistre került!"));
         } else {
             if (args[1].equalsIgnoreCase("remove")) {
                 iAntiBotManager.getBlackListService().unBlacklist( "/" + args[2]);
