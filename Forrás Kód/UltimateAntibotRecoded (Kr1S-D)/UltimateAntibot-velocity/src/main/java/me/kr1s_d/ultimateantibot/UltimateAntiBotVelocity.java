@@ -115,7 +115,7 @@ public class UltimateAntiBotVelocity implements IAntiBotPlugin, IServerPlatform 
         }
         //Version.init(this);
         //new Metrics(this, 11712);
-        this.logHelper.info("&cUltimateAntiBot §f betöltése...");
+        this.logHelper.info("&cUltimateAntiBot §fbetöltése...");
         this.firewallService = new FirewallService(this);
         this.VPNService = new VPNService(this);
         this.VPNService.load();
