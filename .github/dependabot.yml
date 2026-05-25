@@ -7,13 +7,13 @@ version: 2
 updates:
   # Configuration for Maven projects
   - package-ecosystem: "maven"
-    directory: "/"
+    directory: "/Forrás Kód"
     schedule:
       interval: "weekly"
 
   # Configuration for Gradle projects
   - package-ecosystem: "gradle"
-    directory: "/"
+    directory: "/Forrás Kód"
     schedule:
       interval: "weekly"
 
