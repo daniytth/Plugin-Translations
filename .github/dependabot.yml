@@ -5,7 +5,15 @@
 
 version: 2
 updates:
-  - package-ecosystem: "java" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  # Configuration for Maven projects
+  - package-ecosystem: "maven"
+    directory: "/"
     schedule:
       interval: "weekly"
+
+  # Configuration for Gradle projects
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
