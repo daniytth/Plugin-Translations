@@ -1,0 +1,8 @@
+name: AxCrates
+version: '${project.version}'
+main: com.artillexstudios.axcrates.AxCrates
+api-version: '1.20'
+folia-supported: true
+
+softdepend:
+  - PlaceholderAPI

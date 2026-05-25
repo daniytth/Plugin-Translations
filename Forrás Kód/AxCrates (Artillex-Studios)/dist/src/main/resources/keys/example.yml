@@ -1,0 +1,11 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axcrates.html
+# ITEM BUILDER: https://docs.artillex-studios.com/item-builder.html
+
+item:
+  material: TRIPWIRE_HOOK
+  name: "&#FF4400Példa &fKulcs"
+  glow: true
+  lore:
+    - "&#DDDDDD🔑 Láda Kulcs"
+    - " "
+    - "&#FF4400&l(!) &#FF4400Használd egy ládán."

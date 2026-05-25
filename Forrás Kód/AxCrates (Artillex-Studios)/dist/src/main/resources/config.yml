@@ -1,0 +1,73 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axcrates.html
+
+prefix: "&#FF4400&lAxCrates &7» "
+
+database:
+  # h2, mysql, postgresql
+  # for single server setups we recommend h2
+  type: "h2"
+
+  # you only need to touch these when using mysql/postgresql
+  address: 127.0.0.1
+  port: 3306
+  database: admin
+  username: admin
+  password: "admin"
+  pool:
+    maximum-pool-size: 10
+    minimum-idle: 10
+    maximum-lifetime: 1800000
+    keepalive-time: 0
+    connection-timeout: 5000
+
+# format: language_COUNTRY
+# after changing this, the server will download the default item names
+language: hu
+
+# if the player can't open a crate because they are missing a item or some requirement, then this will be applied
+knockback-strength:
+  forwards: 0.8
+  upwards: 0.3
+
+# if disabled, the players whole inventory will be checked for keys
+# only used for placed crates
+force-key-in-hand: true
+
+# if enabled, with shift click you can open all the keys that you have on you
+multi-opening:
+  enabled: true
+  # the maximum amount of keys that you can open at once
+  max: 64
+
+# if the placed crate block is a chest, barrel or a shulker box, should the block be opened for a bit?
+actually-open-container:
+  enabled: true
+  # should the reward item be shown? this will not work if there are multiple tiers/rewards
+  show-reward: true
+  # how long should it stay open? 1 second = 1000 miliseconds
+  open-time-miliseconds: 3000
+
+# should players be able to open crates with their inventory full?
+allow-opening-with-full-inventory: false
+
+# settings for holograms displays
+holograms:
+  # set to 00000000 to make it invisible
+  # format (hexadecimal): AARRGGBB
+  background-color: 00000000
+  # list: left, right, center
+  alignment: center
+  # list: fixed, vertical, horizontal, center
+  billboard: vertical
+  # should blocks/entities be visible behind the displays?
+  see-through: false
+
+# should be plugin notify you if there is a new update?
+update-notifier:
+  # if enabled, it will display the message in the console
+  enabled: true
+  # if enabled, it will broadcast the update message to all players who have the <plugin-name>.update-notify permission
+  on-join: true
+
+# do not change this
+version: 2

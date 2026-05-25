@@ -1,0 +1,66 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axcrates.html
+# ITEM BUILDER: https://docs.artillex-studios.com/item-builder.html
+
+title: "%crate%"
+# a gui can have 1-6 rows
+rows: 6
+# how many items should be shown on a single page?
+page-size: 36
+
+# ----- REWARDS -----
+
+# the lore of rewards
+reward:
+  - "%lore%"
+  - " "
+  - "&#FF4400&l> &#FF4400Tier &8- &#FF4400%tier%"
+  - "&#FF4400&l> &#FF4400Esély &8- &#FF4400%chance%%"
+
+# ----- ITEMS -----
+
+filler:
+  slot:
+  - "0-8"
+  - "45-53"
+  material: "RED_STAINED_GLASS_PANE"
+  name: " "
+
+# this item will only show if there are at least 2 pages
+previous-page:
+  slot: 47
+  material: "ARROW"
+  name: "&#FF4400&lElőző Oldal"
+  lore:
+    - " "
+    - "&#FF4400&l> &#FF4400Kattintás &8- &#FF4400Előző Oldal"
+  # list of sounds: https://www.digminecraft.com/lists/sound_list_pc.php
+  # the sound played when clicking this item
+  # set to "" to disable
+  sound: "ui.button.click"
+
+close:
+  slot: 49
+  material: "RED_CANDLE"
+  name: "&#FF4400&lBezárás"
+  lore:
+    - " "
+    - "&#FF4400&l> &#FF4400Kattintás &8- &#FF4400Menű Bezárása"
+  sound: "ui.button.click"
+
+# this item will only show if there are at least 2 pages
+next-page:
+  slot: 51
+  material: "ARROW"
+  name: "&#FF4400&lKövetkező Oldal"
+  lore:
+    - " "
+    - "&#FF4400&l> &#FF4400Kattintás &8- &#FF4400Következző Oldal"
+  sound: "ui.button.click"
+
+#decoration-example:
+#  slot: 13
+#  material: IRON_INGOT
+#  name: '&eDECORATION'
+#  lore:
+#    - ' '
+#    - ' &fWoah, what a cool decoration!'

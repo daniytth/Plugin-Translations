@@ -1,0 +1,78 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axcrates.html
+# ITEM BUILDER: https://docs.artillex-studios.com/item-builder.html
+
+# we recommend using the /axcrates editor to change these settings!
+
+# used for placeholders
+name: ""
+# only used for the editor
+material: CHEST
+
+key:
+  # there are currently 2 modes:
+  #   crate - the item requires a crate to be placed in the world to open
+  #   lootbox - the item can be right-clicked anywhere to open the crate
+  mode: "crate"
+  # keys that will open this chest
+  allowed: []
+
+# set to "NONE" to disable previews
+# you can find all (or create new) configured templates in the AxCrates/previews folder
+preview-template: "red"
+
+# set to "NONE" to disable
+# list of valid animations: <not done yet>
+open-animation: "NONE"
+
+# list of valid actions: <not done yet>
+open-actions:
+  - "[sound] entity_player_levelup,0.5,0.2"
+
+## uncomment section to use
+#open-requirements:
+#  - "[permission] your.permission.node"
+#  - "[!permission] the.permission.you.dont.want" # You can use a ! to negate the expression
+#  - "[world] world|world2"
+#  - "[placeholder] %player_name%=Karcsi"
+
+# only useful if the item-mode is set to 'crate' mode (it also works in lootbox mode as a preview)
+placed:
+  texture:
+    # enable model support?
+    enabled: false
+    # which model plugin should we use?
+    # list of supported plugins: <not done yet>
+    mode: "modelengine"
+    # name of the model
+    model: "some-model"
+    # rotation in degrees
+    rotation: 0
+    # leave "" if you don't have animations
+    open-animation: ""
+    close-animation: ""
+  hologram:
+    enabled: true
+    location-offset:
+      x: 0.0
+      y: 1.0
+      z: 0.0
+    lines:
+      - '%crate%'
+      - '&#FF4400Bal Kattintás &7- &fElőznézet'
+      - '&#FF4400Jobb Kattintás &7- &fNyitás'
+  particles:
+    enabled: true
+    # list of valid animations: <not done yet>
+    animation: SIMPLE
+    # list of valid particles: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+    # or dust format: REDSTONE;<RED>;<GREEN>;<BLUE>;[SIZE]
+    particle: "REDSTONE;255;68;0;1.0"
+  # should the knockback be enabled?
+  knockback: true
+  locations: []
+
+# you should use the gui editor to modify this!
+rewards:
+  # these are tiers, they are mostly useful for lootboxes
+  "basic":
+    - roll-amount: 1

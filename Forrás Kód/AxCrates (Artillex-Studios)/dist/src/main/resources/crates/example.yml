@@ -1,0 +1,110 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axcrates.html
+# ITEM BUILDER: https://docs.artillex-studios.com/item-builder.html
+
+# used for placeholders
+name: "&#FF4400Példa &fLáda"
+# only used for the editor
+material: chest
+
+key:
+  # there are currently 2 modes:
+  #   crate - the item requires a crate to be placed in the world to open
+  #   lootbox - the item can be right-clicked anywhere to open the crate
+  mode: "crate"
+  # keys that will open this chest
+  allowed:
+    - "example"
+
+# set to "" to disable
+# list of valid animations: <not done yet>
+open-animation: ""
+
+# set to "" to disable
+preview-template: "red"
+
+# list of valid actions: <not done yet>
+open-actions:
+  - "[firework] #FF4400,ball"
+  - "[sound] entity_player_levelup,0.5,0.2"
+  - "[broadcast] &#FFAAAA%player% &fKinyitotta a(z) %crate%&f!"
+  - "[cooldown] 10000"
+
+## uncomment section to use
+#open-requirements:
+#  - "[permission] your.permission.node"
+#  - "[!permission] the.permission.you.dont.want" # You can use a ! to negate the expression
+#  - "[world] world|world2"
+#  - "[placeholder] %player_name%=Karcsi"
+
+# only useful if the item-mode is set to 'crate' mode (it also works in lootbox mode as a preview)
+placed:
+  texture:
+    # requires modelengine
+    enabled: false
+    # supported plugins: modelengine v3
+    mode: "modelengine"
+    model: "some-model"
+    rotation: 0
+    # leave "" if you don't have animations
+    open-animation: ""
+    close-animation: ""
+  hologram:
+    enabled: true
+    location-offset:
+      x: 0.0
+      y: 0.75
+      z: 0.0
+    lines:
+      - '%crate%'
+      - '&#FF4400Bal Kattintás &7- &fElőző'
+      - '&#FF4400Jobb Kattintás &7- &fNyitás'
+  particles:
+    enabled: true
+    # list of valid animations: <not done yet>
+    animation: SIMPLE
+    # should the animation be reversed after it ends? this makes every animation look smooth
+    # this may not look great with some animations
+    reverse: true
+    # should the whole animation be played backwards?
+    backwards: false
+    # speed multiplier
+    # default is 1.0, which is 100% speed
+    # set to 1.5 to make it 50% faster
+    # set to 0.5 to make it 50% slower
+    speed: 1.0
+    # list of valid particles: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+    # or dust format: REDSTONE;<RED>;<GREEN>;<BLUE>;[SIZE]
+    particle: "REDSTONE;255;68;0;1.0"
+  # should the knockback be enabled?
+  knockback: true
+  locations: []
+
+# you should use the gui editor to modify this!
+rewards:
+  # these are tiers, they are mostly useful for lootboxes
+  "Basic":
+    - roll-amount: 1
+    - chance: 10.0
+      items:
+        - amount: 1
+          material: diamond
+      commands:
+        - "give %player% diamond 1"
+    - chance: 25.0
+      items:
+        - amount: 1
+          material: iron_ingot
+          name: "&#FFFF00Láda Vas"
+  "Legendary":
+    - roll-amount: 1
+    - chance: 50.0
+      items:
+        - amount: 5
+          material: diamond
+      commands:
+        - "give %player% diamond 5"
+    - chance: 25.0
+      items:
+        - amount: 5
+          material: iron_ingot
+          name: "&#FFFF00Láda Vas"

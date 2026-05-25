@@ -1,0 +1,97 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axcrates.html
+
+help:
+  - "&#FF4400&lAxCrates &7» &#FFAAAASegítség:"
+  - " "
+  - "  &7⋆ &f/axcrates reload &7| &#FFAAAAKonfiguráció újratöltése."
+  - "  &7⋆ &f/axcrates editor &7| &#FFAAAASzerkesztő megnyitása"
+  - "  &7⋆ &f/axcrates give <player> <key> [amount] [-silent] [-virtual] &7| &#FFAAAASzerkesztp megnyitása"
+  - "  &7⋆ &f/axcrates take <player> <key> [amount] [--physical] &7| &#FFAAAAKulcsok eltávolítása"
+  - "  &7⋆ &f/axcrates transfer <player> <key> [amount] &7| &#FFAAAAVirtuális kulcsok átadása egy másik játékosnak"
+  - "  &7⋆ &f/axcrates keys [player] &7| &#FFAAAAEllenőrizze a lejátszó virtuális gombjait"
+  - "  &7⋆ &f/axcrates drop location <key> <world> <x> <y> <z> [amount] [--withVelocity] &7| &#FFAAAATárgy dobása"
+  - "  &7⋆ &f/axcrates drop entity <key> <entity> [amount] [--withVelocity] &7| &#FFAAAATárgy dobása"
+  - "  &7⋆ &f/axcrates show <crate> [player] &7| &#FFAAAALáda előnézet megtekintése"
+  - "  &7⋆ &f/axcrates open <crate> <player> [amount] [--force] &7| &#FFAAAANyisd meg a ládát a játékos számára"
+  - "  &7⋆ &f/axcrates convert <plugin> &7| &#FFAAAAAdatok konvertálása egy másik pluginból"
+
+reload:
+  success: "&#33FF33Plugin successfully reloaded!"
+  failed: "&#FF3333Failed to reload the plugin! Something is wrong in the &f%file%&#FF3333 file, look in the console or use a yaml validator to fix the errors!"
+
+reward:
+  single: "&#FFAAAAYou have opened a &f%crate% &#FFAAAAand got &f%reward%&#FFAAAA!"
+  multiple:
+    main:
+      - "&#FFAAAAYou have opened a &f%crate% &#FFAAAAand got:"
+      - " "
+      - "%tiers%" # this will be replaced by the tiers
+      - " "
+      - "&#FFAAAAstore.example.com"
+    tier:
+      - "&#FFAAAA%tier% Tier &#DDDDDD(%amount%)"
+      - "%rewards%" # this will be replaced by the rewards
+    reward: " &#DDDDDD- &f%reward%"
+
+# hologram used by some opening animations
+animation-hologram:
+  - "%crate%"
+  - "&#FFAAAAOpened by &#FF4400%player%"
+  - "&#DDDDDDstore.example.com"
+
+key:
+  give:
+    staff: "&#FFAAAAYou have given &f%amount%x %key% &#FFAAAAto &f%player%&#FFAAAA!"
+    player: "&#FFAAAAYou have been given &f%amount%x %key%&#FFAAAA!"
+  take:
+    staff: "&#FFAAAAYou have taken &f%amount%x %key% &#FFAAAAfrom &f%player%&#FFAAAA!"
+    player: "&f%amount%x %key% &#FFAAAAwere taken from you!"
+    not-enough: "&f%player% &#FFAAAAdoesn't have &f%amount%x %key% &#FFAAAAkeys!"
+  transfer:
+    sender: "&#FFAAAAYou have transferred &f%amount%x %key% &#FFAAAAto &f%player%&#FFAAAA!"
+    receiver: "&#FFAAAAYou have received &f%amount%x %key% &#FFAAAAfrom &f%player%&#FFAAAA!"
+    not-enough: "&#FFAAAAYou don't have &f%amount%x %key% &#FFAAAAkeys!"
+
+virtual-keys:
+  self:
+    - " "
+    - "&#FFAAAAYour virtual keys:"
+    - "%keys%" # this will be replaced by the 'key' section
+    - " "
+  other:
+    - " "
+    - "&#FFAAAAVirtual keys of &f%player%&#FFAAAA:"
+    - "%keys%"
+    - " "
+  key: " &#AAAAAA「&f%amount%x&#AAAAAA」 %key%"
+  no-keys: " &#DDDDDDNo virtual keys."
+
+errors:
+  inventory-full: "&#FFAAAAYour inventory is full!"
+  no-key: "&#FFAAAAYou don't have any keys for the &f%crate%&#FFAAAA!"
+  no-preview: "&#FFAAAAThe &f%crate% &#FFAAAAdoesn't have a preview!"
+  no-rewards: "&#FFAAAAThe &f%crate% &#FFAAAAdoesn't have any rewards!"
+
+# this is used when for example someone runs /axcrates give @a
+x-players: "%amount% players"
+
+editor:
+  invalid-material: "&#FFAAAAInvalid material! You must use an existing material by their in-game name."
+  only-one-tier: "&#FFAAAAThere is currently only one tier set up. Create one by shift clicking!"
+  hold-something: "&#FFAAAAYou must hold an item in your cursor when clicking!"
+  removed-location: "&#FFAAAAYou have removed the crate from the block."
+
+commands:
+  invalid-value: "&#FF0000Invalid parameter: &#BB0000%value%"
+  invalid-command: "&#FF0000Invalid command or subcommand!"
+  missing-argument: "&#FF0000Missing argument! You must specify a value for &#BB0000%value%&#FF0000."
+  no-permission: "&#FF0000You don't have permission to access this command!"
+  out-of-range: "&#FF0000The &#BB0000%number% &#FF0000must be between &#BB0000%min% &#FF0000and &#BB0000%max%&#FF0000!"
+  player-only: "&#FF0000You must be a player to use this command!"
+  invalid-player: "&#FF0000The player &#BB0000%player% &#FF0000can not be found!"
+  invalid-selector: "&#FF0000You can not use this selector in this command!"
+
+update-notifier: "&#FFAAAAThere is a new version of AxCrates available! &#DDDDDD(&#FFFFFFcurrent: &#FF0000%current% &#DDDDDD| &#FFFFFFlatest: &#00FF00%latest%&#DDDDDD)"
+
+# do not change this
+version: 1
