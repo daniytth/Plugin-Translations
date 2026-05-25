@@ -7,13 +7,21 @@ version: 2
 updates:
   # Configuration for Maven projects
   - package-ecosystem: "maven"
-    directory: "/Forrás Kód"
+    directory: "/Forrás Kód/UltimateAntibotRecoded (Kr1S-D)/UltimateAntibot-bungeecord"
     schedule:
       interval: "weekly"
 
-  # Configuration for Gradle projects
-  - package-ecosystem: "gradle"
-    directory: "/Forrás Kód"
+  - package-ecosystem: "maven"
+    directory: "/Forrás Kód/UltimateAntibotRecoded (Kr1S-D)/UltimateAntibot-common"
     schedule:
       interval: "weekly"
 
+  - package-ecosystem: "maven"
+    directory: "/Forrás Kód/UltimateAntibotRecoded (Kr1S-D)/UltimateAntibot-spigot"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "maven"
+    directory: "/Forrás Kód/UltimateAntibotRecoded (Kr1S-D)/UltimateAntibot-velocity"
+    schedule:
+      interval: "weekly"
