@@ -25,3 +25,14 @@ updates:
     directory: "/Forrás Kód/UltimateAntibotRecoded (Kr1S-D)/UltimateAntibot-velocity"
     schedule:
       interval: "weekly"
+      
+  - package-ecosystem: "maven"
+    directory: "/Forrás Kód/AxCrates (Artillex-Studios)"
+    schedule:
+      interval: "weekly"
+
+      
+  - package-ecosystem: "gradle"
+    directory: "/Forrás Kód/CropsFarm (bytezlol)"
+    schedule:
+      interval: "weekly"
