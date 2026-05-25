@@ -1,0 +1,32 @@
+# WorldGuard region names where crop regeneration is enabled.
+# Crops broken outside these regions behave vanilla.
+regions:
+  - "farm1"
+  - "farm2"
+
+# Per-crop settings.
+crops:
+  carrots:
+    drop-amount: 3
+    regeneration-delay: 2
+    regeneration-age: 7
+
+  potatoes:
+    drop-amount: 3
+    regeneration-delay: 2
+    regeneration-age: 7
+
+  wheat:
+    drop-amount: 2
+    regeneration-delay: 2
+    regeneration-age: 7
+
+  beetroots:
+    drop-amount: 2
+    regeneration-delay: 2
+    regeneration-age: 3
+
+  nether_wart:
+    drop-amount: 2
+    regeneration-delay: 3
+    regeneration-age: 3

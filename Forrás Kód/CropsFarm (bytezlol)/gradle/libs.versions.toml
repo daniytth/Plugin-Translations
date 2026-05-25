@@ -1,0 +1,25 @@
+[versions]
+paper = "1.21.4-R0.1-SNAPSHOT"
+canvas = "1.21.11-R0.1-SNAPSHOT"
+lombok = "1.18.42"
+run-paper = "2.3.1"
+shadow = "9.4.1"
+placeholderapi = "2.11.6"
+vault = "1.7"
+folialib = "0.5.1"
+worldedit = "7.3.18"
+worldguard = "7.0.13"
+
+[libraries]
+paper-api = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper" }
+canvas = { group = "io.canvasmc.canvas", name = "canvas-api", version.ref = "canvas" }
+lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
+vault = { group = "com.github.MilkBowl", name = "VaultAPI", version.ref = "vault" }
+folialib = { group = "com.tcoded", name = "FoliaLib", version.ref = "folialib" }
+placeholderapi = { group = "me.clip", name = "placeholderapi", version.ref = "placeholderapi" }
+worldedit = { group = "com.sk89q.worldedit", name = "worldedit-bukkit", version.ref = "worldedit" }
+worldguard = { group = "com.sk89q.worldguard", name = "worldguard-bukkit", version.ref = "worldguard" }
+
+[plugins]
+run-paper = { id = "xyz.jpenilla.run-paper", version.ref = "run-paper" }
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }

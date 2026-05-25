@@ -1,0 +1,11 @@
+name: FarmPlugin
+main: net.flamestudios.FarmSystem
+version: 1.0
+folia-supported: true
+api-version: 1.21
+author: FlameStudios
+website: www.github.com/bytezlol
+depend:
+  - WorldGuard
+commands:
+  farm:
