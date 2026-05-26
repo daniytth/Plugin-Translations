@@ -6,7 +6,7 @@ run-paper = "3.0.2"
 shadow = "9.4.1"
 placeholderapi = "2.12.2"
 vault = "1.7"
-folialib = "0.5.1"
+folialib = "0.5.2"
 worldedit = "7.4.3"
 worldguard = "7.0.16"
 
