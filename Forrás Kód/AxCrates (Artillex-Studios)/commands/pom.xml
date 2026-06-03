@@ -28,7 +28,7 @@
         <dependency>
             <groupId>io.github.revxrsal</groupId>
             <artifactId>lamp.bukkit</artifactId>
-            <version>4.0.0-rc.13</version>
+            <version>4.0.0-rc.16</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
