@@ -1,5 +1,5 @@
 [versions]
-paper = "26.1.2.build.65-stable"
+paper = "26.1.2.build.68-stable"
 canvas = "1.21.11-R0.1-SNAPSHOT"
 lombok = "1.18.42"
 run-paper = "3.0.2"
