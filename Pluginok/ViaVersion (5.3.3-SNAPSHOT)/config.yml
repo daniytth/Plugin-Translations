@@ -20,7 +20,7 @@ block-versions: []
 # List of all Minecraft protocol versions: https://minecraft.wiki/w/Protocol_version, or use a generator: https://via.krusic22.com
 block-protocols: []
 # Change the blocked disconnect message
-block-disconnect-msg: Nem jó Minecraft Verzióval probálsz bejönni 1.20.4-gyel gyere
+block-disconnect-msg: Nem jó Minecraft Verzióval probálsz fel csatlakozni.
   fel!
 # If you use ProtocolLib, we can't reload without kicking the players.
 # (We don't suggest using reload either, use a plugin manager)
