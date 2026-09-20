@@ -1,0 +1,201 @@
+status:
+    offline:
+        base: '&c{SERVER} jelenleg {STATUS}. &7A sorban a &f{POS}&7. helyen állsz a &f{LEN}&7.-ből/-ből.'
+        offline: offline
+        restarting: újraindul
+        restricted: korlátozott
+        paused: szüneteltetve
+        whitelisted: fehérlistázott
+    full:
+        base: '&c{SERVER} megtelt. &7A sorban a &f{POS}&7. helyen állsz a &f{LEN}&7.-ből/-ből. Becsült idő: {TIME}'
+    online:
+        base: '&7A sorban a &f{POS}&7. helyen állsz a &f{LEN}&7.-ből/-ből. Becsült idő: {TIME}'
+    left-last-queue: '&aKiléptél az utolsó sorból, amelyben voltál.'
+    now-in-queue: |-
+        &aMostantól{EXPRESS}&asorban állsz a {SERVER} szerverre! &7A sorban a &f{POS}&7. helyen állsz a &f{LEN}&7.-ből/-ből.
+        &7Írd be a &f/leavequeue&7 parancsot vagy &7<click:run_command:/leavequeue {SERVERNAME}>kattints ide</click>&7 a sorból való kilépéshez!
+    now-in-empty-queue: ''
+    express: ' &6express '
+    non-express: ' '
+    sending-now: '&aÉppen átküldelek a &f{SERVER} &aszerverre..'
+    making-room: <gold>Helyet csinálok számodra..
+    priority-increased: <gold>Mostantól magasabb prioritásod van! <green>Előrébb kerülsz a sorban..
+    skipping-queue-server: ''
+errors:
+    server-not-exist: '&cA {SERVER} szerver nem létezik!'
+    already-queued: '&cMár sorban állsz arra a szerverre!'
+    player-only: '&cEzt a parancsot csak játékosként hajthatod végre!'
+    already-connected: '&cMár csatlakozva vagy ehhez a szerverhez!'
+    cant-join-paused: '&cNem csatlakozhatsz a {SERVER} sorához, mert szüneteltetve van.'
+    deny-joining-from-server: '&cErről a szerverről nem csatlakozhatsz sorokhoz!'
+    wrong-version:
+        base: <red>A {VERSIONS} verzióval kell rendelkezned a szerverre való csatlakozáshoz!
+        or: ' vagy '
+        comma: ', '
+        title: <red><bold>Rossz verzió
+        subtitle: <gold>Kérlek, csatlakozz a következővel: <yellow>{VERSIONS}<gold>.
+    too-fast-queue: <red>Túl gyorsan sorba állsz!
+    kicked-to-make-room: <red>Átkerültél a lobbyba, hogy helyet csináljunk egy másik játékosnak.
+    make-room-failed:
+        player: <red>Nem sikerült helyet csinálni számodra azon a szerveren.
+        admin: <red>Nem sikerült helyet csinálni számodra azon a szerveren. További információkért nézd meg a konzolt.
+commands:
+    leave-queue: '&aKiléptél a {SERVER} sorából!'
+    reload: '&aKonfiguráció és üzenetek sikeresen újratöltve!'
+    joinqueue:
+        usage: '&cHasználat: /joinqueue <szerver>'
+    kick:
+        usage: '<red>Használat: /ajqueue kick <játékos> [sor]'
+        no-player: '&cNem található {PLAYER}! Győződj meg róla, hogy sorban áll!'
+        unknown-server: '&cNem található a {QUEUE} sor. Győződj meg róla, hogy helyesen írtad be!'
+        success: <green>Kirúgtad <white>{PLAYER} <green>-t {NUM} sor{ból/ből}!
+    kickall:
+        usage: '<red>Használat: /ajqueue kickall <sor>'
+        success: <green>Kirúgtál <white>{NUM} <green>játékost a <white>{SERVER}<green> sorból!
+    pausequeueserver:
+        unpaused: <green>Már nem vagy szüneteltetve! <gray>Mostantól normálisan használhatod a soros szervereket.
+        paused: <green>Mostantól szüneteltetve vagy! <gray>Többé nem küldünk át soros szervereken keresztül.
+        reminder: '<gold>Emlékeztető: <yellow>Jelenleg szüneteltetve vagy a soros szerverek számára, így nem fognak rajtuk keresztül átküldeni!<gray> Használd a <white>/ajQueue pausequeueserver</white> parancsot a szüneteltetés feloldásához és a normál viselkedés visszaállításához'
+    leave:
+        more-args: '&cKérlek, add meg, melyik sorból szeretnél kilépni! &7Ezekben a sorokban állsz: {QUEUES}'
+        queues-list-format: '&f{NAME}&7, '
+        not-queued: '&cNem állsz sorban arra a szerverre! &7Ezekben a sorokban állsz: {QUEUES}'
+        no-queues: '&cNem állsz sorban!'
+    pause:
+        more-args: '&cHasználat: /ajqueue pause <szerver> [be/ki]'
+        no-server: '&cAz a szerver nem létezik!'
+        success: '&aA {SERVER} sora mostantól {PAUSED}'
+        paused:
+            'true': '&eszüneteltetve'
+            'false': '&aaktív'
+    send:
+        player-not-found: '&cA játékos nem található. Győződj meg róla, hogy online van!'
+        usage: '<red>Használat: /ajqueue send <játékos> <szerver>'
+    listqueues:
+        header: '&9Sorok:'
+        single-format: '<hover:show_text:''&7Állapot: {STATUS}''>{COLOR}{NAME}&7: {COUNT} sorban</hover>'
+        both-format: '<hover:show_text:''&7Állapot: {STATUS}''>{COLOR}{NAME}&7: {STANDARD_COUNT}+&6{EXPRESS_COUNT} &7sorban</hover>'
+noperm: '&cNincs jogosultságod ehhez!'
+format:
+    time:
+        mins: '{m}ó {s}mp'
+        secs: '{s} másodperc'
+list:
+    single-format: '&b{SERVER} &7({COUNT}): {LIST}'
+    both-format: '&b{SERVER} &7({STANDARD_COUNT}+&6{EXPRESS_COUNT}&7): {LIST}'
+    playerlist-format: '&9{EXPRESS_COLOR}{NAME}&7, '
+    playerlist-and-more: '&7és még &f{MORE} &7további'
+    total: '&7Összes játékos a sorokban: &f{TOTAL}'
+    none: '&7Nincs'
+actionbar:
+    online: '&7{EXPRESS}sorban állsz a &f{SERVER}&7 szerverre. A &f{POS}&7. helyen állsz a &f{LEN}&7.-ből/-ből. Becsült idő: {TIME}'
+    full: '&7{EXPRESS}sorban állsz a &f{SERVER}&7 szerverre. A &f{POS}&7. helyen állsz a &f{LEN}&7.-ből/-ből. Becsült idő: {TIME}'
+    offline: '&7{EXPRESS}sorban állsz a &f{SERVER}&7 szerverre. &7A &f{POS}&7. helyen állsz a &f{LEN}&7.-ből/-ből.'
+    express: ' &6express '
+    non-express: ' '
+spigot:
+    actionbar:
+        warning: '"spigot.actionbar" üzenetek már nem használatosak! Mostantól az "actionbar" alatt találhatók (spigot nélkül az elején)'
+send: '&aHozzáadtad &f{PLAYER}&a-t a &f{SERVER}&a sorához'
+remove: '&aEltávolítottad &f{PLAYER}&a-t az összes sorból, amelyben volt.'
+placeholders:
+    queued:
+        none: Nincs
+    position:
+        none: Nincs
+    estimated_time:
+        none: Nincs
+    status:
+        online: '&aOnline'
+        offline: '&cOffline'
+        restarting: '&cÚjraindul'
+        full: '&eTele'
+        restricted: '&eKorlátozott'
+        paused: '&eSzüneteltetve'
+        whitelisted: '&eFehérlistázott'
+title:
+    title: ''
+    subtitle: <gold>A(z) <green>#{POS} <gold>helyen állsz a sorban!
+    sending-now:
+        title: ''
+        subtitle: <green>Éppen átküldelek a <white>{SERVER} <green>szerverre..
+max-tries-reached: '&cNem sikerült csatlakozni a {SERVER} szerverhez. Elérted a maximális próbálkozások számát.'
+auto-queued: '&aAutomatikusan sorba kerültél a {SERVER} szerverre, mert kirúgtak.'
+velocity-kick-message: '<red>Kirúgtak, miközben megpróbáltál csatlakozni a {SERVER} szerverhez: <white>{REASON}'
+updater:
+    update-available: |-
+        <gray><strikethrough>                                                         <reset>
+          <green>Elérhető az ajQueue frissítése!
+          <dark_green>Letöltheted a <click:run_command:/ajqueue update><bold>kattintással</bold>
+            vagy a <gray>/ajQueue update</click> parancs futtatásával
+        <gray><strikethrough>                                                         <reset>
+    no-update: <red>Nincs elérhető frissítés
+    success: <green>A frissítés letöltve! Most már csak indítsd újra a szervert
+    already-downloaded: '&aMár letöltöttél egy frissítést! &7Indítsd újra a szervert az alkalmazásához'
+    slow-feedback: '&7Frissítés ellenőrzése és letöltése...'
+    disabled: '&cA frissítő le van tiltva! &7Kérlek, engedélyezd a config-ban a frissítések letöltéséhez.'
+    warnings:
+        could-not-delete-old-jar: '&aFrissítés letöltve&e, de a régi jar fájlt nem sikerült törölni. &7Kérlek, töröld a régi jar fájlt a szerver újraindítása előtt.'
+    errors:
+        while-checking: '&eHiba történt a frissítés ellenőrzése során. &7További információért nézd meg a konzolt.'
+        unknown: '&eIsmeretlen hiba történt: {ERROR}'
+        could-not-find-jar: '&cNem található a régi jar fájl!&7 Győződj meg róla, hogy a neve hasonló az ajQueue-x.x.x.jar-hoz'
+        while-downloading: '&eHiba történt a frissítés letöltése során. &7További információért nézd meg a konzolt.'
+        missing-update-token: '&cHiányzó frissítési token! &7További információért nézd meg a&f updater-config.yml&f fájlt.'
+        invalid-update-token: '&cÉrvénytelen frissítési token! &7További információért nézd meg a&f updater-config.yml&f fájlt. Ha elakadtál, kérlek, vedd fel a kapcsolatot a támogatással.'
+        uncaught: '&cHiba történt a parancs végrehajtása során. &7Nézd meg a konzolt.'
+velocity-built-in-kick-messages:
+    already-connecting: Már csatlakozik
+    already-connected: Már csatlakozva
+    success: Sikeres
+    cancelled: Kapcsolat megszakítva
+    disconnected: A kapcsolat ismeretlen okból megszakadt
+protocol-names:
+    '5': 1.7.10
+    '47': 1.8.9
+    '107': '1.9'
+    '108': 1.9.1
+    '109': 1.9.2
+    '110': 1.9.4
+    '210': 1.10.2
+    '315': '1.11'
+    '316': 1.11.2
+    '335': '1.12'
+    '338': 1.12.1
+    '340': 1.12.2
+    '393': '1.13'
+    '401': 1.13.1
+    '404': 1.13.2
+    '477': '1.14'
+    '480': 1.14.1
+    '485': 1.14.2
+    '490': 1.14.3
+    '498': 1.14.4
+    '573': '1.15'
+    '575': 1.15.1
+    '578': 1.15.2
+    '735': '1.16'
+    '736': 1.16.1
+    '751': 1.16.2
+    '753': 1.16.3
+    '754': 1.16.5
+    '755': '1.17'
+    '756': 1.17.1
+    '757': 1.18.1
+    '758': 1.18.2
+    '759': '1.19'
+    '760': 1.19.2
+    '761': 1.19.3
+    '762': 1.19.4
+    '763': 1.20.1
+    '764': 1.20.2
+    '765': 1.20.4
+    '766': 1.20.6
+    '767': 1.21.1
+    '768': 1.21.3
+    '769': 1.21.4
+    '770': 1.21.5
+    '771': 1.21.6
+    '772': 1.21.8
+    '773': 1.21.10
+    '774': 1.21.11

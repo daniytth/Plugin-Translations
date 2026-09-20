@@ -1,0 +1,70 @@
+messages:
+
+  # Legtöbb használati üzenet
+
+  # A játékosnak nincs jogosultsága a parancs használatához
+  no-permissions: "<color:#F2000E>[✘] Nincs jogosultságod a parancs végrehajtásához!" # Ha nincs elég jogosultságod
+
+  # Ha ismeretlen parancsot adtak meg
+  unknown-command: "<color:#F2000E>[✘] Ismeretlen parancs! Használd a </color><gradient:#F27200:#F29900>/hv help</gradient> parancsot"
+
+  # Ha a parancs helytelenül van megadva
+  usage: "<color:#F2000E>[✘] Használat: /hv <setspawn|delspawn|reload|control>"
+
+  # Ha a parancsot nem játékos írta be
+  not-player: "<color:#F2000E>[✘] Játékosnak kell lenned a parancs használatához!"
+
+  # Kategória a /hv setspawn parancshoz
+  setspawn:
+
+    # Ha a spawn sikeresen beállításra került
+    success: "<color:#38F200>[✔] Spawn pont sikeresen beállítva!"
+
+    # Hiba
+    error: "<color:#F2000E>Nem sikerült beállítani a spawn pontot! Ellenőrizd a konzolt a részletekért."
+
+  # Kategória a /hv spawn parancshoz
+  spawn:
+
+    # Ha teleportált a spawnhoz
+    success: "<color:#38F200>Teleportáltál a spawnhoz!"
+
+    # Ha a spawn pont nincs beállítva
+    not-set: "<color:#F2000E>[✘] Spawn nincs beállítva!"
+
+    # Hiba
+    error: "<color:#F2000E>Hiba történt, kérlek ellenőrizd a naplókat és vedd fel a kapcsolatot a fejlesztőkkel segítségért."
+
+  # Kategória a /hv delspawn parancshoz
+  delspawn:
+
+    # Ha a spawn sikeresen törölve lett
+    success: "<color:#38F200>[✔] Spawn</color> <color:#F2000E>törölve</color><color:#38F200>!</color>"
+
+    # Ha a spawn nincs beállítva a törléshez
+    not-set: "<color:#F2000E>[✘] Spawn nem volt beállítva!"
+
+    # Hiba
+    error: "<color:#F2000E>[✘] Nem sikerült törölni a spawn pontot! Ellenőrizd a konzolt a részletekért!"
+
+  # Kategória a /hv reload parancshoz
+  reload:
+
+    # Ha sikeresen újratöltve
+    success: "<color:#38F200>[✔] Konfiguráció újratöltve!" # Ha a plugin újratöltve
+
+    # Hiba
+    error: "<color:#F2000E>[✘] Hiba történt a konfiguráció újratöltése során!"
+
+  # Kategória a /hv help parancshoz
+
+  # Segítség üzenet (akkor is megjelenik, ha a /hv parancsot írják be)
+  help:
+    - "<gradient:#D70000:#FF5D2D>============== ʜᴀᴠᴇɴ sᴇɢíᴛséɢ ============== </gradient>"
+    - "/ʜᴠ sᴇᴛsᴘᴀᴡɴ - <gradient:#D70000:#FF5D2D>sᴘᴀᴡɴ ᴘᴏɴᴛ ʙᴇáʟʟíᴛása</gradient><white>;</white>"
+    - "/ʜᴠ ᴅᴇʟsᴘᴀᴡɴ - <gradient:#D70000:#FF5D2D>sᴘᴀᴡɴ ᴘᴏɴᴛ ᴛöʀʟése</gradient><white>;</white>"
+    - "/ʜᴠ ʀᴇʟᴏᴀᴅ - <gradient:#D70000:#FF5D2D>ᴘʟᴜɢɪɴ ᴋᴏɴғɪɢᴜʀáᴄɪó ᴊᴜʟʀᴀᴛöʟᴛése</gradient><white>;</white>"
+    - "/ʜᴠ ᴄᴏɴᴛʀᴏʟ - <gradient:#D70000:#FF5D2D>ɢᴜɪ-ᴍᴇɴü ᴍᴇɢɴʏɪᴛása</gradient><white>;</white>"
+    - "/ʜᴠ ʜᴇʟᴘ - <gradient:#D70000:#FF5D2D>ᴇᴢᴇɴ ᴀ sᴇɢíᴛséɢ ᴍᴇɢᴊᴇʟᴇɴíᴛése</gradient><white>;</white>"
+    - "/sᴘᴀᴡɴ - <gradient:#D70000:#FF5D2D>ᴛᴇʟᴇᴘᴏʀᴛáʟás ᴀ sᴘᴀᴡɴʜᴏᴢ</gradient><white>.</white>"
+    - "<gradient:#D70000:#FF5D2D>=========================================</gradient>"
